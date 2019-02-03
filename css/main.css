@@ -1,0 +1,103 @@
+@keyframes jumping {
+    0%      {transform: translate(0px, 0px);}
+    50%     {transform: translate(0px, -20px);}
+    100%    {transform: translate(0px, 0px);}
+}
+
+a {
+    color: white
+}
+
+body {
+    background: rgb(11, 11, 11);
+}
+
+.navbar {
+    background: rgb(0, 0, 0);
+}
+
+.nav-link, .navbar-brand {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    background: rgb(11, 11, 11);
+    color: rgb(235, 235, 235)
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: rgb(255, 255, 255) !important;
+}
+
+.header {
+    /*background-image: url('../img/test.jpg');*/
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: static;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(50, 50, 50, 0.8);
+}
+
+.description {
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+
+.circle1 {
+    -moz-border-radius: 50px/50px;
+    -webkit-border-radius: 50px 50px;
+    border-radius: 50px/50px;
+    border: solid 5px rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    animation-name: jumping;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.circle2 {
+    -moz-border-radius: 50px/50px;
+    -webkit-border-radius: 50px 50px;
+    border-radius: 50px/50px;
+    border: solid 5px rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    animation-name: jumping;
+    animation-duration: 1s;
+    animation-delay: -0.33s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}  
+
+.circle3 {
+    -moz-border-radius: 50px/50px;
+    -webkit-border-radius: 50px 50px;
+    border-radius: 50px/50px;
+    border: solid 5px rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+    animation-name: jumping;
+    animation-duration: 1s;
+    animation-delay: -0.67s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}

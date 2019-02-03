@@ -39,7 +39,7 @@ body {
 }
 
 .header {
-    /*background-image: url('../img/test.jpg');*/
+    background-image: url('../img/XDD.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -51,15 +51,22 @@ body {
     min-width: 100%;
     left: 0;
     top: 0;
-    background: rgba(50, 50, 50, 0.8);
+    background: rgba(20, 20, 20, 0.8);
 }
 
 .description {
     position: absolute;
     top: 30%;
+    left: 25%;
     margin: auto;
     padding: 2em;
 }
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
 
 .circle1 {
     -moz-border-radius: 50px/50px;
@@ -100,4 +107,11 @@ body {
     animation-delay: -0.67s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+}
+
+h1 {
+    
+    font-size: 5em;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }

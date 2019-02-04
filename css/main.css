@@ -71,7 +71,7 @@ h2 {
 }
 
 .header {
-    /*background-image: url('../img/XDD.png');*/
+    background-image: url('../img/XDD.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;

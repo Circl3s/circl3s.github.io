@@ -16,16 +16,29 @@
     100%    {opacity: 1};
 }
 
+@keyframes slide-up {
+    0%      {transform: translate(0px, 0px);}
+    100%    {transform: translate(0px, -200vw);}
+}
+
+@keyframes black-white {
+    0%      {color: rgb(0, 0, 0);}
+    100%    {color: rgb(255, 255, 255);}
+}
+
+div {
+    /*border: solid 2px red;*/
+}
+
 a {
     color: white
 }
 
 body {
-    background: rgb(11, 11, 255);
+    background: rgb(11, 11, 11);
 }
 
 header h1 {
-    
     font-size: 5em;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -44,8 +57,24 @@ h2 {
     text-align: center;
 }
 
+.welcome {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    background: rgba(255, 255, 255, 1);
+    z-index: 4;
+    animation-name: slide-up;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
 .navbar {
+    position: fixed;
     background: rgb(0, 0, 0);
+    z-index: 20;
 }
 
 .nav-link, .navbar-brand {
@@ -71,7 +100,7 @@ h2 {
 }
 
 .header {
-    background-image: url('../img/XDD.png');
+    background-image: url('../img/profil2.gif');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -94,6 +123,7 @@ h2 {
     left: 25%;
     margin: auto;
     padding: 2em;
+    z-index: 5;
 }
 
 .center {
@@ -148,7 +178,7 @@ h2 {
 
 .arrow-down {
     font-size: 2em;
-    text-align: center;
+    text-justify: auto;
     color: rgb(255, 255, 255);
     position: fixed;
     bottom: 1%;
@@ -181,6 +211,21 @@ h2 {
 
 .about {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     background: black;
+}
+
+.about img {
+    border-radius: 50%/50%;
+    height: 25vw;
+    width: 25vw;
+}
+
+.about .right {
+    color: white;
+    justify-content: flex-end;
+}
+
+.about .left {
+    justify-content: flex-start;
 }

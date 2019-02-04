@@ -11,12 +11,37 @@
     100%    {color: rgba(255, 255, 255, 0.2)}
 }
 
+@keyframes fade-in {
+    0%      {opacity: 0};
+    100%    {opacity: 1};
+}
+
 a {
     color: white
 }
 
 body {
-    background: rgb(11, 11, 11);
+    background: rgb(11, 11, 255);
+}
+
+header h1 {
+    
+    font-size: 5em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+}
+
+h2 {
+    
+    font-size: 2.2em;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .navbar {
@@ -46,10 +71,11 @@ body {
 }
 
 .header {
-    background-image: url('../img/XDD.png');
+    /*background-image: url('../img/XDD.png');*/
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    z-index: 0;
 }
 
 .overlay {
@@ -59,10 +85,11 @@ body {
     left: 0;
     top: 0;
     background: rgba(20, 20, 20, 0.8);
+    z-index: 1;
 }
 
 .description {
-    position: absolute;
+    position: fixed;
     top: 30%;
     left: 25%;
     margin: auto;
@@ -82,10 +109,11 @@ body {
     border: solid 5px rgb(255, 255, 255);
     width: 100px;
     height: 100px;
-    animation-name: jumping;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+    animation-name: jumping, fade-in;
+    animation-duration: 1s, 0.5s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: infinite, 1;
+    animation-fill-mode: none, both;
 }
 
 .circle2 {
@@ -95,11 +123,12 @@ body {
     border: solid 5px rgb(255, 255, 255);
     width: 100px;
     height: 100px;
-    animation-name: jumping;
-    animation-duration: 1s;
-    animation-delay: -0.33s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+    animation-name: jumping, fade-in;
+    animation-duration: 1s, 0.5s;
+    animation-delay: 0.33s, 0.33s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: infinite, 1;
+    animation-fill-mode: none, both;
 }  
 
 .circle3 {
@@ -109,25 +138,22 @@ body {
     border: solid 5px rgb(255, 255, 255);
     width: 100px;
     height: 100px;
-    animation-name: jumping;
-    animation-duration: 1s;
-    animation-delay: -0.67s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
-h1 {
-    
-    font-size: 5em;
-    color: rgb(255, 255, 255);
-    text-align: center;
+    animation-name: jumping, fade-in;
+    animation-duration: 1s, 0.5s;
+    animation-delay: 0.67s, 0.67s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: infinite, 1;
+    animation-fill-mode: none, both;
 }
 
 .arrow-down {
+    font-size: 2em;
+    text-align: center;
     color: rgb(255, 255, 255);
     position: fixed;
-    top: 92%;
-    left: 50%;
+    bottom: 1%;
+    left: 49%;
+    z-index: 2;
 }
 
 .blinking1 {
@@ -151,4 +177,10 @@ h1 {
     animation-delay: 0.2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.about {
+    position: relative;
+    z-index: 3;
+    background: black;
 }

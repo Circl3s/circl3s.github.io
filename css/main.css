@@ -39,7 +39,7 @@ body {
 }
 
 header {
-    background-image: url('../img/profil2.gif');
+    /*background-image: url('../img/profil2.gif');*/
     background-attachment: fixed;
     background-size: cover;
     background-position: center;

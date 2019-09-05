@@ -1,4 +1,4 @@
-<html>
+<html> 
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         
@@ -11,6 +11,7 @@
         <script type="text/javascript" src="js/main.js"></script>
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
     </head>
 
@@ -34,13 +35,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-4">
                     <li class="nav-item">
-                        <a class="nav-link" data-value="about" href="#">About</a>
+                        <a class="nav-link" data-value="about" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-value="stuff" href="#">Stuff</a>
+                        <a class="nav-link" data-value="stuff" href="#stuff">Stuff</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-value="contact" href="#">Contact</a>
+                        <a class="nav-link" data-value="contact" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -50,7 +51,11 @@
 
         <header>
             <div class="overlay">
-                <!--<div class="vl"></div>-->
+                <div class="video-container">
+                    <video autoplay muted loop id="Circl3sVid" style="filter:opacity(50%) blur(5px);">
+                        <source src="Colorful Lights.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <div class="d-flex justify-content-center">
                     <div class="arrow-down">
                         <i class="fas fa-chevron-down blinking1"></i><br>
@@ -72,7 +77,7 @@
                             <div class="circle3 center"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="circl3s row">
                         <div class="col">
                             <br>
                             <h1>Circl3s</h1>
@@ -84,24 +89,55 @@
 
         <!-- ABOUT -->
 
-        <div class="container-fluid about">
+        <div class="about">
+            <div class="tag-link" id="about"></div>
             <h2>What you need to know about me:</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 right">
-                    <br>
-                    <img src="img/profil2.gif"><br>
-                    <img src="img/profil2.gif"><br>
-                    <img src="img/profil2.gif"><br>
-                    <img src="img/profil2.gif"><br>
-                    <img src="img/profil2.gif"><br>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 left">
-                    <p>
-                        test
-                    </p>
+            <table cellspacing="10" style="color: white; width: 80%" border=10px bordercolor=black align=center>
+                <tr>
+                    <td align=center valign=center colspan="1"><img src="48411329_737120300019656_7012662497412907008_n.png"></td>
+                    <td align=left valign=center colspan="3" style="font-size: 1.5em; padding: 2em">I am a young Polish music producer, sound designer and an IT technician in training. This website serves as my portfolio and a hub for all my published resources and information about them.</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- STUFF -->
+
+        <div class="stuff">
+            <div class="d-flex justify-content-around align-items-stretch">
+                <div class="row">
+                    <div class="col">
+                            <div class="tag-link" id="stuff"></div>
+                            <video autoplay muted loop id="ProgrammingVid">
+                                <source src="https://ak2.picdn.net/shutterstock/videos/29750992/preview/stock-footage-network-animation-connected-dots-on-white-background-seamless-loop-k.webm" type="video/webm">
+                            </video>
+                        <div class="card">
+                            <img src="https://miro.medium.com/max/2000/1*s9pTH7fpkN2SUCHSGG-HXQ.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="card-title" align=center>Programming</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit recusandae itaque ex expedita quaerat aperiam dolorum! Rerum aliquid cumque officia dolore ex sunt. Sed facere molestiae, deserunt magni consectetur ducimus!</p>
+                                <a href="https://github.com/circl3s" class="btn btn-secondary">See portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                            <video autoplay muted loop id="MusicVid">
+                                <source src="https://ak4.picdn.net/shutterstock/videos/29030944/preview/stock-footage-colorful-waveform-imagination-of-voice-record-artificial-intelligence.webm" type="video/webm">
+                            </video>
+                        <div class="card">
+                            <img src="https://www.flstudiomusic.com/wp-content/uploads/2017/08/fl-studio-12-5.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="card-title" align=center>Music</h3>
+                                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, aperiam repudiandae atque temporibus ut amet hic explicabo laudantium sapiente necessitatibus natus esse vel voluptas tempora in quas dolor illo rerum!</p>
+                                <a href="https://youtube.com/c/orionpl" class="btn btn-secondary">See portfolio</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+        <div class="contact">
+            <div class="tag-link" id="contact"></div>
+            
+        </div>
     </body>
 </html>

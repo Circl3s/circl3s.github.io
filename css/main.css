@@ -36,6 +36,11 @@ a {
 
 body {
     background: rgb(11, 11, 11);
+    font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat Black", sans-serif;
 }
 
 header {
@@ -47,6 +52,7 @@ header {
 }
 
 header h1 {
+    font-family: "Montserrat", sans-serif;
     font-size: 5em;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -59,7 +65,6 @@ header h1 {
 }
 
 h2 {
-    
     font-size: 2.2em;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -81,6 +86,7 @@ h2 {
 
 .navbar {
     position: fixed;
+    height: 5vh;
     background: rgb(0, 0, 0);
     z-index: 20;
 }
@@ -123,6 +129,9 @@ h2 {
     left: 25%;
     margin: auto;
     padding: 2em;
+}
+
+.circl3s {
     z-index: 5;
 }
 
@@ -144,6 +153,7 @@ h2 {
     animation-timing-function: ease-in-out, linear;
     animation-iteration-count: infinite, 1;
     animation-fill-mode: none, both;
+    z-index: 3;
 }
 
 .circle2 {
@@ -159,6 +169,7 @@ h2 {
     animation-timing-function: ease-in-out, linear;
     animation-iteration-count: infinite, 1;
     animation-fill-mode: none, both;
+    z-index: 3;
 }  
 
 .circle3 {
@@ -174,6 +185,7 @@ h2 {
     animation-timing-function: ease-in-out, linear;
     animation-iteration-count: infinite, 1;
     animation-fill-mode: none, both;
+    z-index: 3;
 }
 
 .arrow-down {
@@ -237,4 +249,75 @@ h2 {
     height: 100%;
     left: 50%;
     border-left: 1px solid red;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+}
+.video-container video {
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+}
+
+.stuff .row {
+    left: 0%;
+    z-index: 5;
+    color: white;
+    background: rgb(11, 11, 11);
+    width: 100%;
+    overflow: hidden;
+    margin: 0%;
+    padding: 0%;
+}
+
+.stuff video {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: opacity(50%);
+    margin: 0%;
+    padding: 0%;
+}
+
+#ProgrammingVid {
+    filter: opacity(50%) invert(100%);
+}
+
+.stuff .col {
+    overflow: hidden;
+}
+
+.stuff .card {
+    background: rgb(11, 11, 11);
+    padding: 2%;
+    margin: 5%;
+}
+
+.stuff p {
+    font-size: 1.5em;
+}
+
+.contact {
+    position: sticky;
+    z-index: 4;
+    height: 50vh;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 13%, rgb(0, 0, 0) 13%, rgb(0, 0, 0) 17%,rgba(255, 255, 255, 0) 17%, rgba(255, 255, 255, 0) 20%, rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 90%, rgb(0, 0, 0) 90%, rgb(0, 0, 0) 100%);
+    filter: drop-shadow(-5px -1px 5px rgba(0, 0, 0, 0.9))
+}
+
+.tag-link {
+    position: absolute;
+    top: -5vh;
 }

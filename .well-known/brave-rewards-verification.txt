@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: circl3s.github.io
+Token: f5d258a58a44b127bfbc6327012f11f1867e99d84c2603cbb73e6b481bd09211

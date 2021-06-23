@@ -31,7 +31,7 @@
     <h2>Circl3s</h2>
     <div class="links">
         <a href="#about">About</a>
-        <a href="">Hobbies</a>
+        <a href="#hobbies">Hobbies</a>
         <a href="">Contact</a>
     </div>
 </div>

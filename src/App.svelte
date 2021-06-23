@@ -1,6 +1,7 @@
 <script>
     import About from "./About.svelte";
     import Greeter from "./Greeter.svelte";
+    import Hobbies from "./Hobbies.svelte";
     import Navbar from "./Navbar.svelte";
 </script>
 
@@ -12,4 +13,5 @@
     <Navbar />
     <Greeter />
     <About />
+    <Hobbies />
 </div>

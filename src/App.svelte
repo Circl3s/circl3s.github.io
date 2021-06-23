@@ -1,0 +1,15 @@
+<script>
+    import About from "./About.svelte";
+    import Greeter from "./Greeter.svelte";
+    import Navbar from "./Navbar.svelte";
+</script>
+
+<style>
+
+</style>
+
+<div class="App">
+    <Navbar />
+    <Greeter />
+    <About />
+</div>

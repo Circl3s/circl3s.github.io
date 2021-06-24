@@ -12,7 +12,5 @@
     <div class="text-2xl font-semibold mb-4">
         <slot name="title"></slot>
     </div>
-    <div>
-        <slot name="content"></slot>
-    </div>
+    <slot name="content"></slot>
 </div>

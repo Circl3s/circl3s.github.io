@@ -1,8 +1,8 @@
 <script>
+import Button from "./Button.svelte";
 import Card from "./Card.svelte";
+import Typewriter from "./Typewriter.svelte";
 import WebGL from "./WebGL.svelte";
-
-
 </script>
 
 <style>
@@ -13,6 +13,10 @@ import WebGL from "./WebGL.svelte";
     .hobby {
         @apply w-full md:w-1/2 flex justify-center;
     }
+
+    p {
+        @apply text-justify;
+    }
 </style>
 
 <div class="Hobbies" id="hobbies">
@@ -21,9 +25,13 @@ import WebGL from "./WebGL.svelte";
             <h2 slot="title">
                 Sound Design
             </h2>
-            <p slot="content">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. In error consequatur natus ipsum ab, facere voluptatem eaque perferendis eveniet! Dolor mollitia, omnis ea consectetur id sint eos dolorem veniam quae!
-            </p>
+            <div slot="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.
+                </p>
+                <Button>
+                    Browse
+                </Button>
+            </div>
         </Card>
     </div>
     <div class="hobby">
@@ -31,9 +39,14 @@ import WebGL from "./WebGL.svelte";
             <h2 slot="title">
                 Programming
             </h2>
-            <p slot="content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.
-            </p>
+            <div slot="content">
+                <Typewriter />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.
+                </p>
+                <Button>
+                    Browse
+                </Button>
+            </div>
         </Card>
     </div>
 </div>

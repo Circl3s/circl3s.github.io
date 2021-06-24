@@ -10,7 +10,7 @@
 
 <style>
     .Navbar {
-        @apply text-white h-20 w-full fixed top-0 z-10 flex items-center justify-between p-4 transition duration-200;
+        @apply text-white h-20 w-full fixed top-0 z-50 flex items-center justify-between p-4 transition duration-200;
     }
 
     .bg {

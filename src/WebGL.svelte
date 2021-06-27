@@ -1,9 +1,12 @@
 <script>
     import {onMount} from "svelte";
+    import blobs from "./shaders/blobs.frag";
 
     let canvas;
 
-    onMount(() => {
+    onMount(async () => {
+        canvas.width = canvas.getBoundingClientRect().width;
+        canvas.height = canvas.getBoundingClientRect().height;
         const vertexShaderText = `
 precision mediump float;
 
@@ -16,73 +19,8 @@ void main() {
 }
         `;
 
-        const fragmentShaderText = `
-        precision mediump float;
+        const fragmentShaderText = blobs;
 
-#define PI 3.1415926535897932384626433832795
-
-uniform float u_time;
-uniform vec2 u_resolution;
-
-float normalized_sin(float x) {
-    return (sin(x) / 2.0) + 0.5;
-}
-
-float normalized_offset(float x) {
-    return (x * 2.0 * PI);
-}
-
-void main() {
-    vec2 pos = gl_FragCoord.xy / u_resolution;
-
-    // float rst = normalized_sin(2.0 * u_time + normalized_offset(pos.x + pos.y)) / sin(normalized_offset(pos.x));
-    // float gst = normalized_sin(1.5 * u_time + normalized_offset(pos.x + pos.y) + normalized_offset(1.0 / 3.0)) / sin(normalized_offset(pos.y));
-    // float bst = normalized_sin(2.5 * u_time + normalized_offset(pos.x + pos.y) + normalized_offset(2.0 / 3.0)) / sin(normalized_offset(pos.x * pos.y) + 2.0 / 3.0 * PI);
-
-    float rst = normalized_sin(u_time + pos.x) / pow(normalized_sin(pos.y), 5.0);
-    float gst = normalized_sin(u_time + normalized_offset(1.0 / 3.0) + pos.x) / pow(normalized_sin(pos.y), 3.0);
-    float bst = normalized_sin(u_time + normalized_offset(2.0 / 3.0) + pos.x) / pow(normalized_sin(pos.y), 2.0);
-    gl_FragColor = vec4(rst, gst, bst, 1.0);
-}
-        `;
-
-//         const fragmentShaderText = `
-// precision mediump float;
-
-// #define PI 3.1415926535897932384626433832795
-
-// uniform float u_time;
-// uniform vec2 u_resolution;
-
-// float plot(vec2 st, float pct){
-//   return  smoothstep( pct-0.02, pct, st.y) -
-//           smoothstep( pct, pct+0.02, st.y);
-// }
-
-// vec3 music() {
-//     vec2 st = gl_FragCoord.xy / u_resolution.xy;
-
-//     float ar = u_resolution.x / u_resolution.y;
-
-//     st.y = st.y * 5.0 * ar;
-//     float grid = floor(st.y);
-//     st.y = fract(st.y);
-
-//     float val = plot(st, ((sin(u_time * 5.0 + st.x * 10.0 * (grid + 10.0)) / 5.0) + 0.5));
-
-//     return vec3(val);
-// }
-
-// void main() {
-//     vec2 st = gl_FragCoord.xy / u_resolution.xy;
-//     float ar = u_resolution.y / u_resolution.x;
-//     if (st.x < 0.1) {
-//         gl_FragColor = vec4(music(), 1.0);
-//     }
-// }
-//         `;
-
-        var canvas = document.getElementById("webgl");
         var gl = canvas.getContext("webgl");
 
         if (!gl) {
@@ -139,7 +77,6 @@ void main() {
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(triangleVertices), gl.STATIC_DRAW);
 
         var positionAttribLocation = gl.getAttribLocation(program, "vertPosition");
-        // var colorAttribLocation = gl.getAttribLocation(program, "vertColor");
 
         gl.vertexAttribPointer(
             positionAttribLocation,
@@ -150,19 +87,14 @@ void main() {
             0
         );
 
-        // gl.vertexAttribPointer(
-        //     colorAttribLocation,
-        //     3,
-        //     gl.FLOAT,
-        //     gl.FALSE,
-        //     5 * Float32Array.BYTES_PER_ELEMENT,
-        //     2 * Float32Array.BYTES_PER_ELEMENT
-        // );
-
         gl.enableVertexAttribArray(positionAttribLocation);
-        // gl.enableVertexAttribArray(colorAttribLocation);
 
         gl.useProgram(program);
+
+        window.onresize = () => {
+            canvas.width = canvas.getBoundingClientRect().width;
+            canvas.height = canvas.getBoundingClientRect().height;
+        }
 
         var timeLocation = gl.getUniformLocation(program, "u_time");
         var resLocation = gl.getUniformLocation(program, "u_resolution");
@@ -180,11 +112,11 @@ void main() {
 
 <style>
     .WebGL {
-        @apply w-full h-full fixed top-0;
+        @apply w-full h-full top-0;
         z-index: -1 !important;
     }
 </style>
 
-<canvas bind:this={canvas} class="WebGL" id="webgl">
+<canvas bind:this={canvas} class="WebGL">
 
 </canvas>

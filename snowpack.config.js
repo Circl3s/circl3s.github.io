@@ -9,7 +9,8 @@ module.exports = {
   },
   plugins: [
     "@snowpack/plugin-svelte",
-    "@snowpack/plugin-postcss"
+    "@snowpack/plugin-postcss",
+    'snowpack-plugin-glslify'
   ],
   packageOptions: {
     /* ... */

@@ -1,25 +1,14 @@
 <script>
     import {onMount} from "svelte";
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
     let editor;
     let cursor;
-    // let snippets = [
-    //     [
-    //         `<span class="text-purple-400 italic">function </span>`,
-    //         `<span class="text-green-400">hello</span>`
-    //     ]
-    // ]
     let snippets = [
-        `function hello() {\n⠀⠀console.log("Hello World!")\n}`,
-        `define hello():\n⠀⠀print("Hello World!")`,
-        `def hello()\n⠀⠀puts "Hello World!"\nend`,
-        `function Write-Greeting {\n⠀⠀Write-Output "Hello World!"\n}`,
-        `fn hello() {\n⠀⠀println!("Hello World!");\n}`
-    ]
+        `function hello() {\n⠀⠀console.log("Hello World!")\n}\n\nfor (let i = 0; i < 5; i++) {\n⠀⠀hello()\n}`,
+        `define hello():\n⠀⠀print("Hello World!")\n\nfor _ in range(5):\n⠀⠀hello()`,
+        `def hello()\n⠀⠀puts "Hello World!"\nend\n\n5.times do\n⠀⠀hello()\nend`,
+        `function Write-Greeting {\n⠀⠀Write-Output "Hello World!"\n}\n\nFor ($i = 0; $i -lt 5; $i++) {\n⠀⠀Write-Greeting\n}`
+    ];
 
     function blink() {
         if (cursor.style.visibility == "visible") {
@@ -33,43 +22,56 @@
         switch (snippet_i) {
             case 0:
                 editor.innerHTML = editor.innerHTML.replace("function", `<span class="text-purple-400 italic">function</span>`);
-                editor.innerHTML = editor.innerHTML.replace("hello", `<span class="text-green-400">hello</span>`);
+                editor.innerHTML = editor.innerHTML.replace("let", `<span class="text-purple-400 italic">let</span>`);
+                editor.innerHTML = editor.innerHTML.replace("for", `<span class="text-purple-400 italic">for</span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("i ", `<span class="text-red-400">i </span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("i++", `<span class="text-red-400">i</span>++`);
+                editor.innerHTML = editor.innerHTML.replaceAll("hello", `<span class="text-green-400">hello</span>`);
                 editor.innerHTML = editor.innerHTML.replace("console", `<span class="text-yellow-400">console</span>`);
                 editor.innerHTML = editor.innerHTML.replace("log", `<span class="text-green-400">log</span>`);
                 editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`);
+                editor.innerHTML = editor.innerHTML.replace(" 0", `<span class="text-yellow-400"> 0</span>`);
+                editor.innerHTML = editor.innerHTML.replace(" 5", `<span class="text-yellow-400"> 5</span>`);
                 break;
             case 1:
                 editor.innerHTML = editor.innerHTML.replace("define", `<span class="text-purple-400 italic">define</span>`);
-                editor.innerHTML = editor.innerHTML.replace("hello", `<span class="text-green-400">hello</span>`);
+                editor.innerHTML = editor.innerHTML.replace("for", `<span class="text-purple-400 italic">for</span>`);
+                editor.innerHTML = editor.innerHTML.replace(" in", `<span class="text-purple-400 italic"> in</span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("hello", `<span class="text-green-400">hello</span>`);
                 editor.innerHTML = editor.innerHTML.replace("print", `<span class="text-green-400">print</span>`);
+                editor.innerHTML = editor.innerHTML.replace("range", `<span class="text-green-400">range</span>`);
+                editor.innerHTML = editor.innerHTML.replace("5", `<span class="text-yellow-400">5</span>`);
                 editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`);
                 break;
             case 2:
                 editor.innerHTML = editor.innerHTML.replace("def", `<span class="text-purple-400 italic">def</span>`);
-                editor.innerHTML = editor.innerHTML.replace("end", `<span class="text-purple-400 italic">end</span>`);
-                editor.innerHTML = editor.innerHTML.replace("hello", `<span class="text-green-400">hello</span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("end", `<span class="text-purple-400 italic">end</span>`);
+                editor.innerHTML = editor.innerHTML.replace("do", `<span class="text-purple-400">do</span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("hello", `<span class="text-green-400">hello</span>`);
                 editor.innerHTML = editor.innerHTML.replace("puts", `<span class="text-green-400">puts</span>`);
                 editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`);
+                editor.innerHTML = editor.innerHTML.replace("5", `<span class="text-yellow-400">5</span>`);
+                editor.innerHTML = editor.innerHTML.replace("times", `<span class="text-green-400">times</span>`);
                 break;
             case 3:
                 editor.innerHTML = editor.innerHTML.replace("function", `<span class="text-purple-400 italic">function</span>`);
-                editor.innerHTML = editor.innerHTML.replace("Write-Greeting", `<span class="text-green-400">Write-Greeting</span>`);
+                editor.innerHTML = editor.innerHTML.replace("For", `<span class="text-purple-400 italic">For</span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("Write-Greeting", `<span class="text-green-400">Write-Greeting</span>`);
                 editor.innerHTML = editor.innerHTML.replace("Write-Output", `<span class="text-green-400">Write-Output</span>`);
+                editor.innerHTML = editor.innerHTML.replaceAll("$i ", `<span class="text-red-400">$i </span>`);
+                editor.innerHTML = editor.innerHTML.replace("$i++", `<span class="text-red-400">$i</span>++`);
+                editor.innerHTML = editor.innerHTML.replace("-lt", `<span class="text-gray-400">-lt</span>`);
+                editor.innerHTML = editor.innerHTML.replace(" 0", `<span class="text-yellow-400"> 0</span>`);
+                editor.innerHTML = editor.innerHTML.replace(" 5", `<span class="text-yellow-400"> 5</span>`);
                 editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`);
                 break;
-            case 4:
-                editor.innerHTML = editor.innerHTML.replace("fn", `<span class="text-purple-400 italic">fn</span>`);
-                editor.innerHTML = editor.innerHTML.replace("hello", `<span class="text-green-400">hello</span>`);
-                editor.innerHTML = editor.innerHTML.replace("println!", `<span class="text-green-400">println!</span>`);
-                editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`);
-
             default:
                 break;
         }
     }
 
     let i = 0;
-    let snippet_i = 0;
+    let snippet_i = -1;
     function typeWriter() {
         if (i < snippets[snippet_i].length) {
             editor.innerText += snippets[snippet_i].charAt(i);
@@ -98,7 +100,7 @@
 
 <style>
     .Typewriter {
-        @apply bg-gray-900 shadow-inner rounded-md w-full h-48 my-4 p-4 font-mono;
+        @apply bg-gray-900 shadow-inner rounded-md w-full h-52 my-4 p-4 font-mono;
     }
 </style>
 

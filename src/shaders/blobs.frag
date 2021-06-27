@@ -14,5 +14,5 @@ void main() {
 
     float circle = -1.0 * smoothstep(st.y * 0.7, st.y * 0.7 + 0.05, distance(gst, vec2(0.5, 0.5))) + 1.0;
 
-    gl_FragColor = vec4(0.066666 * circle, 0.094118 * circle, 0.152941 * circle, 1.0);
+    gl_FragColor = vec4(0.094118 * circle, 0.094118 * circle, 0.105882 * circle, 1.0);
 }

@@ -1,5 +1,6 @@
 <script>
     import {draw, fade} from "svelte/transition";
+    import Notch from "./Notch.svelte";
 
     let ready = false;
 
@@ -43,5 +44,6 @@
                 <path d="M2,50a48,48 0 1,0 96,0a48,48 0 1,0 -96,0" fill="transparent" stroke="white" stroke-width="2" in:draw={{delay: 200, duration: 2000}}/>
             </svg>
         </div>
+        <Notch />
     {/if}
 </div>

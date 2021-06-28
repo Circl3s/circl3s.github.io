@@ -4,7 +4,12 @@
 
     let canvas;
 
-    onMount(async () => {
+    function handleResize() {
+        canvas.width = canvas.getBoundingClientRect().width;
+        canvas.height = canvas.getBoundingClientRect().height;
+    }
+
+    onMount(() => {
         canvas.width = canvas.getBoundingClientRect().width;
         canvas.height = canvas.getBoundingClientRect().height;
         const vertexShaderText = `
@@ -91,16 +96,11 @@ void main() {
 
         gl.useProgram(program);
 
-        window.onresize = () => {
-            canvas.width = canvas.getBoundingClientRect().width;
-            canvas.height = canvas.getBoundingClientRect().height;
-        }
-
         var timeLocation = gl.getUniformLocation(program, "u_time");
         var resLocation = gl.getUniformLocation(program, "u_resolution");
 
         function renderLoop(time) {
-            gl.uniform1f(timeLocation, time / 1000);
+            gl.uniform1f(timeLocation, (time / 5000) % 1);
             gl.uniform2f(resLocation, canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height);
             gl.drawArrays(gl.TRIANGLES, 0, 3);
             requestAnimationFrame(renderLoop);
@@ -110,6 +110,7 @@ void main() {
     });
 </script>
 
+
 <style>
     .WebGL {
         @apply w-full h-full top-0;
@@ -117,6 +118,7 @@ void main() {
     }
 </style>
 
+<svelte:window on:resize={handleResize} />
 <canvas bind:this={canvas} class="WebGL">
 
 </canvas>

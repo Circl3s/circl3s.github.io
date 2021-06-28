@@ -12,7 +12,8 @@ import WebGL from "./WebGL.svelte";
     }
 
     .bg {
-        @apply w-full h-full absolute;
+        @apply w-full h-full fixed bottom-0;
+        z-index: -1;
     }
 
     .columns {
@@ -30,9 +31,6 @@ import WebGL from "./WebGL.svelte";
 
 <Marker name="hobbies" />
 <div class="Hobbies">
-    <div class="bg">
-        <WebGL />
-    </div>
     <div class="columns">
         <div class="hobby">
             <Card>
@@ -63,5 +61,8 @@ import WebGL from "./WebGL.svelte";
                 </div>
             </Card>
         </div>
+    </div>
+    <div class="bg">
+        <WebGL />
     </div>
 </div>

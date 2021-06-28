@@ -10,7 +10,7 @@ void main() {
     gst.x *= ar;
     vec2 grid = gst * 10.0;
     gst.x = fract(grid.x);
-    gst.y = fract(grid.y + u_time / 5.0);
+    gst.y = fract(grid.y + u_time);
 
     float circle = -1.0 * smoothstep(st.y * 0.7, st.y * 0.7 + 0.05, distance(gst, vec2(0.5, 0.5))) + 1.0;
 

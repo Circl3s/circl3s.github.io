@@ -1,6 +1,7 @@
 <script>
 import Button from "./Button.svelte";
 import Card from "./Card.svelte";
+import Marker from "./Marker.svelte";
 import Typewriter from "./Typewriter.svelte";
 import WebGL from "./WebGL.svelte";
 </script>
@@ -27,7 +28,8 @@ import WebGL from "./WebGL.svelte";
     }
 </style>
 
-<div class="Hobbies" id="hobbies">
+<Marker name="hobbies" />
+<div class="Hobbies">
     <div class="bg">
         <WebGL />
     </div>

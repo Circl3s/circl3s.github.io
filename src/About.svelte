@@ -1,6 +1,6 @@
 <script>
 import Card from "./Card.svelte";
-
+import Marker from "./Marker.svelte";
 
 </script>
 
@@ -18,7 +18,8 @@ import Card from "./Card.svelte";
     }
 </style>
 
-<div class="About" id="about">
+<Marker name="about" />
+<div class="About">
     <img src="https://thispersondoesnotexist.com/image" alt="">
     <Card>
         <h2 slot="title">

@@ -13,7 +13,7 @@ import WebGL from "./WebGL.svelte";
     }
 
     .bg {
-        @apply w-full h-full fixed bottom-0;
+        @apply w-full h-full fixed bottom-0 bg-gradient-to-b from-gray-900 to-black;
         z-index: -1;
     }
 
@@ -65,6 +65,8 @@ import WebGL from "./WebGL.svelte";
         </div>
     </div>
     <div class="bg">
-        <WebGL />
+        {#if window.WebGLRenderingContext}
+            <WebGL />
+        {/if}
     </div>
 </div>

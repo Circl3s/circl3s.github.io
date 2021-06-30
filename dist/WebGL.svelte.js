@@ -74,11 +74,11 @@ void main() {
 		const fragmentShaderText = blobs;
 		var gl = canvas.getContext("webgl");
 
-		if (!gl) {
-			gl = canvas.getContext("experimental-webgl");
-		}
-
+		// if (!gl) {
+		//     gl = canvas.getContext("experimental-webgl");
+		// }
 		gl.clearColor(0.75, 0.85, 0.8, 1);
+
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		var vertexShader = gl.createShader(gl.VERTEX_SHADER);
 		var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);

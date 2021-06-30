@@ -43,7 +43,7 @@ function create_title_slot_1(ctx) {
 	};
 }
 
-// (66:20) <Button>
+// (70:20) <Button>
 function create_default_slot_1(ctx) {
 	let t;
 
@@ -60,7 +60,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (62:16) 
+// (66:16) 
 function create_content_slot_1(ctx) {
 	let div;
 	let musicbox;
@@ -87,7 +87,7 @@ function create_content_slot_1(ctx) {
 			p.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.";
 			t2 = space();
 			create_component(button.$$.fragment);
-			attr(p, "class", "svelte-1gsrcy8");
+			attr(p, "class", "svelte-18x7nsg");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -127,7 +127,7 @@ function create_content_slot_1(ctx) {
 	};
 }
 
-// (74:16) 
+// (78:16) 
 function create_title_slot(ctx) {
 	let h2;
 
@@ -146,7 +146,7 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (81:20) <Button>
+// (85:20) <Button>
 function create_default_slot(ctx) {
 	let t;
 
@@ -163,7 +163,7 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (77:16) 
+// (81:16) 
 function create_content_slot(ctx) {
 	let div;
 	let typewriter;
@@ -190,7 +190,7 @@ function create_content_slot(ctx) {
 			p.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.";
 			t2 = space();
 			create_component(button.$$.fragment);
-			attr(p, "class", "svelte-1gsrcy8");
+			attr(p, "class", "svelte-18x7nsg");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -230,6 +230,35 @@ function create_content_slot(ctx) {
 	};
 }
 
+// (93:8) {#if window.WebGLRenderingContext}
+function create_if_block(ctx) {
+	let webgl;
+	let current;
+	webgl = new WebGL({});
+
+	return {
+		c() {
+			create_component(webgl.$$.fragment);
+		},
+		m(target, anchor) {
+			mount_component(webgl, target, anchor);
+			current = true;
+		},
+		i(local) {
+			if (current) return;
+			transition_in(webgl.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(webgl.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			destroy_component(webgl, detaching);
+		}
+	};
+}
+
 function create_fragment(ctx) {
 	let marker;
 	let t0;
@@ -242,7 +271,6 @@ function create_fragment(ctx) {
 	let card1;
 	let t2;
 	let div3;
-	let webgl;
 	let current;
 	marker = new Marker({ props: { name: "hobbies" } });
 
@@ -266,7 +294,7 @@ function create_fragment(ctx) {
 			}
 		});
 
-	webgl = new WebGL({});
+	let if_block = window.WebGLRenderingContext && create_if_block(ctx);
 
 	return {
 		c() {
@@ -281,12 +309,12 @@ function create_fragment(ctx) {
 			create_component(card1.$$.fragment);
 			t2 = space();
 			div3 = element("div");
-			create_component(webgl.$$.fragment);
-			attr(div0, "class", "hobby svelte-1gsrcy8");
-			attr(div1, "class", "hobby svelte-1gsrcy8");
-			attr(div2, "class", "columns svelte-1gsrcy8");
-			attr(div3, "class", "bg svelte-1gsrcy8");
-			attr(div4, "class", "Hobbies svelte-1gsrcy8");
+			if (if_block) if_block.c();
+			attr(div0, "class", "hobby svelte-18x7nsg");
+			attr(div1, "class", "hobby svelte-18x7nsg");
+			attr(div2, "class", "columns svelte-18x7nsg");
+			attr(div3, "class", "bg svelte-18x7nsg");
+			attr(div4, "class", "Hobbies svelte-18x7nsg");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);
@@ -300,7 +328,7 @@ function create_fragment(ctx) {
 			mount_component(card1, div1, null);
 			append(div4, t2);
 			append(div4, div3);
-			mount_component(webgl, div3, null);
+			if (if_block) if_block.m(div3, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -324,14 +352,14 @@ function create_fragment(ctx) {
 			transition_in(marker.$$.fragment, local);
 			transition_in(card0.$$.fragment, local);
 			transition_in(card1.$$.fragment, local);
-			transition_in(webgl.$$.fragment, local);
+			transition_in(if_block);
 			current = true;
 		},
 		o(local) {
 			transition_out(marker.$$.fragment, local);
 			transition_out(card0.$$.fragment, local);
 			transition_out(card1.$$.fragment, local);
-			transition_out(webgl.$$.fragment, local);
+			transition_out(if_block);
 			current = false;
 		},
 		d(detaching) {
@@ -340,7 +368,7 @@ function create_fragment(ctx) {
 			if (detaching) detach(div4);
 			destroy_component(card0);
 			destroy_component(card1);
-			destroy_component(webgl);
+			if (if_block) if_block.d();
 		}
 	};
 }

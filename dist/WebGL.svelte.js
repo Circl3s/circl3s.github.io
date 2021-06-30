@@ -24,7 +24,7 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			canvas_1 = element("canvas");
-			attr(canvas_1, "class", "WebGL svelte-dzd2yj");
+			attr(canvas_1, "class", "WebGL svelte-1b0v5du");
 		},
 		m(target, anchor) {
 			insert(target, canvas_1, anchor);
@@ -74,11 +74,11 @@ void main() {
 		const fragmentShaderText = blobs;
 		var gl = canvas.getContext("webgl");
 
-		// if (!gl) {
-		//     gl = canvas.getContext("experimental-webgl");
-		// }
-		gl.clearColor(0.75, 0.85, 0.8, 1);
+		if (!gl) {
+			gl = canvas.getContext("experimental-webgl");
+		}
 
+		gl.clearColor(0.75, 0.85, 0.8, 1);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 		var vertexShader = gl.createShader(gl.VERTEX_SHADER);
 		var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);

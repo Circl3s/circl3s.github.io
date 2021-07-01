@@ -5,7 +5,8 @@
 module.exports = {
   mount: {
     public: "/",
-    src: "/dist"
+    src: "/dist",
+    well_known: "/.well-known"
   },
   plugins: [
     "@snowpack/plugin-svelte",

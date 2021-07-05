@@ -1,5 +1,3 @@
-import { C as identity } from '../common/index-9f5e4f8f.js';
-
 function cubicInOut(t) {
   return t < 0.5 ? 4 * t * t * t : 0.5 * Math.pow(2 * t - 2, 3) + 1;
 }
@@ -8,15 +6,6 @@ function cubicOut(t) {
   return f * f * f + 1;
 }
 
-function fade(node, {delay = 0, duration = 400, easing = identity} = {}) {
-  const o = +getComputedStyle(node).opacity;
-  return {
-    delay,
-    duration,
-    easing,
-    css: (t) => `opacity: ${t * o}`
-  };
-}
 function slide(node, {delay = 0, duration = 400, easing = cubicOut} = {}) {
   const style = getComputedStyle(node);
   const opacity = +style.opacity;
@@ -53,4 +42,4 @@ function draw(node, {delay = 0, speed, duration, easing = cubicInOut} = {}) {
   };
 }
 
-export { draw, fade, slide };
+export { draw, slide };

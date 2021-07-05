@@ -1,6 +1,6 @@
 <script>
     import {onMount} from "svelte";
-    import blobs from "./shaders/blobs.frag";
+    import blobs from "../shaders/blobs.frag";
 
     let canvas;
 

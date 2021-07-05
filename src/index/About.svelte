@@ -1,6 +1,6 @@
 <script>
-import Card from "./Card.svelte";
-import Marker from "./Marker.svelte";
+import Card from "../shared/Card.svelte";
+import Marker from "../shared/Marker.svelte";
 
 </script>
 

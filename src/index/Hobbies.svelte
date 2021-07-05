@@ -1,10 +1,10 @@
 <script>
-import Button from "./Button.svelte";
-import Card from "./Card.svelte";
-import Marker from "./Marker.svelte";
+import Button from "../shared/Button.svelte";
+import Card from "../shared/Card.svelte";
+import Marker from "../shared/Marker.svelte";
 import MusicBox from "./MusicBox.svelte";
 import Typewriter from "./Typewriter.svelte";
-import WebGL from "./WebGL.svelte";
+import WebGL from "../shared/WebGL.svelte";
 </script>
 
 <style>

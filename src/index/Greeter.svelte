@@ -1,5 +1,5 @@
 <script>
-    import {draw, fade} from "svelte/transition";
+    import {draw} from "svelte/transition";
     import Notch from "./Notch.svelte";
 
     let ready = false;

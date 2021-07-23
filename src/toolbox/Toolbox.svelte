@@ -1,5 +1,6 @@
 <script>
-    import {draw} from "svelte/transition"
+    import Footer from "../shared/Footer.svelte";
+    import Navbar from "../shared/Navbar.svelte";
     import About from "./About.svelte";
 </script>
 
@@ -8,5 +9,7 @@
 </style>
 
 <div class="Toolbox">
+    <Navbar />
     <About />
+    <Footer />
 </div>

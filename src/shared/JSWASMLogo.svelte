@@ -1,5 +1,5 @@
 <script>
-    $: wide = window.innerWidth > 768;
+    let wide = window.innerWidth > 768;
 
     function handleResize(e) {
         wide = window.innerWidth > 768;

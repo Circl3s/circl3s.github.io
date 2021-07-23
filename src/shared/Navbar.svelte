@@ -33,6 +33,6 @@
         <a href="#about">About</a>
         <a href="#hobbies">Hobbies</a>
         <a href="#toolbox">Toolbox</a>
-        <a href="">Contact</a>
+        <a href="#social">Social</a>
     </div>
 </div>

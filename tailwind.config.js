@@ -7,7 +7,21 @@ module.exports = {
       "./src/**/*.{svelte, js, jsx,}",
       "./public/**/*.{html, css}"
     ],
-    enabled: "production"
+    safelist: [
+      "from-purple-900",
+      "to-purple-700",
+      "from-red-900",
+      "to-red-700",
+      "from-green-900",
+      "to-green-700",
+      "from-yellow-900",
+      "to-yellow-700",
+      "from-blue-900",
+      "to-blue-700",
+      "from-indigo-900",
+      "to-indigo-700",
+    ],
+    enabled: "production",
   },
   darkMode: false, // or 'media' or 'class'
   theme: {

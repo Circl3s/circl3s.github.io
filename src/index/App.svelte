@@ -4,6 +4,8 @@
     import Hobbies from "./Hobbies.svelte";
     import Navbar from "../shared/Navbar.svelte";
     import Toolbox from "./Toolbox.svelte";
+    import Social from "./Social.svelte";
+    import Footer from "../shared/Footer.svelte";
 </script>
 
 <style>
@@ -16,4 +18,6 @@
     <About />
     <Hobbies />
     <Toolbox />
+    <Social />
+    <Footer />
 </div>

@@ -3,6 +3,8 @@
     import Card from "../shared/Card.svelte";
     import JSWASMLogo from "../shared/JSWASMLogo.svelte";
     import Marker from "../shared/Marker.svelte";
+
+    let scroll;
 </script>
 
 <style>
@@ -11,8 +13,9 @@
     }
 </style>
 
+<svelte:window bind:scrollY={scroll} />
 <Marker name="toolbox" />
-<div class="Toolbox">
+<div class="Toolbox" style="background-position-y: {scroll / 3}px">
     <JSWASMLogo />
     <Card>
         <h1 slot="title">Circl3s' Toolbox</h1>

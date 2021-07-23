@@ -1,9 +1,8 @@
 <script>
     import Button from "../shared/Button.svelte";
     import Card from "../shared/Card.svelte";
+    import JSWASMLogo from "../shared/JSWASMLogo.svelte";
     import Marker from "../shared/Marker.svelte";
-
-
 </script>
 
 <style>
@@ -14,6 +13,7 @@
 
 <Marker name="toolbox" />
 <div class="Toolbox">
+    <JSWASMLogo />
     <Card>
         <h1 slot="title">Circl3s' Toolbox</h1>
         <div slot="content">

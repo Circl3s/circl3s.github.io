@@ -21,6 +21,7 @@ import About from "./About.svelte.js";
 import Greeter from "./Greeter.svelte.js";
 import Hobbies from "./Hobbies.svelte.js";
 import Navbar from "../shared/Navbar.svelte.js";
+import Toolbox from "./Toolbox.svelte.js";
 
 function create_fragment(ctx) {
 	let div;
@@ -31,11 +32,14 @@ function create_fragment(ctx) {
 	let about;
 	let t2;
 	let hobbies;
+	let t3;
+	let toolbox;
 	let current;
 	navbar = new Navbar({});
 	greeter = new Greeter({});
 	about = new About({});
 	hobbies = new Hobbies({});
+	toolbox = new Toolbox({});
 
 	return {
 		c() {
@@ -47,6 +51,8 @@ function create_fragment(ctx) {
 			create_component(about.$$.fragment);
 			t2 = space();
 			create_component(hobbies.$$.fragment);
+			t3 = space();
+			create_component(toolbox.$$.fragment);
 			attr(div, "class", "App");
 		},
 		m(target, anchor) {
@@ -58,6 +64,8 @@ function create_fragment(ctx) {
 			mount_component(about, div, null);
 			append(div, t2);
 			mount_component(hobbies, div, null);
+			append(div, t3);
+			mount_component(toolbox, div, null);
 			current = true;
 		},
 		p: noop,
@@ -67,6 +75,7 @@ function create_fragment(ctx) {
 			transition_in(greeter.$$.fragment, local);
 			transition_in(about.$$.fragment, local);
 			transition_in(hobbies.$$.fragment, local);
+			transition_in(toolbox.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -74,6 +83,7 @@ function create_fragment(ctx) {
 			transition_out(greeter.$$.fragment, local);
 			transition_out(about.$$.fragment, local);
 			transition_out(hobbies.$$.fragment, local);
+			transition_out(toolbox.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -82,6 +92,7 @@ function create_fragment(ctx) {
 			destroy_component(greeter);
 			destroy_component(about);
 			destroy_component(hobbies);
+			destroy_component(toolbox);
 		}
 	};
 }

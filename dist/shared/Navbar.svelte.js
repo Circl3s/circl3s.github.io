@@ -45,6 +45,7 @@ function create_fragment(ctx) {
 
 			div0.innerHTML = `<a href="#about" class="svelte-4cmdoz">About</a> 
         <a href="#hobbies" class="svelte-4cmdoz">Hobbies</a> 
+        <a href="#toolbox" class="svelte-4cmdoz">Toolbox</a> 
         <a href="" class="svelte-4cmdoz">Contact</a>`;
 
 			attr(h2, "class", "svelte-4cmdoz");

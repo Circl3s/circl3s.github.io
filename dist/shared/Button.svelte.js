@@ -17,14 +17,15 @@ import {
 function create_fragment(ctx) {
 	let button;
 	let current;
-	const default_slot_template = /*#slots*/ ctx[1].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[0], null);
+	const default_slot_template = /*#slots*/ ctx[2].default;
+	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[1], null);
 
 	return {
 		c() {
 			button = element("button");
 			if (default_slot) default_slot.c();
-			attr(button, "class", "Button svelte-pmgv8y");
+			attr(button, "class", "Button svelte-ex35fc");
+			button.disabled = /*disabled*/ ctx[0];
 		},
 		m(target, anchor) {
 			insert(target, button, anchor);
@@ -37,9 +38,13 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (default_slot) {
-				if (default_slot.p && (!current || dirty & /*$$scope*/ 1)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[0], !current ? -1 : dirty, null, null);
+				if (default_slot.p && (!current || dirty & /*$$scope*/ 2)) {
+					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[1], !current ? -1 : dirty, null, null);
 				}
+			}
+
+			if (!current || dirty & /*disabled*/ 1) {
+				button.disabled = /*disabled*/ ctx[0];
 			}
 		},
 		i(local) {
@@ -60,18 +65,20 @@ function create_fragment(ctx) {
 
 function instance($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
+	let { disabled = false } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("$$scope" in $$props) $$invalidate(0, $$scope = $$props.$$scope);
+		if ("disabled" in $$props) $$invalidate(0, disabled = $$props.disabled);
+		if ("$$scope" in $$props) $$invalidate(1, $$scope = $$props.$$scope);
 	};
 
-	return [$$scope, slots];
+	return [disabled, $$scope, slots];
 }
 
 class Button extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, { disabled: 0 });
 	}
 }
 

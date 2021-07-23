@@ -22,6 +22,8 @@ import Greeter from "./Greeter.svelte.js";
 import Hobbies from "./Hobbies.svelte.js";
 import Navbar from "../shared/Navbar.svelte.js";
 import Toolbox from "./Toolbox.svelte.js";
+import Social from "./Social.svelte.js";
+import Footer from "../shared/Footer.svelte.js";
 
 function create_fragment(ctx) {
 	let div;
@@ -34,12 +36,18 @@ function create_fragment(ctx) {
 	let hobbies;
 	let t3;
 	let toolbox;
+	let t4;
+	let social;
+	let t5;
+	let footer;
 	let current;
 	navbar = new Navbar({});
 	greeter = new Greeter({});
 	about = new About({});
 	hobbies = new Hobbies({});
 	toolbox = new Toolbox({});
+	social = new Social({});
+	footer = new Footer({});
 
 	return {
 		c() {
@@ -53,6 +61,10 @@ function create_fragment(ctx) {
 			create_component(hobbies.$$.fragment);
 			t3 = space();
 			create_component(toolbox.$$.fragment);
+			t4 = space();
+			create_component(social.$$.fragment);
+			t5 = space();
+			create_component(footer.$$.fragment);
 			attr(div, "class", "App");
 		},
 		m(target, anchor) {
@@ -66,6 +78,10 @@ function create_fragment(ctx) {
 			mount_component(hobbies, div, null);
 			append(div, t3);
 			mount_component(toolbox, div, null);
+			append(div, t4);
+			mount_component(social, div, null);
+			append(div, t5);
+			mount_component(footer, div, null);
 			current = true;
 		},
 		p: noop,
@@ -76,6 +92,8 @@ function create_fragment(ctx) {
 			transition_in(about.$$.fragment, local);
 			transition_in(hobbies.$$.fragment, local);
 			transition_in(toolbox.$$.fragment, local);
+			transition_in(social.$$.fragment, local);
+			transition_in(footer.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -84,6 +102,8 @@ function create_fragment(ctx) {
 			transition_out(about.$$.fragment, local);
 			transition_out(hobbies.$$.fragment, local);
 			transition_out(toolbox.$$.fragment, local);
+			transition_out(social.$$.fragment, local);
+			transition_out(footer.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -93,6 +113,8 @@ function create_fragment(ctx) {
 			destroy_component(about);
 			destroy_component(hobbies);
 			destroy_component(toolbox);
+			destroy_component(social);
+			destroy_component(footer);
 		}
 	};
 }

@@ -119,13 +119,12 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let wide;
+	let wide = window.innerWidth > 768;
 
 	function handleResize(e) {
 		$$invalidate(0, wide = window.innerWidth > 768);
 	}
 
-	$: $$invalidate(0, wide = window.innerWidth > 768);
 	return [wide, handleResize];
 }
 

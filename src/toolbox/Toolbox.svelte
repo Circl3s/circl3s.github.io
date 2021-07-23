@@ -7,6 +7,6 @@
 
 </style>
 
-<div class="Utils">
+<div class="Toolbox">
     <About />
 </div>

@@ -32,6 +32,7 @@
     <div class="links">
         <a href="#about">About</a>
         <a href="#hobbies">Hobbies</a>
+        <a href="#toolbox">Toolbox</a>
         <a href="">Contact</a>
     </div>
 </div>

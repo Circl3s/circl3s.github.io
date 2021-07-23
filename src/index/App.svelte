@@ -3,6 +3,7 @@
     import Greeter from "./Greeter.svelte";
     import Hobbies from "./Hobbies.svelte";
     import Navbar from "../shared/Navbar.svelte";
+    import Toolbox from "./Toolbox.svelte";
 </script>
 
 <style>
@@ -14,4 +15,5 @@
     <Greeter />
     <About />
     <Hobbies />
+    <Toolbox />
 </div>

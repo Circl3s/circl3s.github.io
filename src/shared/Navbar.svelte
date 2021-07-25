@@ -1,11 +1,18 @@
 <script>
-    let scroll = 0;
-    console.log(scroll);
+    import Menu from "./Menu.svelte";
 
-    function handleScroll(e) {
-        scroll = window.scrollY;
-        console.log(scroll);
-    } 
+    export let anchors;
+    export let title;
+
+    let menu;
+
+    let scroll = 0;
+
+    let wide = window.innerWidth > 768;
+
+    function handleResize(e) {
+        wide = window.innerWidth > 768;
+    }
 </script>
 
 <style>
@@ -26,13 +33,20 @@
     }
 </style>
 
-<svelte:window bind:scrollY={scroll} />
-<div class="Navbar {scroll == 0 ? "" : "bg"}">
-    <h2>Circl3s</h2>
-    <div class="links">
-        <a href="#about">About</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#toolbox">Toolbox</a>
-        <a href="#social">Social</a>
-    </div>
+<svelte:window bind:scrollY={scroll} on:resize={handleResize} />
+<div class="Navbar {scroll == 0 && !menu ? "" : "bg"}">
+    <a href="#"><h2>{title}</h2></a>
+    {#if wide}
+        <div class="links">
+            {#each anchors as anchor}
+                <a href="#{anchor.toLowerCase()}">{anchor}</a>
+            {/each}
+        </div>
+    {:else}
+        <Menu bind:open={menu}>
+            {#each anchors as anchor}
+                <a href="#{anchor.toLowerCase()}">{anchor}</a>
+            {/each}
+        </Menu>
+    {/if}
 </div>

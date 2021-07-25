@@ -6,6 +6,8 @@
     import Toolbox from "./Toolbox.svelte";
     import Social from "./Social.svelte";
     import Footer from "../shared/Footer.svelte";
+
+    let anchors = ["About", "Hobbies", "Toolbox", "Social"];
 </script>
 
 <style>
@@ -13,7 +15,7 @@
 </style>
 
 <div class="App">
-    <Navbar />
+    <Navbar title="Circl3s" {anchors} />
     <Greeter />
     <About />
     <Hobbies />

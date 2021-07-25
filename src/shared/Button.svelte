@@ -5,7 +5,7 @@
 
 <style>
     .Button {
-        @apply transition duration-200 bg-gradient-to-br text-white shadow-sm rounded-md m-4 p-4 hover:brightness-125;
+        @apply transition duration-200 bg-gradient-to-br text-white shadow-sm rounded-md m-4 p-4 hover:brightness-125 focus:outline-none;
     }
 
     .Button:disabled {

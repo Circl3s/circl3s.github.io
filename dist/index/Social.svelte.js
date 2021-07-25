@@ -37,7 +37,7 @@ function create_default_slot_3(ctx) {
 	};
 }
 
-// (64:8) <Button color={"blue"}>
+// (68:8) <Button color={"blue"}>
 function create_default_slot_2(ctx) {
 	let t;
 
@@ -54,7 +54,7 @@ function create_default_slot_2(ctx) {
 	};
 }
 
-// (67:8) <Button color={"red"}>
+// (71:8) <Button color={"red"}>
 function create_default_slot_1(ctx) {
 	let t;
 
@@ -71,7 +71,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (70:8) <Button disabled>
+// (74:8) <Button disabled>
 function create_default_slot(ctx) {
 	let t;
 
@@ -95,16 +95,16 @@ function create_fragment(ctx) {
 	let h10;
 	let t2;
 	let div0;
-	let t7;
+	let t8;
 	let h11;
-	let t9;
+	let t10;
 	let div1;
 	let button0;
-	let t10;
-	let button1;
 	let t11;
-	let button2;
+	let button1;
 	let t12;
+	let button2;
+	let t13;
 	let button3;
 	let current;
 	marker = new Marker({ props: { name: "social" } });
@@ -150,29 +150,30 @@ function create_fragment(ctx) {
 			t2 = space();
 			div0 = element("div");
 
-			div0.innerHTML = `<img src="img/YouTube.svg" alt="YouTube Logo" class="svelte-k3w4re"/> 
-        <img src="img/Spotify.svg" alt="Spotify Logo" class="svelte-k3w4re"/> 
-        <img src="img/Bandcamp.svg" alt="Bandcamp Logo" class="svelte-k3w4re"/> 
-        <img src="img/iTunes.svg" alt="iTunes Logo" class="svelte-k3w4re"/> 
-        <img src="img/Facebook.svg" alt="Facebook Logo" class="svelte-k3w4re"/>`;
+			div0.innerHTML = `<img src="img/YouTube.svg" alt="YouTube Logo" class="svelte-u5dr27"/> 
+        <img src="img/Spotify.svg" alt="Spotify Logo" class="svelte-u5dr27"/> 
+        <img src="img/Bandcamp.svg" alt="Bandcamp Logo" class="svelte-u5dr27"/> 
+        <img src="img/iTunes.svg" alt="iTunes Logo" class="svelte-u5dr27"/> 
+        <img src="img/Github.png" alt="Github Logo" class="svelte-u5dr27"/> 
+        <img src="img/Facebook.svg" alt="Facebook Logo" class="svelte-u5dr27"/>`;
 
-			t7 = space();
+			t8 = space();
 			h11 = element("h1");
 			h11.textContent = "...or contact me directly:";
-			t9 = space();
+			t10 = space();
 			div1 = element("div");
 			create_component(button0.$$.fragment);
-			t10 = space();
-			create_component(button1.$$.fragment);
 			t11 = space();
-			create_component(button2.$$.fragment);
+			create_component(button1.$$.fragment);
 			t12 = space();
+			create_component(button2.$$.fragment);
+			t13 = space();
 			create_component(button3.$$.fragment);
-			attr(h10, "class", "svelte-k3w4re");
-			attr(div0, "class", "container svelte-k3w4re");
-			attr(h11, "class", "svelte-k3w4re");
-			attr(div1, "class", "container svelte-k3w4re");
-			attr(div2, "class", "Social svelte-k3w4re");
+			attr(h10, "class", "svelte-u5dr27");
+			attr(div0, "class", "container svelte-u5dr27");
+			attr(h11, "class", "svelte-u5dr27");
+			attr(div1, "class", "container svelte-u5dr27");
+			attr(div2, "class", "Social svelte-u5dr27");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);
@@ -181,16 +182,16 @@ function create_fragment(ctx) {
 			append(div2, h10);
 			append(div2, t2);
 			append(div2, div0);
-			append(div2, t7);
+			append(div2, t8);
 			append(div2, h11);
-			append(div2, t9);
+			append(div2, t10);
 			append(div2, div1);
 			mount_component(button0, div1, null);
-			append(div1, t10);
-			mount_component(button1, div1, null);
 			append(div1, t11);
-			mount_component(button2, div1, null);
+			mount_component(button1, div1, null);
 			append(div1, t12);
+			mount_component(button2, div1, null);
+			append(div1, t13);
 			mount_component(button3, div1, null);
 			current = true;
 		},

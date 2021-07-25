@@ -41,7 +41,14 @@ function create_fragment(ctx) {
 	let t5;
 	let footer;
 	let current;
-	navbar = new Navbar({});
+
+	navbar = new Navbar({
+			props: {
+				title: "Circl3s",
+				anchors: /*anchors*/ ctx[0]
+			}
+		});
+
 	greeter = new Greeter({});
 	about = new About({});
 	hobbies = new Hobbies({});
@@ -119,10 +126,15 @@ function create_fragment(ctx) {
 	};
 }
 
+function instance($$self) {
+	let anchors = ["About", "Hobbies", "Toolbox", "Social"];
+	return [anchors];
+}
+
 class App extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, {});
 	}
 }
 

@@ -168,6 +168,12 @@ function insert(target, node, anchor) {
 function detach(node) {
   node.parentNode.removeChild(node);
 }
+function destroy_each(iterations, detaching) {
+  for (let i = 0; i < iterations.length; i += 1) {
+    if (iterations[i])
+      iterations[i].d(detaching);
+  }
+}
 function element(name) {
   return document.createElement(name);
 }
@@ -195,6 +201,11 @@ function attr(node, attribute, value) {
 }
 function children(element2) {
   return Array.from(element2.childNodes);
+}
+function set_data(text2, data) {
+  data = "" + data;
+  if (text2.wholeText !== data)
+    text2.data = data;
 }
 function set_style(node, key, value, important) {
   node.style.setProperty(key, value, important ? "important" : "");
@@ -300,6 +311,9 @@ function schedule_update() {
 }
 function add_render_callback(fn) {
   render_callbacks.push(fn);
+}
+function add_flush_callback(fn) {
+  flush_callbacks.push(fn);
 }
 let flushing = false;
 const seen_callbacks = new Set();
@@ -456,6 +470,13 @@ function create_in_transition(node, fn, params) {
   };
 }
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
+function bind(component, name, callback) {
+  const index = component.$$.props[name];
+  if (index !== void 0) {
+    component.$$.bound[index] = callback;
+    callback(component.$$.ctx[index]);
+  }
+}
 function create_component(block) {
   block && block.c();
 }
@@ -567,4 +588,4 @@ class SvelteComponent {
   }
 }
 
-export { binding_callbacks as A, globals as B, empty as C, SvelteComponent as S, append as a, attr as b, createEventDispatcher as c, create_component as d, destroy_component as e, detach as f, element as g, insert as h, init as i, space as j, transition_out as k, add_render_callback as l, mount_component as m, noop as n, onMount as o, check_outros as p, create_in_transition as q, group_outros as r, safe_not_equal as s, transition_in as t, svg_element as u, text as v, listen as w, create_slot as x, update_slot as y, set_style as z };
+export { binding_callbacks as A, globals as B, run_all as C, add_flush_callback as D, bind as E, destroy_each as F, empty as G, set_data as H, SvelteComponent as S, append as a, attr as b, createEventDispatcher as c, create_component as d, destroy_component as e, detach as f, element as g, insert as h, init as i, space as j, transition_out as k, add_render_callback as l, mount_component as m, noop as n, onMount as o, check_outros as p, create_in_transition as q, group_outros as r, safe_not_equal as s, transition_in as t, svg_element as u, text as v, listen as w, create_slot as x, update_slot as y, set_style as z };

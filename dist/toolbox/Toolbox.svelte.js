@@ -29,7 +29,14 @@ function create_fragment(ctx) {
 	let t1;
 	let footer;
 	let current;
-	navbar = new Navbar({});
+
+	navbar = new Navbar({
+			props: {
+				title: "Circl3s' Toolbox",
+				anchors: /*anchors*/ ctx[0]
+			}
+		});
+
 	about = new About({});
 	footer = new Footer({});
 
@@ -75,10 +82,15 @@ function create_fragment(ctx) {
 	};
 }
 
+function instance($$self) {
+	let anchors = ["Download Video", "Convert Video", "Extract Audio"];
+	return [anchors];
+}
+
 class Toolbox extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, null, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, {});
 	}
 }
 

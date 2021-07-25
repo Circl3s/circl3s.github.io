@@ -15,7 +15,7 @@
     }
 
     img {
-        @apply transition duration-200 w-24 h-24 m-4 filter grayscale hover:filter-none;
+        @apply transition duration-200 w-24 h-24 m-4 filter grayscale brightness-75 hover:filter-none hover:cursor-pointer;
     }
 
     .container {
@@ -32,6 +32,7 @@
         <img src="img/Spotify.svg" alt="Spotify Logo">
         <img src="img/Bandcamp.svg" alt="Bandcamp Logo">
         <img src="img/iTunes.svg" alt="iTunes Logo">
+        <img src="img/Github.png" alt="Github Logo">
         <img src="img/Facebook.svg" alt="Facebook Logo">
     </div>
     <h1>...or contact me directly:</h1>

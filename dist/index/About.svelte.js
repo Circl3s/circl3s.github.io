@@ -11,6 +11,7 @@ import {
 	init,
 	insert,
 	mount_component,
+	noop,
 	safe_not_equal,
 	space,
 	transition_in,
@@ -28,7 +29,7 @@ function create_title_slot(ctx) {
 			h2 = element("h2");
 			h2.textContent = "About";
 			attr(h2, "slot", "title");
-			attr(h2, "class", "svelte-ne2r3m");
+			attr(h2, "class", "svelte-rkesvt");
 		},
 		m(target, anchor) {
 			insert(target, h2, anchor);
@@ -39,22 +40,50 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (72:8) 
+// (61:8) 
 function create_content_slot(ctx) {
-	let p;
+	let div;
+	let p0;
+	let t3;
+	let p1;
+	let t5;
+	let p2;
+	let t7;
+	let p3;
 
 	return {
 		c() {
-			p = element("p");
-			p.textContent = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error est voluptas hic natus voluptate ullam ipsa saepe. Pariatur fuga nemo autem assumenda architecto! Perferendis culpa repudiandae at quaerat ab ipsum?";
-			attr(p, "slot", "content");
-			attr(p, "class", "svelte-ne2r3m");
+			div = element("div");
+			p0 = element("p");
+			p0.textContent = `My name is Feliks and I'm a ${new Date(new Date() - new Date("11 Oct 2001")).getFullYear() - 1970} year old music producer/sound designer and programmer.`;
+			t3 = space();
+			p1 = element("p");
+			p1.textContent = "When it comes to music I make mostly electronic music with emphasis on sound design or music inspired by my love for hardware analogue synthesizers of old.";
+			t5 = space();
+			p2 = element("p");
+			p2.textContent = "When programming I tend to stick to frontend development, but I have also designed and implemented APIs and managed databases for my personal as well as school projects.";
+			t7 = space();
+			p3 = element("p");
+			p3.textContent = "You can find out more about my work in the next section.";
+			attr(p0, "class", "svelte-rkesvt");
+			attr(p1, "class", "svelte-rkesvt");
+			attr(p2, "class", "svelte-rkesvt");
+			attr(p3, "class", "svelte-rkesvt");
+			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
-			insert(target, p, anchor);
+			insert(target, div, anchor);
+			append(div, p0);
+			append(div, t3);
+			append(div, p1);
+			append(div, t5);
+			append(div, p2);
+			append(div, t7);
+			append(div, p3);
 		},
+		p: noop,
 		d(detaching) {
-			if (detaching) detach(p);
+			if (detaching) detach(div);
 		}
 	};
 }
@@ -90,8 +119,8 @@ function create_fragment(ctx) {
 			create_component(card.$$.fragment);
 			if (img.src !== (img_src_value = "https://thispersondoesnotexist.com/image")) attr(img, "src", img_src_value);
 			attr(img, "alt", "");
-			attr(img, "class", "svelte-ne2r3m");
-			attr(div, "class", "About svelte-ne2r3m");
+			attr(img, "class", "svelte-rkesvt");
+			attr(div, "class", "About svelte-rkesvt");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);

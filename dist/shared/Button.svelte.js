@@ -8,6 +8,7 @@ import {
 	element,
 	init,
 	insert,
+	listen,
 	safe_not_equal,
 	transition_in,
 	transition_out,
@@ -18,8 +19,10 @@ function create_fragment(ctx) {
 	let button;
 	let button_class_value;
 	let current;
-	const default_slot_template = /*#slots*/ ctx[3].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[2], null);
+	let mounted;
+	let dispose;
+	const default_slot_template = /*#slots*/ ctx[5].default;
+	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[4], null);
 
 	return {
 		c() {
@@ -36,11 +39,16 @@ function create_fragment(ctx) {
 			}
 
 			current = true;
+
+			if (!mounted) {
+				dispose = listen(button, "click", /*action*/ ctx[2]);
+				mounted = true;
+			}
 		},
 		p(ctx, [dirty]) {
 			if (default_slot) {
-				if (default_slot.p && (!current || dirty & /*$$scope*/ 4)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[2], !current ? -1 : dirty, null, null);
+				if (default_slot.p && (!current || dirty & /*$$scope*/ 16)) {
+					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[4], !current ? -1 : dirty, null, null);
 				}
 			}
 
@@ -64,6 +72,8 @@ function create_fragment(ctx) {
 		d(detaching) {
 			if (detaching) detach(button);
 			if (default_slot) default_slot.d(detaching);
+			mounted = false;
+			dispose();
 		}
 	};
 }
@@ -72,20 +82,28 @@ function instance($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
 	let { color = "purple" } = $$props;
 	let { disabled = false } = $$props;
+	let { href } = $$props;
+
+	function action() {
+		if (href) {
+			window.location.href = href;
+		}
+	}
 
 	$$self.$$set = $$props => {
 		if ("color" in $$props) $$invalidate(0, color = $$props.color);
 		if ("disabled" in $$props) $$invalidate(1, disabled = $$props.disabled);
-		if ("$$scope" in $$props) $$invalidate(2, $$scope = $$props.$$scope);
+		if ("href" in $$props) $$invalidate(3, href = $$props.href);
+		if ("$$scope" in $$props) $$invalidate(4, $$scope = $$props.$$scope);
 	};
 
-	return [color, disabled, $$scope, slots];
+	return [color, disabled, action, href, $$scope, slots];
 }
 
 class Button extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { color: 0, disabled: 1 });
+		init(this, options, instance, create_fragment, safe_not_equal, { color: 0, disabled: 1, href: 3 });
 	}
 }
 

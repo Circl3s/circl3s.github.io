@@ -11,6 +11,7 @@ import {
 	init,
 	insert,
 	mount_component,
+	noop,
 	safe_not_equal,
 	space,
 	text,
@@ -24,6 +25,7 @@ import Marker from "../shared/Marker.svelte.js";
 import MusicBox from "./MusicBox.svelte.js";
 import Typewriter from "./Typewriter.svelte.js";
 import WebGL from "../shared/WebGL.svelte.js";
+import blobs from "../shaders/blobs.js";
 
 function create_title_slot_1(ctx) {
 	let h2;
@@ -43,13 +45,13 @@ function create_title_slot_1(ctx) {
 	};
 }
 
-// (70:20) <Button>
+// (76:20) <Button disabled>
 function create_default_slot_1(ctx) {
 	let t;
 
 	return {
 		c() {
-			t = text("Browse");
+			t = text("Browse (coming soon)");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -60,7 +62,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (66:16) 
+// (68:16) 
 function create_content_slot_1(ctx) {
 	let div;
 	let musicbox;
@@ -73,6 +75,7 @@ function create_content_slot_1(ctx) {
 
 	button = new Button({
 			props: {
+				disabled: true,
 				$$slots: { default: [create_default_slot_1] },
 				$$scope: { ctx }
 			}
@@ -84,7 +87,7 @@ function create_content_slot_1(ctx) {
 			create_component(musicbox.$$.fragment);
 			t0 = space();
 			p = element("p");
-			p.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.";
+			p.textContent = "I started listening to electronic music when I was a little kid and became interested in making it myself soon after. \n                        I released my first track on YouTube in 2014 and since then my various tracks and covers have gathered over 1 million streams in total. \n                        Over the years I realized I am much more interested in the sound design aspect of creating electronic music than the composition itself, and therefore have spent my life mastering various synthesis methods and collecting hardware synthesizers. \n                        Genres like Electro House and Synthwave are my bread and butter, but I also like to experiment and even dabble in cinematic/orchestral composing.";
 			t2 = space();
 			create_component(button.$$.fragment);
 			attr(p, "class", "svelte-18x7nsg");
@@ -127,7 +130,7 @@ function create_content_slot_1(ctx) {
 	};
 }
 
-// (78:16) 
+// (84:16) 
 function create_title_slot(ctx) {
 	let h2;
 
@@ -146,13 +149,13 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (85:20) <Button>
+// (97:20) <Button disabled>
 function create_default_slot(ctx) {
 	let t;
 
 	return {
 		c() {
-			t = text("Browse");
+			t = text("Browse (coming soon)");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -163,7 +166,7 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (81:16) 
+// (87:16) 
 function create_content_slot(ctx) {
 	let div;
 	let typewriter;
@@ -176,6 +179,7 @@ function create_content_slot(ctx) {
 
 	button = new Button({
 			props: {
+				disabled: true,
 				$$slots: { default: [create_default_slot] },
 				$$scope: { ctx }
 			}
@@ -187,7 +191,7 @@ function create_content_slot(ctx) {
 			create_component(typewriter.$$.fragment);
 			t0 = space();
 			p = element("p");
-			p.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae facilis autem nostrum nam! Maxime quaerat expedita iste quo sunt nostrum ipsa, esse id sint adipisci blanditiis amet. Minus, in qui.";
+			p.textContent = "I've been deeply invested in computers and programming for a long time. \n                        I've' written in many programming and scripting languages, predominantly Javascript, Python, Crystal and PowerShell, but I'm always learning new languages and frameworks. \n                        Other languages I'm learning or have used in the past include Rust, PHP, Ruby and Lua among others. \n                        I have experience using MySQL and Redis databases and have utilized SSR, designed APIs and written server-side applications that interact with them. \n                        I have a grasp on component-based frontend building having used Flutter and Svelte. \n                        I often spend my free time learning new technologies, like WebGL, WebAssembly, PWA, etc.";
 			t2 = space();
 			create_component(button.$$.fragment);
 			attr(p, "class", "svelte-18x7nsg");
@@ -230,11 +234,11 @@ function create_content_slot(ctx) {
 	};
 }
 
-// (93:8) {#if window.WebGLRenderingContext}
+// (105:8) {#if window.WebGLRenderingContext}
 function create_if_block(ctx) {
 	let webgl;
 	let current;
-	webgl = new WebGL({});
+	webgl = new WebGL({ props: { shader_import: blobs } });
 
 	return {
 		c() {
@@ -244,6 +248,7 @@ function create_if_block(ctx) {
 			mount_component(webgl, target, anchor);
 			current = true;
 		},
+		p: noop,
 		i(local) {
 			if (current) return;
 			transition_in(webgl.$$.fragment, local);
@@ -346,6 +351,7 @@ function create_fragment(ctx) {
 			}
 
 			card1.$set(card1_changes);
+			if (window.WebGLRenderingContext) if_block.p(ctx, dirty);
 		},
 		i(local) {
 			if (current) return;

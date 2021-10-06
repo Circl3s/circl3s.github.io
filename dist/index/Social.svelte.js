@@ -20,64 +20,14 @@ import {
 
 import Button from "../shared/Button.svelte.js";
 import Marker from "../shared/Marker.svelte.js";
+import SocialButton from "../shared/SocialButton.svelte.js";
 
-function create_default_slot_3(ctx) {
-	let t;
-
-	return {
-		c() {
-			t = text("Send an email");
-		},
-		m(target, anchor) {
-			insert(target, t, anchor);
-		},
-		d(detaching) {
-			if (detaching) detach(t);
-		}
-	};
-}
-
-// (68:8) <Button color={"blue"}>
-function create_default_slot_2(ctx) {
-	let t;
-
-	return {
-		c() {
-			t = text("Send a message");
-		},
-		m(target, anchor) {
-			insert(target, t, anchor);
-		},
-		d(detaching) {
-			if (detaching) detach(t);
-		}
-	};
-}
-
-// (71:8) <Button color={"red"}>
-function create_default_slot_1(ctx) {
-	let t;
-
-	return {
-		c() {
-			t = text("Send a nude");
-		},
-		m(target, anchor) {
-			insert(target, t, anchor);
-		},
-		d(detaching) {
-			if (detaching) detach(t);
-		}
-	};
-}
-
-// (74:8) <Button disabled>
 function create_default_slot(ctx) {
 	let t;
 
 	return {
 		c() {
-			t = text("Send a bomb");
+			t = text("Send an email");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -95,46 +45,66 @@ function create_fragment(ctx) {
 	let h10;
 	let t2;
 	let div0;
-	let t8;
+	let socialbutton0;
+	let t3;
+	let socialbutton1;
+	let t4;
+	let socialbutton2;
+	let t5;
+	let socialbutton3;
+	let t6;
+	let socialbutton4;
+	let t7;
 	let h11;
-	let t10;
+	let t9;
 	let div1;
-	let button0;
-	let t11;
-	let button1;
-	let t12;
-	let button2;
-	let t13;
-	let button3;
+	let button;
 	let current;
 	marker = new Marker({ props: { name: "social" } });
 
-	button0 = new Button({
+	socialbutton0 = new SocialButton({
 			props: {
-				$$slots: { default: [create_default_slot_3] },
-				$$scope: { ctx }
+				src: "img/YouTube.svg",
+				alt: "YouTube Logo",
+				href: "https://youtube.com/c/Circl3s"
 			}
 		});
 
-	button1 = new Button({
+	socialbutton1 = new SocialButton({
 			props: {
-				color: "blue",
-				$$slots: { default: [create_default_slot_2] },
-				$$scope: { ctx }
+				src: "img/Spotify.svg",
+				alt: "Spotify Logo",
+				href: "https://open.spotify.com/artist/63EPBIlscwLmgEeGq7O3rj"
 			}
 		});
 
-	button2 = new Button({
+	socialbutton2 = new SocialButton({
 			props: {
-				color: "red",
-				$$slots: { default: [create_default_slot_1] },
-				$$scope: { ctx }
+				src: "img/Bandcamp.svg",
+				alt: "Bandcamp Logo",
+				href: "https://circl3s.bandcamp.com"
 			}
 		});
 
-	button3 = new Button({
+	socialbutton3 = new SocialButton({
 			props: {
-				disabled: true,
+				src: "img/iTunes.svg",
+				alt: "Apple Music Logo",
+				href: "https://music.apple.com/gb/artist/circl3s/1112995196"
+			}
+		});
+
+	socialbutton4 = new SocialButton({
+			props: {
+				src: "img/Github.png",
+				alt: "Github Logo",
+				href: "https://github.com/Circl3s"
+			}
+		});
+
+	button = new Button({
+			props: {
+				href: "mailto:maak4422+contact@gmail.com",
 				$$slots: { default: [create_default_slot] },
 				$$scope: { ctx }
 			}
@@ -149,31 +119,26 @@ function create_fragment(ctx) {
 			h10.textContent = "You can find me on these platforms:";
 			t2 = space();
 			div0 = element("div");
-
-			div0.innerHTML = `<img src="img/YouTube.svg" alt="YouTube Logo" class="svelte-u5dr27"/> 
-        <img src="img/Spotify.svg" alt="Spotify Logo" class="svelte-u5dr27"/> 
-        <img src="img/Bandcamp.svg" alt="Bandcamp Logo" class="svelte-u5dr27"/> 
-        <img src="img/iTunes.svg" alt="iTunes Logo" class="svelte-u5dr27"/> 
-        <img src="img/Github.png" alt="Github Logo" class="svelte-u5dr27"/> 
-        <img src="img/Facebook.svg" alt="Facebook Logo" class="svelte-u5dr27"/>`;
-
-			t8 = space();
+			create_component(socialbutton0.$$.fragment);
+			t3 = space();
+			create_component(socialbutton1.$$.fragment);
+			t4 = space();
+			create_component(socialbutton2.$$.fragment);
+			t5 = space();
+			create_component(socialbutton3.$$.fragment);
+			t6 = space();
+			create_component(socialbutton4.$$.fragment);
+			t7 = space();
 			h11 = element("h1");
 			h11.textContent = "...or contact me directly:";
-			t10 = space();
+			t9 = space();
 			div1 = element("div");
-			create_component(button0.$$.fragment);
-			t11 = space();
-			create_component(button1.$$.fragment);
-			t12 = space();
-			create_component(button2.$$.fragment);
-			t13 = space();
-			create_component(button3.$$.fragment);
-			attr(h10, "class", "svelte-u5dr27");
-			attr(div0, "class", "container svelte-u5dr27");
-			attr(h11, "class", "svelte-u5dr27");
-			attr(div1, "class", "container svelte-u5dr27");
-			attr(div2, "class", "Social svelte-u5dr27");
+			create_component(button.$$.fragment);
+			attr(h10, "class", "svelte-1iwwpf4");
+			attr(div0, "class", "container svelte-1iwwpf4");
+			attr(h11, "class", "svelte-1iwwpf4");
+			attr(div1, "class", "container svelte-1iwwpf4");
+			attr(div2, "class", "Social svelte-1iwwpf4");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);
@@ -182,74 +147,62 @@ function create_fragment(ctx) {
 			append(div2, h10);
 			append(div2, t2);
 			append(div2, div0);
-			append(div2, t8);
+			mount_component(socialbutton0, div0, null);
+			append(div0, t3);
+			mount_component(socialbutton1, div0, null);
+			append(div0, t4);
+			mount_component(socialbutton2, div0, null);
+			append(div0, t5);
+			mount_component(socialbutton3, div0, null);
+			append(div0, t6);
+			mount_component(socialbutton4, div0, null);
+			append(div2, t7);
 			append(div2, h11);
-			append(div2, t10);
+			append(div2, t9);
 			append(div2, div1);
-			mount_component(button0, div1, null);
-			append(div1, t11);
-			mount_component(button1, div1, null);
-			append(div1, t12);
-			mount_component(button2, div1, null);
-			append(div1, t13);
-			mount_component(button3, div1, null);
+			mount_component(button, div1, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			const button0_changes = {};
+			const button_changes = {};
 
 			if (dirty & /*$$scope*/ 1) {
-				button0_changes.$$scope = { dirty, ctx };
+				button_changes.$$scope = { dirty, ctx };
 			}
 
-			button0.$set(button0_changes);
-			const button1_changes = {};
-
-			if (dirty & /*$$scope*/ 1) {
-				button1_changes.$$scope = { dirty, ctx };
-			}
-
-			button1.$set(button1_changes);
-			const button2_changes = {};
-
-			if (dirty & /*$$scope*/ 1) {
-				button2_changes.$$scope = { dirty, ctx };
-			}
-
-			button2.$set(button2_changes);
-			const button3_changes = {};
-
-			if (dirty & /*$$scope*/ 1) {
-				button3_changes.$$scope = { dirty, ctx };
-			}
-
-			button3.$set(button3_changes);
+			button.$set(button_changes);
 		},
 		i(local) {
 			if (current) return;
 			transition_in(marker.$$.fragment, local);
-			transition_in(button0.$$.fragment, local);
-			transition_in(button1.$$.fragment, local);
-			transition_in(button2.$$.fragment, local);
-			transition_in(button3.$$.fragment, local);
+			transition_in(socialbutton0.$$.fragment, local);
+			transition_in(socialbutton1.$$.fragment, local);
+			transition_in(socialbutton2.$$.fragment, local);
+			transition_in(socialbutton3.$$.fragment, local);
+			transition_in(socialbutton4.$$.fragment, local);
+			transition_in(button.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
 			transition_out(marker.$$.fragment, local);
-			transition_out(button0.$$.fragment, local);
-			transition_out(button1.$$.fragment, local);
-			transition_out(button2.$$.fragment, local);
-			transition_out(button3.$$.fragment, local);
+			transition_out(socialbutton0.$$.fragment, local);
+			transition_out(socialbutton1.$$.fragment, local);
+			transition_out(socialbutton2.$$.fragment, local);
+			transition_out(socialbutton3.$$.fragment, local);
+			transition_out(socialbutton4.$$.fragment, local);
+			transition_out(button.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
 			destroy_component(marker, detaching);
 			if (detaching) detach(t0);
 			if (detaching) detach(div2);
-			destroy_component(button0);
-			destroy_component(button1);
-			destroy_component(button2);
-			destroy_component(button3);
+			destroy_component(socialbutton0);
+			destroy_component(socialbutton1);
+			destroy_component(socialbutton2);
+			destroy_component(socialbutton3);
+			destroy_component(socialbutton4);
+			destroy_component(button);
 		}
 	};
 }

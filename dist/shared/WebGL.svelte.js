@@ -14,7 +14,6 @@ import {
 } from "../../_snowpack/pkg/svelte/internal.js";
 
 import { onMount } from "../../_snowpack/pkg/svelte.js";
-import blobs from "../shaders/blobs.js";
 
 function create_fragment(ctx) {
 	let canvas_1;
@@ -28,7 +27,7 @@ function create_fragment(ctx) {
 		},
 		m(target, anchor) {
 			insert(target, canvas_1, anchor);
-			/*canvas_1_binding*/ ctx[2](canvas_1);
+			/*canvas_1_binding*/ ctx[3](canvas_1);
 
 			if (!mounted) {
 				dispose = listen(window, "resize", /*handleResize*/ ctx[1]);
@@ -40,7 +39,7 @@ function create_fragment(ctx) {
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(canvas_1);
-			/*canvas_1_binding*/ ctx[2](null);
+			/*canvas_1_binding*/ ctx[3](null);
 			mounted = false;
 			dispose();
 		}
@@ -48,6 +47,7 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
+	let { shader_import } = $$props;
 	let canvas;
 
 	function handleResize() {
@@ -71,7 +71,7 @@ void main() {
 }
         `;
 
-		const fragmentShaderText = blobs;
+		const fragmentShaderText = shader_import;
 		var gl = canvas.getContext("webgl");
 
 		if (!gl) {
@@ -154,13 +154,17 @@ void main() {
 		});
 	}
 
-	return [canvas, handleResize, canvas_1_binding];
+	$$self.$$set = $$props => {
+		if ("shader_import" in $$props) $$invalidate(2, shader_import = $$props.shader_import);
+	};
+
+	return [canvas, handleResize, shader_import, canvas_1_binding];
 }
 
 class WebGL extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, { shader_import: 2 });
 	}
 }
 

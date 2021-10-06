@@ -1,6 +1,7 @@
 <script>
+    export let shader_import;
+
     import {onMount} from "svelte";
-    import blobs from "../shaders/blobs.frag";
 
     let canvas;
 
@@ -24,7 +25,7 @@ void main() {
 }
         `;
 
-        const fragmentShaderText = blobs;
+        const fragmentShaderText = shader_import;
 
         var gl = canvas.getContext("webgl");
 

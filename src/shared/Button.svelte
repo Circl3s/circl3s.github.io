@@ -1,6 +1,13 @@
 <script>
     export let color = "purple";
     export let disabled = false;
+    export let href;
+
+    function action() {
+        if (href) {
+            window.location.href = href;
+        }
+    }
 </script>
 
 <style>
@@ -13,6 +20,6 @@
     }
 </style>
 
-<button class="Button from-{color}-900 to-{color}-700" {disabled}>
+<button class="Button from-{color}-900 to-{color}-700" {disabled} on:click={action}>
     <slot></slot>
 </button>

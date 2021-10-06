@@ -1,6 +1,7 @@
 <script>
     import Button from "../shared/Button.svelte";
     import Marker from "../shared/Marker.svelte";
+    import SocialButton from "../shared/SocialButton.svelte";
 </script>
 
 <style>
@@ -14,10 +15,6 @@
         @apply text-3xl p-4;
     }
 
-    img {
-        @apply transition duration-200 w-24 h-24 m-4 filter grayscale brightness-75 hover:filter-none hover:cursor-pointer;
-    }
-
     .container {
         @apply w-full flex flex-row flex-wrap p-4 justify-around;
         max-width: none !important;
@@ -28,26 +25,17 @@
 <div class="Social">
     <h1>You can find me on these platforms:</h1>
     <div class="container">
-        <img src="img/YouTube.svg" alt="YouTube Logo">
-        <img src="img/Spotify.svg" alt="Spotify Logo">
-        <img src="img/Bandcamp.svg" alt="Bandcamp Logo">
-        <img src="img/iTunes.svg" alt="iTunes Logo">
-        <img src="img/Github.png" alt="Github Logo">
-        <img src="img/Facebook.svg" alt="Facebook Logo">
+        <SocialButton src="img/YouTube.svg" alt="YouTube Logo" href="https://youtube.com/c/Circl3s" />
+        <SocialButton src="img/Spotify.svg" alt="Spotify Logo" href="https://open.spotify.com/artist/63EPBIlscwLmgEeGq7O3rj" />
+        <SocialButton src="img/Bandcamp.svg" alt="Bandcamp Logo" href="https://circl3s.bandcamp.com" />
+        <SocialButton src="img/iTunes.svg" alt="Apple Music Logo" href="https://music.apple.com/gb/artist/circl3s/1112995196" />
+        <SocialButton src="img/Github.png" alt="Github Logo" href="https://github.com/Circl3s" />
+        <!-- <SocialButton src="img/Facebook.svg" alt="Facebook Logo" href="https://facebook.com/Circl3s" /> -->
     </div>
     <h1>...or contact me directly:</h1>
     <div class="container">
-        <Button>
+        <Button href="mailto:maak4422+contact@gmail.com">
             Send an email
-        </Button>
-        <Button color={"blue"}>
-            Send a message
-        </Button>
-        <Button color={"red"}>
-            Send a nude
-        </Button>
-        <Button disabled>
-            Send a bomb
         </Button>
     </div>
 </div>

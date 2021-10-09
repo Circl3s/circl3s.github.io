@@ -100,7 +100,7 @@
 
 <style>
     .Typewriter {
-        @apply bg-gray-900 shadow-inner rounded-md w-full h-52 my-4 p-4 font-mono;
+        @apply bg-gray-900 shadow-inner rounded-md w-full h-52 my-4 p-4 font-mono text-sm md:text-base;
     }
 </style>
 

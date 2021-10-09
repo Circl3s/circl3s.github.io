@@ -23,7 +23,7 @@
                 elements.forEach(element => {
                 element.classList.remove("blink");
             });
-        }, 500 / 4);
+        }, 500);
     }
 
     function progress() {

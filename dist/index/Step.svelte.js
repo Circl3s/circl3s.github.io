@@ -3,92 +3,57 @@ import './Step.svelte.css.proxy.js';
 import {
 	SvelteComponent,
 	attr,
-	create_slot,
 	detach,
 	element,
 	init,
 	insert,
-	listen,
-	safe_not_equal,
-	transition_in,
-	transition_out,
-	update_slot
+	noop,
+	safe_not_equal
 } from "../../_snowpack/pkg/svelte/internal.js";
-
-import { createEventDispatcher } from "../../_snowpack/pkg/svelte.js";
 
 function create_fragment(ctx) {
 	let div;
-	let current;
-	let mounted;
-	let dispose;
-	const default_slot_template = /*#slots*/ ctx[2].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[1], null);
+	let div_class_value;
 
 	return {
 		c() {
 			div = element("div");
-			if (default_slot) default_slot.c();
-			attr(div, "class", "Step svelte-tqndk3");
+			attr(div, "class", div_class_value = "Step bg-" + (/*active*/ ctx[1] ? /*color*/ ctx[0] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " svelte-zkuwe0");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
-
-			if (default_slot) {
-				default_slot.m(div, null);
-			}
-
-			current = true;
-
-			if (!mounted) {
-				dispose = listen(div, "click", /*clicked*/ ctx[0]);
-				mounted = true;
-			}
 		},
 		p(ctx, [dirty]) {
-			if (default_slot) {
-				if (default_slot.p && (!current || dirty & /*$$scope*/ 2)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[1], !current ? -1 : dirty, null, null);
-				}
+			if (dirty & /*active, color, blink*/ 7 && div_class_value !== (div_class_value = "Step bg-" + (/*active*/ ctx[1] ? /*color*/ ctx[0] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " svelte-zkuwe0")) {
+				attr(div, "class", div_class_value);
 			}
 		},
-		i(local) {
-			if (current) return;
-			transition_in(default_slot, local);
-			current = true;
-		},
-		o(local) {
-			transition_out(default_slot, local);
-			current = false;
-		},
+		i: noop,
+		o: noop,
 		d(detaching) {
 			if (detaching) detach(div);
-			if (default_slot) default_slot.d(detaching);
-			mounted = false;
-			dispose();
 		}
 	};
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { $$slots: slots = {}, $$scope } = $$props;
-	const dispatch = createEventDispatcher();
-
-	const clicked = () => {
-		dispatch("clicked");
-	};
+	let { color = "gray" } = $$props;
+	let { active = false } = $$props;
+	let { blink = false } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("$$scope" in $$props) $$invalidate(1, $$scope = $$props.$$scope);
+		if ("color" in $$props) $$invalidate(0, color = $$props.color);
+		if ("active" in $$props) $$invalidate(1, active = $$props.active);
+		if ("blink" in $$props) $$invalidate(2, blink = $$props.blink);
 	};
 
-	return [clicked, $$scope, slots];
+	return [color, active, blink];
 }
 
 class Step extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, { color: 0, active: 1, blink: 2 });
 	}
 }
 

@@ -285,18 +285,6 @@ function get_current_component() {
 function onMount(fn) {
   get_current_component().$$.on_mount.push(fn);
 }
-function createEventDispatcher() {
-  const component = get_current_component();
-  return (type, detail) => {
-    const callbacks = component.$$.callbacks[type];
-    if (callbacks) {
-      const event = custom_event(type, detail);
-      callbacks.slice().forEach((fn) => {
-        fn.call(component, event);
-      });
-    }
-  };
-}
 const dirty_components = [];
 const binding_callbacks = [];
 const render_callbacks = [];
@@ -588,4 +576,4 @@ class SvelteComponent {
   }
 }
 
-export { binding_callbacks as A, globals as B, run_all as C, add_flush_callback as D, bind as E, destroy_each as F, empty as G, set_data as H, SvelteComponent as S, append as a, attr as b, createEventDispatcher as c, create_component as d, destroy_component as e, detach as f, element as g, insert as h, init as i, space as j, transition_out as k, add_render_callback as l, mount_component as m, noop as n, onMount as o, check_outros as p, create_in_transition as q, group_outros as r, safe_not_equal as s, transition_in as t, svg_element as u, text as v, listen as w, create_slot as x, update_slot as y, set_style as z };
+export { update_slot as A, globals as B, run_all as C, add_flush_callback as D, bind as E, empty as F, set_data as G, SvelteComponent as S, append as a, attr as b, create_component as c, destroy_component as d, detach as e, element as f, insert as g, space as h, init as i, transition_out as j, add_render_callback as k, check_outros as l, mount_component as m, noop as n, onMount as o, create_in_transition as p, group_outros as q, svg_element as r, safe_not_equal as s, transition_in as t, text as u, listen as v, binding_callbacks as w, destroy_each as x, set_style as y, create_slot as z };

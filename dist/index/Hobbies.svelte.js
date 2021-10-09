@@ -22,7 +22,7 @@ import {
 import Button from "../shared/Button.svelte.js";
 import Card from "../shared/Card.svelte.js";
 import Marker from "../shared/Marker.svelte.js";
-import MusicBox from "./MusicBox.svelte.js";
+import Sequencer from "./Sequencer.svelte.js";
 import Typewriter from "./Typewriter.svelte.js";
 import WebGL from "../shared/WebGL.svelte.js";
 import blobs from "../shaders/blobs.js";
@@ -65,13 +65,13 @@ function create_default_slot_1(ctx) {
 // (68:16) 
 function create_content_slot_1(ctx) {
 	let div;
-	let musicbox;
+	let sequencer;
 	let t0;
 	let p;
 	let t2;
 	let button;
 	let current;
-	musicbox = new MusicBox({});
+	sequencer = new Sequencer({});
 
 	button = new Button({
 			props: {
@@ -84,7 +84,7 @@ function create_content_slot_1(ctx) {
 	return {
 		c() {
 			div = element("div");
-			create_component(musicbox.$$.fragment);
+			create_component(sequencer.$$.fragment);
 			t0 = space();
 			p = element("p");
 			p.textContent = "I started listening to electronic music when I was a little kid and became interested in making it myself soon after. \n                        I released my first track on YouTube in 2014 and since then my various tracks and covers have gathered over 1 million streams in total. \n                        Over the years I realized I am much more interested in the sound design aspect of creating electronic music than the composition itself, and therefore have spent my life mastering various synthesis methods and collecting hardware synthesizers. \n                        Genres like Electro House and Synthwave are my bread and butter, but I also like to experiment and even dabble in cinematic/orchestral composing.";
@@ -95,7 +95,7 @@ function create_content_slot_1(ctx) {
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
-			mount_component(musicbox, div, null);
+			mount_component(sequencer, div, null);
 			append(div, t0);
 			append(div, p);
 			append(div, t2);
@@ -113,18 +113,18 @@ function create_content_slot_1(ctx) {
 		},
 		i(local) {
 			if (current) return;
-			transition_in(musicbox.$$.fragment, local);
+			transition_in(sequencer.$$.fragment, local);
 			transition_in(button.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
-			transition_out(musicbox.$$.fragment, local);
+			transition_out(sequencer.$$.fragment, local);
 			transition_out(button.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
 			if (detaching) detach(div);
-			destroy_component(musicbox);
+			destroy_component(sequencer);
 			destroy_component(button);
 		}
 	};

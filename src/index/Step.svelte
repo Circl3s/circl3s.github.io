@@ -1,21 +1,19 @@
 <script>
-    import {createEventDispatcher} from "svelte";
-
-    const dispatch = createEventDispatcher();
-
-    const clicked = () => {
-        dispatch("clicked");
-    };
+    export let color = "gray";
+    export let active = false;
+    export let blink = false;
 </script>
 
 <style>
     .Step {
-        @apply h-1/3 w-12 m-2 bg-gray-800 rounded-md transition duration-100 hover:bg-gray-700;
+        @apply m-1;
+    }
+
+    .blink {
+        filter: brightness(1.5);
     }
 </style>
 
-<div class="Step" on:click={clicked}>
-    <slot>
-
-    </slot>
+<div class="Step bg-{active ? color : "gray"}-800 {blink ? "blink" : ""}">
+    
 </div>

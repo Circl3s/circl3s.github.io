@@ -2,7 +2,7 @@
 import Button from "../shared/Button.svelte";
 import Card from "../shared/Card.svelte";
 import Marker from "../shared/Marker.svelte";
-import MusicBox from "./MusicBox.svelte";
+import Sequencer from "./Sequencer.svelte";
 import Typewriter from "./Typewriter.svelte";
 import WebGL from "../shared/WebGL.svelte";
 
@@ -41,7 +41,7 @@ import blobs from "../shaders/blobs.frag";
                     Sound Design
                 </h2>
                 <div slot="content">
-                    <MusicBox />
+                    <Sequencer />
                     <p>
                         I started listening to electronic music when I was a little kid and became interested in making it myself soon after. 
                         I released my first track on YouTube in 2014 and since then my various tracks and covers have gathered over 1 million streams in total. 

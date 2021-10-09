@@ -498,7 +498,7 @@ function blink(elements) {
 				element.classList.remove("blink");
 			});
 		},
-		500 / 4
+		500
 	);
 }
 

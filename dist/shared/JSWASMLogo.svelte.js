@@ -24,9 +24,9 @@ function create_else_block(ctx) {
 	return {
 		c() {
 			img = element("img");
+			attr(img, "class", "img svelte-fc9nyz");
 			if (img.src !== (img_src_value = "img/WebAssembly_Horizontal.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "WebAssembly Logo");
-			attr(img, "class", "svelte-j7fy03");
 		},
 		m(target, anchor) {
 			insert(target, img, anchor);
@@ -37,7 +37,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (37:4) {#if wide}
+// (33:4) {#if wide}
 function create_if_block(ctx) {
 	let img;
 	let img_src_value;
@@ -45,9 +45,9 @@ function create_if_block(ctx) {
 	return {
 		c() {
 			img = element("img");
+			attr(img, "class", "img svelte-fc9nyz");
 			if (img.src !== (img_src_value = "img/WebAssembly.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "WebAssembly Logo");
-			attr(img, "class", "svelte-j7fy03");
 		},
 		m(target, anchor) {
 			insert(target, img, anchor);
@@ -80,10 +80,10 @@ function create_fragment(ctx) {
 			img = element("img");
 			t = space();
 			if_block.c();
+			attr(img, "class", "img svelte-fc9nyz");
 			if (img.src !== (img_src_value = "img/JavaScript.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "JavaScript Logo");
-			attr(img, "class", "svelte-j7fy03");
-			attr(div, "class", "Logo svelte-j7fy03");
+			attr(div, "class", "Logo svelte-fc9nyz");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

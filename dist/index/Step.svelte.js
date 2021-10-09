@@ -7,6 +7,7 @@ import {
 	element,
 	init,
 	insert,
+	listen,
 	noop,
 	safe_not_equal
 } from "../../_snowpack/pkg/svelte/internal.js";
@@ -14,17 +15,24 @@ import {
 function create_fragment(ctx) {
 	let div;
 	let div_class_value;
+	let mounted;
+	let dispose;
 
 	return {
 		c() {
 			div = element("div");
-			attr(div, "class", div_class_value = "Step bg-" + (/*active*/ ctx[1] ? /*color*/ ctx[0] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " svelte-zkuwe0");
+			attr(div, "class", div_class_value = "Step bg-" + (/*active*/ ctx[0] ? /*color*/ ctx[1] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " " + (!/*active*/ ctx[0] ? "no-blink" : "") + " svelte-186yjq1");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
+
+			if (!mounted) {
+				dispose = listen(div, "click", /*toggle*/ ctx[3]);
+				mounted = true;
+			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*active, color, blink*/ 7 && div_class_value !== (div_class_value = "Step bg-" + (/*active*/ ctx[1] ? /*color*/ ctx[0] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " svelte-zkuwe0")) {
+			if (dirty & /*active, color, blink*/ 7 && div_class_value !== (div_class_value = "Step bg-" + (/*active*/ ctx[0] ? /*color*/ ctx[1] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " " + (!/*active*/ ctx[0] ? "no-blink" : "") + " svelte-186yjq1")) {
 				attr(div, "class", div_class_value);
 			}
 		},
@@ -32,6 +40,8 @@ function create_fragment(ctx) {
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div);
+			mounted = false;
+			dispose();
 		}
 	};
 }
@@ -41,19 +51,23 @@ function instance($$self, $$props, $$invalidate) {
 	let { active = false } = $$props;
 	let { blink = false } = $$props;
 
+	function toggle() {
+		$$invalidate(0, active = !active);
+	}
+
 	$$self.$$set = $$props => {
-		if ("color" in $$props) $$invalidate(0, color = $$props.color);
-		if ("active" in $$props) $$invalidate(1, active = $$props.active);
+		if ("color" in $$props) $$invalidate(1, color = $$props.color);
+		if ("active" in $$props) $$invalidate(0, active = $$props.active);
 		if ("blink" in $$props) $$invalidate(2, blink = $$props.blink);
 	};
 
-	return [color, active, blink];
+	return [active, color, blink, toggle];
 }
 
 class Step extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { color: 0, active: 1, blink: 2 });
+		init(this, options, instance, create_fragment, safe_not_equal, { color: 1, active: 0, blink: 2 });
 	}
 }
 

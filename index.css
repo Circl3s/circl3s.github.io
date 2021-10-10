@@ -704,9 +704,6 @@ video {
 .h-6 {
 	height: 1.5rem;
 }
-.h-44 {
-	height: 11rem;
-}
 .h-20 {
 	height: 5rem;
 }
@@ -751,6 +748,9 @@ video {
 }
 .justify-between {
 	justify-content: space-between;
+}
+.overflow-scroll {
+	overflow: scroll;
 }
 .rounded-full {
 	border-radius: 9999px;

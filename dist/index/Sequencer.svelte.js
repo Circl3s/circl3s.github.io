@@ -271,15 +271,15 @@ function create_fragment(ctx) {
 				each_blocks[i].c();
 			}
 
-			attr(div0, "class", "channel svelte-hx3aqp");
+			attr(div0, "class", "channel svelte-1n3ec0p");
 			attr(div0, "id", "channel-1");
-			attr(div1, "class", "channel svelte-hx3aqp");
+			attr(div1, "class", "channel svelte-1n3ec0p");
 			attr(div1, "id", "channel-2");
-			attr(div2, "class", "channel svelte-hx3aqp");
+			attr(div2, "class", "channel svelte-1n3ec0p");
 			attr(div2, "id", "channel-3");
-			attr(div3, "class", "channel svelte-hx3aqp");
+			attr(div3, "class", "channel svelte-1n3ec0p");
 			attr(div3, "id", "channel-4");
-			attr(div4, "class", "Sequencer svelte-hx3aqp");
+			attr(div4, "class", "Sequencer svelte-1n3ec0p");
 		},
 		m(target, anchor) {
 			insert(target, div4, anchor);

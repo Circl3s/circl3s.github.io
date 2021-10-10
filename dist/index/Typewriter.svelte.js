@@ -30,25 +30,29 @@ function create_fragment(ctx) {
 			t0 = space();
 			span1 = element("span");
 			span1.textContent = "█";
+			attr(span0, "class", "svelte-1j69v0b");
 			set_style(span1, "visibility", "hidden");
 			attr(span1, "id", "fakecursor");
-			attr(div, "class", "Typewriter svelte-yzl17j");
+			attr(span1, "class", "svelte-1j69v0b");
+			attr(div, "class", "Typewriter svelte-1j69v0b");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
 			append(div, span0);
-			/*span0_binding*/ ctx[2](span0);
+			/*span0_binding*/ ctx[3](span0);
 			append(div, t0);
 			append(div, span1);
-			/*span1_binding*/ ctx[3](span1);
+			/*span1_binding*/ ctx[4](span1);
+			/*div_binding*/ ctx[5](div);
 		},
 		p: noop,
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div);
-			/*span0_binding*/ ctx[2](null);
-			/*span1_binding*/ ctx[3](null);
+			/*span0_binding*/ ctx[3](null);
+			/*span1_binding*/ ctx[4](null);
+			/*div_binding*/ ctx[5](null);
 		}
 	};
 }
@@ -56,6 +60,7 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let editor;
 	let cursor;
+	let writer;
 
 	let snippets = [
 		`function hello() {\n⠀⠀console.log("Hello World!")\n}\n\nfor (let i = 0; i < 5; i++) {\n⠀⠀hello()\n}`,
@@ -100,7 +105,7 @@ function instance($$self, $$props, $$invalidate) {
 			case 2:
 				$$invalidate(0, editor.innerHTML = editor.innerHTML.replace("def", `<span class="text-purple-400 italic">def</span>`), editor);
 				$$invalidate(0, editor.innerHTML = editor.innerHTML.replaceAll("end", `<span class="text-purple-400 italic">end</span>`), editor);
-				$$invalidate(0, editor.innerHTML = editor.innerHTML.replace("do", `<span class="text-purple-400">do</span>`), editor);
+				$$invalidate(0, editor.innerHTML = editor.innerHTML.replace("do", `<span class="text-purple-400 italic">do</span>`), editor);
 				$$invalidate(0, editor.innerHTML = editor.innerHTML.replaceAll("hello", `<span class="text-green-400">hello</span>`), editor);
 				$$invalidate(0, editor.innerHTML = editor.innerHTML.replace("puts", `<span class="text-green-400">puts</span>`), editor);
 				$$invalidate(0, editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`), editor);
@@ -132,6 +137,7 @@ function instance($$self, $$props, $$invalidate) {
 			$$invalidate(0, editor.innerText += snippets[snippet_i].charAt(i), editor);
 			i++;
 			colorize();
+			writer.scroll(0, 1000);
 			setTimeout(typeWriter, 3000 / snippets[snippet_i].length);
 		}
 	}
@@ -168,7 +174,14 @@ function instance($$self, $$props, $$invalidate) {
 		});
 	}
 
-	return [editor, cursor, span0_binding, span1_binding];
+	function div_binding($$value) {
+		binding_callbacks[$$value ? "unshift" : "push"](() => {
+			writer = $$value;
+			$$invalidate(2, writer);
+		});
+	}
+
+	return [editor, cursor, writer, span0_binding, span1_binding, div_binding];
 }
 
 class Typewriter extends SvelteComponent {

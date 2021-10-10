@@ -10,7 +10,7 @@
 
 <style>
     .Step {
-        @apply m-0.5 md:m-1 duration-100;
+        @apply m-0.5 md:m-1 duration-100 rounded-sm;
     }
 
     @keyframes blink {

@@ -11,6 +11,15 @@
 
 <style>
     .Greeter {
+        /* background: linear-gradient(
+            rgba(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0.7)
+            ),
+            url("/img/cover_pano_bg.png"
+        );
+        background-attachment: fixed;
+        background-position: top;
+        background-size: cover; */
         @apply bg-black w-full h-screen flex justify-center items-center flex-col;
     }
 
@@ -27,7 +36,7 @@
     }
 
     svg {
-        @apply h-auto md:h-3/4 w-3/4 md:w-auto m-8;
+        @apply h-auto md:h-3/4 w-full md:w-auto p-4 md:p-0 md:m-8;
     }
 </style>
 

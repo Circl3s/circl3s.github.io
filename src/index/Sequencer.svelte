@@ -39,7 +39,7 @@
 
 <style>
     .Sequencer {
-        @apply bg-gray-900 shadow-inner rounded-md w-full h-52 my-4 font-mono grid grid-rows-4 grid-cols-1;
+        @apply bg-gray-900 shadow-inner rounded-md w-full h-44 md:h-52 my-4 font-mono grid grid-rows-4 grid-cols-1;
     }
 
     .channel {

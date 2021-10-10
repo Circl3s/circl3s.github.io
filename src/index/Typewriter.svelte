@@ -3,6 +3,7 @@
 
     let editor;
     let cursor;
+    let writer;
     let snippets = [
         `function hello() {\n⠀⠀console.log("Hello World!")\n}\n\nfor (let i = 0; i < 5; i++) {\n⠀⠀hello()\n}`,
         `define hello():\n⠀⠀print("Hello World!")\n\nfor _ in range(5):\n⠀⠀hello()`,
@@ -46,7 +47,7 @@
             case 2:
                 editor.innerHTML = editor.innerHTML.replace("def", `<span class="text-purple-400 italic">def</span>`);
                 editor.innerHTML = editor.innerHTML.replaceAll("end", `<span class="text-purple-400 italic">end</span>`);
-                editor.innerHTML = editor.innerHTML.replace("do", `<span class="text-purple-400">do</span>`);
+                editor.innerHTML = editor.innerHTML.replace("do", `<span class="text-purple-400 italic">do</span>`);
                 editor.innerHTML = editor.innerHTML.replaceAll("hello", `<span class="text-green-400">hello</span>`);
                 editor.innerHTML = editor.innerHTML.replace("puts", `<span class="text-green-400">puts</span>`);
                 editor.innerHTML = editor.innerHTML.replace(`"Hello World!"`, `<span class="text-red-400">"Hello World!"</span>`);
@@ -77,6 +78,7 @@
             editor.innerText += snippets[snippet_i].charAt(i);
             i++;
             colorize()
+            writer.scroll(0, 1000);
             setTimeout(typeWriter, 3000 / snippets[snippet_i].length);
         }
     }
@@ -100,11 +102,16 @@
 
 <style>
     .Typewriter {
-        @apply bg-gray-900 shadow-inner rounded-md w-full h-44 md:h-52 my-4 p-4 font-mono text-sm md:text-base;
+        scrollbar-width: hidden;
+        @apply bg-gray-900 shadow-inner rounded-md w-full h-32 md:h-52 overflow-scroll my-4 p-4 font-mono text-sm md:text-base;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 </style>
 
-<div class="Typewriter">
+<div class="Typewriter" bind:this={writer}>
     <span bind:this={editor}></span>
     <span style="visibility: hidden;" bind:this={cursor} id="fakecursor">█</span>
     

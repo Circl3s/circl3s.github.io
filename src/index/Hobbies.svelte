@@ -63,7 +63,7 @@ import blobs from "../shaders/blobs.frag";
                     <Typewriter />
                     <p>
                         I've been deeply invested in computers and programming for a long time. 
-                        I've' written in many programming and scripting languages, predominantly Javascript, Python, Crystal and PowerShell, but I'm always learning new languages and frameworks. 
+                        I've written in many programming and scripting languages, predominantly Javascript, Python, Crystal and PowerShell, but I'm always learning new languages and frameworks. 
                         Other languages I'm learning or have used in the past include Rust, PHP, Ruby and Lua among others. 
                         I have experience using MySQL and Redis databases and have utilized SSR, designed APIs and written server-side applications that interact with them. 
                         I have a grasp on component-based frontend building having used Flutter and Svelte. 

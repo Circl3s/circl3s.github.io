@@ -1,8 +1,9 @@
 <script>
     import Menu from "./Menu.svelte";
 
-    export let anchors;
-    export let title;
+    export let anchors = [];
+    export let title = "Circl3s";
+    export let title_link = "#";
 
     let menu;
 
@@ -35,18 +36,20 @@
 
 <svelte:window bind:scrollY={scroll} on:resize={handleResize} />
 <div class="Navbar {scroll == 0 && !menu ? "" : "bg"}">
-    <a href="#"><h2>{title}</h2></a>
-    {#if wide}
-        <div class="links">
-            {#each anchors as anchor}
-                <a href="#{anchor.toLowerCase()}">{anchor}</a>
-            {/each}
-        </div>
-    {:else}
-        <Menu bind:open={menu}>
-            {#each anchors as anchor}
-                <a href="#{anchor.toLowerCase()}">{anchor}</a>
-            {/each}
-        </Menu>
+    <a href={title_link}><h2>{title}</h2></a>
+    {#if anchors.length > 0}
+        {#if wide}
+            <div class="links">
+                {#each anchors as anchor}
+                    <a href="#{anchor.toLowerCase()}">{anchor}</a>
+                {/each}
+            </div>
+        {:else}
+            <Menu bind:open={menu}>
+                {#each anchors as anchor}
+                    <a href="#{anchor.toLowerCase()}">{anchor}</a>
+                {/each}
+            </Menu>
+        {/if}
     {/if}
 </div>

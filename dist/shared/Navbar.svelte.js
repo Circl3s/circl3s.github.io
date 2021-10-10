@@ -36,24 +36,94 @@ import Menu from "./Menu.svelte.js";
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i];
+	child_ctx[9] = list[i];
 	return child_ctx;
 }
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i];
+	child_ctx[9] = list[i];
 	return child_ctx;
 }
 
-// (88:4) {:else}
+// (83:4) {#if anchors.length > 0}
+function create_if_block(ctx) {
+	let current_block_type_index;
+	let if_block;
+	let if_block_anchor;
+	let current;
+	const if_block_creators = [create_if_block_1, create_else_block];
+	const if_blocks = [];
+
+	function select_block_type(ctx, dirty) {
+		if (/*wide*/ ctx[5]) return 0;
+		return 1;
+	}
+
+	current_block_type_index = select_block_type(ctx, -1);
+	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+	return {
+		c() {
+			if_block.c();
+			if_block_anchor = empty();
+		},
+		m(target, anchor) {
+			if_blocks[current_block_type_index].m(target, anchor);
+			insert(target, if_block_anchor, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			let previous_block_index = current_block_type_index;
+			current_block_type_index = select_block_type(ctx, dirty);
+
+			if (current_block_type_index === previous_block_index) {
+				if_blocks[current_block_type_index].p(ctx, dirty);
+			} else {
+				group_outros();
+
+				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+					if_blocks[previous_block_index] = null;
+				});
+
+				check_outros();
+				if_block = if_blocks[current_block_type_index];
+
+				if (!if_block) {
+					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+					if_block.c();
+				} else {
+					if_block.p(ctx, dirty);
+				}
+
+				transition_in(if_block, 1);
+				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+			}
+		},
+		i(local) {
+			if (current) return;
+			transition_in(if_block);
+			current = true;
+		},
+		o(local) {
+			transition_out(if_block);
+			current = false;
+		},
+		d(detaching) {
+			if_blocks[current_block_type_index].d(detaching);
+			if (detaching) detach(if_block_anchor);
+		}
+	};
+}
+
+// (90:8) {:else}
 function create_else_block(ctx) {
 	let menu_1;
 	let updating_open;
 	let current;
 
 	function menu_1_open_binding(value) {
-		/*menu_1_open_binding*/ ctx[7](value);
+		/*menu_1_open_binding*/ ctx[8](value);
 	}
 
 	let menu_1_props = {
@@ -61,8 +131,8 @@ function create_else_block(ctx) {
 		$$scope: { ctx }
 	};
 
-	if (/*menu*/ ctx[2] !== void 0) {
-		menu_1_props.open = /*menu*/ ctx[2];
+	if (/*menu*/ ctx[3] !== void 0) {
+		menu_1_props.open = /*menu*/ ctx[3];
 	}
 
 	menu_1 = new Menu({ props: menu_1_props });
@@ -79,13 +149,13 @@ function create_else_block(ctx) {
 		p(ctx, dirty) {
 			const menu_1_changes = {};
 
-			if (dirty & /*$$scope, anchors*/ 8193) {
+			if (dirty & /*$$scope, anchors*/ 16385) {
 				menu_1_changes.$$scope = { dirty, ctx };
 			}
 
-			if (!updating_open && dirty & /*menu*/ 4) {
+			if (!updating_open && dirty & /*menu*/ 8) {
 				updating_open = true;
-				menu_1_changes.open = /*menu*/ ctx[2];
+				menu_1_changes.open = /*menu*/ ctx[3];
 				add_flush_callback(() => updating_open = false);
 			}
 
@@ -106,8 +176,8 @@ function create_else_block(ctx) {
 	};
 }
 
-// (82:4) {#if wide}
-function create_if_block(ctx) {
+// (84:8) {#if wide}
+function create_if_block_1(ctx) {
 	let div;
 	let each_value = /*anchors*/ ctx[0];
 	let each_blocks = [];
@@ -166,10 +236,10 @@ function create_if_block(ctx) {
 	};
 }
 
-// (90:12) {#each anchors as anchor}
+// (92:16) {#each anchors as anchor}
 function create_each_block_1(ctx) {
 	let a;
-	let t_value = /*anchor*/ ctx[8] + "";
+	let t_value = /*anchor*/ ctx[9] + "";
 	let t;
 	let a_href_value;
 
@@ -177,7 +247,7 @@ function create_each_block_1(ctx) {
 		c() {
 			a = element("a");
 			t = text(t_value);
-			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[8].toLowerCase());
+			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
 			attr(a, "class", "svelte-4cmdoz");
 		},
 		m(target, anchor) {
@@ -185,9 +255,9 @@ function create_each_block_1(ctx) {
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[8] + "")) set_data(t, t_value);
+			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[9] + "")) set_data(t, t_value);
 
-			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[8].toLowerCase())) {
+			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase())) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -197,7 +267,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (89:8) <Menu bind:open={menu}>
+// (91:12) <Menu bind:open={menu}>
 function create_default_slot(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*anchors*/ ctx[0];
@@ -253,10 +323,10 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (84:12) {#each anchors as anchor}
+// (86:16) {#each anchors as anchor}
 function create_each_block(ctx) {
 	let a;
-	let t_value = /*anchor*/ ctx[8] + "";
+	let t_value = /*anchor*/ ctx[9] + "";
 	let t;
 	let a_href_value;
 
@@ -264,7 +334,7 @@ function create_each_block(ctx) {
 		c() {
 			a = element("a");
 			t = text(t_value);
-			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[8].toLowerCase());
+			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
 			attr(a, "class", "svelte-4cmdoz");
 		},
 		m(target, anchor) {
@@ -272,9 +342,9 @@ function create_each_block(ctx) {
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[8] + "")) set_data(t, t_value);
+			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[9] + "")) set_data(t, t_value);
 
-			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[8].toLowerCase())) {
+			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase())) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -297,23 +367,12 @@ function create_fragment(ctx) {
 	let h2;
 	let t0;
 	let t1;
-	let current_block_type_index;
-	let if_block;
 	let div_class_value;
 	let current;
 	let mounted;
 	let dispose;
-	add_render_callback(/*onwindowscroll*/ ctx[6]);
-	const if_block_creators = [create_if_block, create_else_block];
-	const if_blocks = [];
-
-	function select_block_type(ctx, dirty) {
-		if (/*wide*/ ctx[4]) return 0;
-		return 1;
-	}
-
-	current_block_type_index = select_block_type(ctx, -1);
-	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+	add_render_callback(/*onwindowscroll*/ ctx[7]);
+	let if_block = /*anchors*/ ctx[0].length > 0 && create_if_block(ctx);
 
 	return {
 		c() {
@@ -322,11 +381,11 @@ function create_fragment(ctx) {
 			h2 = element("h2");
 			t0 = text(/*title*/ ctx[1]);
 			t1 = space();
-			if_block.c();
+			if (if_block) if_block.c();
 			attr(h2, "class", "svelte-4cmdoz");
-			attr(a, "href", "#");
+			attr(a, "href", /*title_link*/ ctx[2]);
 			attr(a, "class", "svelte-4cmdoz");
-			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[3] == 0 && !/*menu*/ ctx[2] ? "" : "bg") + " svelte-4cmdoz");
+			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-4cmdoz");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -334,17 +393,17 @@ function create_fragment(ctx) {
 			append(a, h2);
 			append(h2, t0);
 			append(div, t1);
-			if_blocks[current_block_type_index].m(div, null);
+			if (if_block) if_block.m(div, null);
 			current = true;
 
 			if (!mounted) {
 				dispose = [
-					listen(window_1, "resize", /*handleResize*/ ctx[5]),
+					listen(window_1, "resize", /*handleResize*/ ctx[6]),
 					listen(window_1, "scroll", () => {
 						scrolling = true;
 						clearTimeout(scrolling_timeout);
 						scrolling_timeout = setTimeout(clear_scrolling, 100);
-						/*onwindowscroll*/ ctx[6]();
+						/*onwindowscroll*/ ctx[7]();
 					})
 				];
 
@@ -352,41 +411,43 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*scroll*/ 8 && !scrolling) {
+			if (dirty & /*scroll*/ 16 && !scrolling) {
 				scrolling = true;
 				clearTimeout(scrolling_timeout);
-				scrollTo(window_1.pageXOffset, /*scroll*/ ctx[3]);
+				scrollTo(window_1.pageXOffset, /*scroll*/ ctx[4]);
 				scrolling_timeout = setTimeout(clear_scrolling, 100);
 			}
 
 			if (!current || dirty & /*title*/ 2) set_data(t0, /*title*/ ctx[1]);
-			let previous_block_index = current_block_type_index;
-			current_block_type_index = select_block_type(ctx, dirty);
 
-			if (current_block_type_index === previous_block_index) {
-				if_blocks[current_block_type_index].p(ctx, dirty);
-			} else {
+			if (!current || dirty & /*title_link*/ 4) {
+				attr(a, "href", /*title_link*/ ctx[2]);
+			}
+
+			if (/*anchors*/ ctx[0].length > 0) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+
+					if (dirty & /*anchors*/ 1) {
+						transition_in(if_block, 1);
+					}
+				} else {
+					if_block = create_if_block(ctx);
+					if_block.c();
+					transition_in(if_block, 1);
+					if_block.m(div, null);
+				}
+			} else if (if_block) {
 				group_outros();
 
-				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-					if_blocks[previous_block_index] = null;
+				transition_out(if_block, 1, 1, () => {
+					if_block = null;
 				});
 
 				check_outros();
-				if_block = if_blocks[current_block_type_index];
-
-				if (!if_block) {
-					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-					if_block.c();
-				} else {
-					if_block.p(ctx, dirty);
-				}
-
-				transition_in(if_block, 1);
-				if_block.m(div, null);
 			}
 
-			if (!current || dirty & /*scroll, menu*/ 12 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[3] == 0 && !/*menu*/ ctx[2] ? "" : "bg") + " svelte-4cmdoz")) {
+			if (!current || dirty & /*scroll, menu*/ 24 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-4cmdoz")) {
 				attr(div, "class", div_class_value);
 			}
 		},
@@ -401,7 +462,7 @@ function create_fragment(ctx) {
 		},
 		d(detaching) {
 			if (detaching) detach(div);
-			if_blocks[current_block_type_index].d();
+			if (if_block) if_block.d();
 			mounted = false;
 			run_all(dispose);
 		}
@@ -409,33 +470,36 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { anchors } = $$props;
-	let { title } = $$props;
+	let { anchors = [] } = $$props;
+	let { title = "Circl3s" } = $$props;
+	let { title_link = "#" } = $$props;
 	let menu;
 	let scroll = 0;
 	let wide = window.innerWidth > 768;
 
 	function handleResize(e) {
-		$$invalidate(4, wide = window.innerWidth > 768);
+		$$invalidate(5, wide = window.innerWidth > 768);
 	}
 
 	function onwindowscroll() {
-		$$invalidate(3, scroll = window_1.pageYOffset)
+		$$invalidate(4, scroll = window_1.pageYOffset)
 	}
 
 	function menu_1_open_binding(value) {
 		menu = value;
-		$$invalidate(2, menu);
+		$$invalidate(3, menu);
 	}
 
 	$$self.$$set = $$props => {
 		if ("anchors" in $$props) $$invalidate(0, anchors = $$props.anchors);
 		if ("title" in $$props) $$invalidate(1, title = $$props.title);
+		if ("title_link" in $$props) $$invalidate(2, title_link = $$props.title_link);
 	};
 
 	return [
 		anchors,
 		title,
+		title_link,
 		menu,
 		scroll,
 		wide,
@@ -448,7 +512,7 @@ function instance($$self, $$props, $$invalidate) {
 class Navbar extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { anchors: 0, title: 1 });
+		init(this, options, instance, create_fragment, safe_not_equal, { anchors: 0, title: 1, title_link: 2 });
 	}
 }
 

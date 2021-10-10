@@ -32,7 +32,7 @@ function create_fragment(ctx) {
 			span1.textContent = "█";
 			set_style(span1, "visibility", "hidden");
 			attr(span1, "id", "fakecursor");
-			attr(div, "class", "Typewriter svelte-7mnqfr");
+			attr(div, "class", "Typewriter svelte-yzl17j");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

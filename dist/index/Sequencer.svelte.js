@@ -49,7 +49,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (64:8) {#each steps[0] as step}
+// (71:8) {#each steps[0] as step}
 function create_each_block_3(ctx) {
 	let step;
 	let current;
@@ -82,7 +82,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (69:8) {#each steps[1] as step}
+// (76:8) {#each steps[1] as step}
 function create_each_block_2(ctx) {
 	let step;
 	let current;
@@ -118,7 +118,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (74:8) {#each steps[2] as step}
+// (81:8) {#each steps[2] as step}
 function create_each_block_1(ctx) {
 	let step;
 	let current;
@@ -154,7 +154,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (79:8) {#each steps[3] as step}
+// (86:8) {#each steps[3] as step}
 function create_each_block(ctx) {
 	let step;
 	let current;
@@ -271,15 +271,15 @@ function create_fragment(ctx) {
 				each_blocks[i].c();
 			}
 
-			attr(div0, "class", "channel svelte-7p2j98");
+			attr(div0, "class", "channel svelte-hx3aqp");
 			attr(div0, "id", "channel-1");
-			attr(div1, "class", "channel svelte-7p2j98");
+			attr(div1, "class", "channel svelte-hx3aqp");
 			attr(div1, "id", "channel-2");
-			attr(div2, "class", "channel svelte-7p2j98");
+			attr(div2, "class", "channel svelte-hx3aqp");
 			attr(div2, "id", "channel-3");
-			attr(div3, "class", "channel svelte-7p2j98");
+			attr(div3, "class", "channel svelte-hx3aqp");
 			attr(div3, "id", "channel-4");
-			attr(div4, "class", "Sequencer svelte-7p2j98");
+			attr(div4, "class", "Sequencer svelte-hx3aqp");
 		},
 		m(target, anchor) {
 			insert(target, div4, anchor);

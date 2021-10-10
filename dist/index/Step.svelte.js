@@ -21,7 +21,7 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			div = element("div");
-			attr(div, "class", div_class_value = "Step bg-" + (/*active*/ ctx[0] ? /*color*/ ctx[1] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " " + (!/*active*/ ctx[0] ? "no-blink" : "") + " svelte-186yjq1");
+			attr(div, "class", div_class_value = "Step bg-" + (/*active*/ ctx[0] ? /*color*/ ctx[1] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " " + (!/*active*/ ctx[0] ? "no-blink" : "") + " svelte-zw2sxj");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -32,7 +32,7 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*active, color, blink*/ 7 && div_class_value !== (div_class_value = "Step bg-" + (/*active*/ ctx[0] ? /*color*/ ctx[1] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " " + (!/*active*/ ctx[0] ? "no-blink" : "") + " svelte-186yjq1")) {
+			if (dirty & /*active, color, blink*/ 7 && div_class_value !== (div_class_value = "Step bg-" + (/*active*/ ctx[0] ? /*color*/ ctx[1] : "gray") + "-800 " + (/*blink*/ ctx[2] ? "blink" : "") + " " + (!/*active*/ ctx[0] ? "no-blink" : "") + " svelte-zw2sxj")) {
 				attr(div, "class", div_class_value);
 			}
 		},

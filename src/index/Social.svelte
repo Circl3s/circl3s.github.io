@@ -16,7 +16,7 @@
     }
 
     .container {
-        @apply w-full flex flex-row flex-wrap p-4 justify-around;
+        @apply w-full flex flex-row flex-wrap p-4 justify-evenly;
         max-width: none !important;
     }
 </style>
@@ -36,6 +36,9 @@
     <div class="container">
         <Button href="mailto:maak4422+contact@gmail.com">
             Send an email
+        </Button>
+        <Button href="https://m.me/feliatar" color="blue" target="_blank">
+            Messenger
         </Button>
     </div>
 </div>

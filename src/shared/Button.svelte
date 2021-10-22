@@ -1,11 +1,12 @@
 <script>
     export let color = "purple";
     export let disabled = false;
+    export let target = "";
     export let href;
 
     function action() {
         if (href) {
-            window.location.href = href;
+            window.open(href, target);
         }
     }
 </script>

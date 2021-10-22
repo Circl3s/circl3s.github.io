@@ -21,8 +21,8 @@ function create_fragment(ctx) {
 	let current;
 	let mounted;
 	let dispose;
-	const default_slot_template = /*#slots*/ ctx[5].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[4], null);
+	const default_slot_template = /*#slots*/ ctx[6].default;
+	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[5], null);
 
 	return {
 		c() {
@@ -47,8 +47,8 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (default_slot) {
-				if (default_slot.p && (!current || dirty & /*$$scope*/ 16)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[4], !current ? -1 : dirty, null, null);
+				if (default_slot.p && (!current || dirty & /*$$scope*/ 32)) {
+					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[5], !current ? -1 : dirty, null, null);
 				}
 			}
 
@@ -82,28 +82,36 @@ function instance($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
 	let { color = "purple" } = $$props;
 	let { disabled = false } = $$props;
+	let { target = "" } = $$props;
 	let { href } = $$props;
 
 	function action() {
 		if (href) {
-			window.location.href = href;
+			window.open(href, target);
 		}
 	}
 
 	$$self.$$set = $$props => {
 		if ("color" in $$props) $$invalidate(0, color = $$props.color);
 		if ("disabled" in $$props) $$invalidate(1, disabled = $$props.disabled);
-		if ("href" in $$props) $$invalidate(3, href = $$props.href);
-		if ("$$scope" in $$props) $$invalidate(4, $$scope = $$props.$$scope);
+		if ("target" in $$props) $$invalidate(3, target = $$props.target);
+		if ("href" in $$props) $$invalidate(4, href = $$props.href);
+		if ("$$scope" in $$props) $$invalidate(5, $$scope = $$props.$$scope);
 	};
 
-	return [color, disabled, action, href, $$scope, slots];
+	return [color, disabled, action, target, href, $$scope, slots];
 }
 
 class Button extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { color: 0, disabled: 1, href: 3 });
+
+		init(this, options, instance, create_fragment, safe_not_equal, {
+			color: 0,
+			disabled: 1,
+			target: 3,
+			href: 4
+		});
 	}
 }
 

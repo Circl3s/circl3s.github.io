@@ -22,12 +22,29 @@ import Button from "../shared/Button.svelte.js";
 import Marker from "../shared/Marker.svelte.js";
 import SocialButton from "../shared/SocialButton.svelte.js";
 
-function create_default_slot(ctx) {
+function create_default_slot_1(ctx) {
 	let t;
 
 	return {
 		c() {
 			t = text("Send an email");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (49:8) <Button href="https://m.me/feliatar" color="blue" target="_blank">
+function create_default_slot(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("Messenger");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -58,7 +75,9 @@ function create_fragment(ctx) {
 	let h11;
 	let t9;
 	let div1;
-	let button;
+	let button0;
+	let t10;
+	let button1;
 	let current;
 	marker = new Marker({ props: { name: "social" } });
 
@@ -102,9 +121,19 @@ function create_fragment(ctx) {
 			}
 		});
 
-	button = new Button({
+	button0 = new Button({
 			props: {
 				href: "mailto:maak4422+contact@gmail.com",
+				$$slots: { default: [create_default_slot_1] },
+				$$scope: { ctx }
+			}
+		});
+
+	button1 = new Button({
+			props: {
+				href: "https://m.me/feliatar",
+				color: "blue",
+				target: "_blank",
 				$$slots: { default: [create_default_slot] },
 				$$scope: { ctx }
 			}
@@ -133,12 +162,14 @@ function create_fragment(ctx) {
 			h11.textContent = "...or contact me directly:";
 			t9 = space();
 			div1 = element("div");
-			create_component(button.$$.fragment);
-			attr(h10, "class", "svelte-1iwwpf4");
-			attr(div0, "class", "container svelte-1iwwpf4");
-			attr(h11, "class", "svelte-1iwwpf4");
-			attr(div1, "class", "container svelte-1iwwpf4");
-			attr(div2, "class", "Social svelte-1iwwpf4");
+			create_component(button0.$$.fragment);
+			t10 = space();
+			create_component(button1.$$.fragment);
+			attr(h10, "class", "svelte-ez9vtu");
+			attr(div0, "class", "container svelte-ez9vtu");
+			attr(h11, "class", "svelte-ez9vtu");
+			attr(div1, "class", "container svelte-ez9vtu");
+			attr(div2, "class", "Social svelte-ez9vtu");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);
@@ -160,17 +191,26 @@ function create_fragment(ctx) {
 			append(div2, h11);
 			append(div2, t9);
 			append(div2, div1);
-			mount_component(button, div1, null);
+			mount_component(button0, div1, null);
+			append(div1, t10);
+			mount_component(button1, div1, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			const button_changes = {};
+			const button0_changes = {};
 
 			if (dirty & /*$$scope*/ 1) {
-				button_changes.$$scope = { dirty, ctx };
+				button0_changes.$$scope = { dirty, ctx };
 			}
 
-			button.$set(button_changes);
+			button0.$set(button0_changes);
+			const button1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button1_changes.$$scope = { dirty, ctx };
+			}
+
+			button1.$set(button1_changes);
 		},
 		i(local) {
 			if (current) return;
@@ -180,7 +220,8 @@ function create_fragment(ctx) {
 			transition_in(socialbutton2.$$.fragment, local);
 			transition_in(socialbutton3.$$.fragment, local);
 			transition_in(socialbutton4.$$.fragment, local);
-			transition_in(button.$$.fragment, local);
+			transition_in(button0.$$.fragment, local);
+			transition_in(button1.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -190,7 +231,8 @@ function create_fragment(ctx) {
 			transition_out(socialbutton2.$$.fragment, local);
 			transition_out(socialbutton3.$$.fragment, local);
 			transition_out(socialbutton4.$$.fragment, local);
-			transition_out(button.$$.fragment, local);
+			transition_out(button0.$$.fragment, local);
+			transition_out(button1.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -202,7 +244,8 @@ function create_fragment(ctx) {
 			destroy_component(socialbutton2);
 			destroy_component(socialbutton3);
 			destroy_component(socialbutton4);
-			destroy_component(button);
+			destroy_component(button0);
+			destroy_component(button1);
 		}
 	};
 }

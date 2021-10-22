@@ -30,11 +30,11 @@ function create_fragment(ctx) {
 			t0 = space();
 			span1 = element("span");
 			span1.textContent = "█";
-			attr(span0, "class", "svelte-1j69v0b");
+			attr(span0, "class", "svelte-1m69srl");
 			set_style(span1, "visibility", "hidden");
 			attr(span1, "id", "fakecursor");
-			attr(span1, "class", "svelte-1j69v0b");
-			attr(div, "class", "Typewriter svelte-1j69v0b");
+			attr(span1, "class", "svelte-1m69srl");
+			attr(div, "class", "Typewriter svelte-1m69srl");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -137,7 +137,11 @@ function instance($$self, $$props, $$invalidate) {
 			$$invalidate(0, editor.innerText += snippets[snippet_i].charAt(i), editor);
 			i++;
 			colorize();
-			writer.scroll(0, 1000);
+
+			if (writer.scrollHeight > writer.clientHeight && writer.scrollHeight - Math.abs(writer.scrollTop) !== writer.clientHeight) {
+				writer.scroll(0, writer.scrollHeight);
+			}
+
 			setTimeout(typeWriter, 3000 / snippets[snippet_i].length);
 		}
 	}

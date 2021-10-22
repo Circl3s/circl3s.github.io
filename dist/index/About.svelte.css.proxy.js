@@ -1,6 +1,6 @@
 // [snowpack] add styles to the page (skip if no document exists)
 if (typeof document !== 'undefined') {
-  const code = ".About.svelte-rkesvt{display:flex;width:100%;flex-direction:column;align-items:center;justify-content:center;--tw-bg-opacity:1;background-color:rgba(24, 24, 27, var(--tw-bg-opacity));padding:2rem}@media(min-width: 768px){.About.svelte-rkesvt{flex-direction:row}}img.svelte-rkesvt{margin:1rem;width:33.333333%;border-radius:9999px}@media(min-width: 768px){img.svelte-rkesvt{width:16.666667%}}h2.svelte-rkesvt,p.svelte-rkesvt{text-align:center}@media(min-width: 768px){h2.svelte-rkesvt,p.svelte-rkesvt{text-align:left}}p.svelte-rkesvt{text-indent:8px}";
+  const code = ".About.svelte-1i135b3{display:flex;width:100%;flex-direction:column;align-items:center;justify-content:center;--tw-bg-opacity:1;background-color:rgba(24, 24, 27, var(--tw-bg-opacity));padding:2rem}@media(min-width: 768px){.About.svelte-1i135b3{flex-direction:row}}img.svelte-1i135b3{margin:1rem;height:9rem;width:9rem;border-radius:9999px;object-fit:cover}@media(min-width: 768px){img.svelte-1i135b3{height:14rem}img.svelte-1i135b3{width:14rem}}h2.svelte-1i135b3,p.svelte-1i135b3{text-align:center}@media(min-width: 768px){h2.svelte-1i135b3,p.svelte-1i135b3{text-align:left}}p.svelte-1i135b3{text-indent:8px}";
 
   const styleEl = document.createElement("style");
   const codeEl = document.createTextNode(code);

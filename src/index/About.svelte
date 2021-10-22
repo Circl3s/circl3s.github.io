@@ -10,7 +10,7 @@ import Marker from "../shared/Marker.svelte";
     }
 
     img {
-        @apply rounded-full w-1/3 md:w-1/6 m-4;
+        @apply rounded-full w-36 h-36 md:w-56 md:h-56 m-4 object-cover;
     }
 
     h2, p {
@@ -24,7 +24,7 @@ import Marker from "../shared/Marker.svelte";
 
 <Marker name="about" />
 <div class="About">
-    <img src="https://thispersondoesnotexist.com/image" alt="">
+    <img src="/img/_MG_0902_edit2.jpg" alt="">
     <Card>
         <h2 slot="title">
             About

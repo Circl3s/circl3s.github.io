@@ -78,7 +78,9 @@
             editor.innerText += snippets[snippet_i].charAt(i);
             i++;
             colorize()
-            writer.scroll(0, 1000);
+            if (writer.scrollHeight > writer.clientHeight && writer.scrollHeight - Math.abs(writer.scrollTop) !== writer.clientHeight) {
+                writer.scroll(0, writer.scrollHeight);
+            }
             setTimeout(typeWriter, 3000 / snippets[snippet_i].length);
         }
     }
@@ -102,7 +104,7 @@
 
 <style>
     .Typewriter {
-        scrollbar-width: hidden;
+        scrollbar-width: none;
         @apply bg-gray-900 shadow-inner rounded-md w-full h-32 md:h-52 overflow-scroll my-4 p-4 font-mono text-sm md:text-base;
     }
 

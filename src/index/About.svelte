@@ -10,7 +10,7 @@ import Marker from "../shared/Marker.svelte";
     }
 
     img {
-        @apply rounded-full w-36 h-36 md:w-56 md:h-56 m-4 object-cover;
+        @apply rounded-full w-36 h-36 md:w-56 md:h-56 m-4 object-cover border-solid border-4 border-gray-800;
     }
 
     h2, p {

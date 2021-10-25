@@ -767,8 +767,8 @@ video {
 .rounded-md {
 	border-radius: 0.375rem;
 }
-.border-4 {
-	border-width: 4px;
+.border-8 {
+	border-width: 8px;
 }
 .border-solid {
 	border-style: solid;

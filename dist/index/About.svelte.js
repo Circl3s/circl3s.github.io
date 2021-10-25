@@ -29,7 +29,7 @@ function create_title_slot(ctx) {
 			h2 = element("h2");
 			h2.textContent = "About";
 			attr(h2, "slot", "title");
-			attr(h2, "class", "svelte-xiyejb");
+			attr(h2, "class", "svelte-1fclbrf");
 		},
 		m(target, anchor) {
 			insert(target, h2, anchor);
@@ -65,10 +65,10 @@ function create_content_slot(ctx) {
 			t7 = space();
 			p3 = element("p");
 			p3.textContent = "You can find out more about my work in the next section.";
-			attr(p0, "class", "svelte-xiyejb");
-			attr(p1, "class", "svelte-xiyejb");
-			attr(p2, "class", "svelte-xiyejb");
-			attr(p3, "class", "svelte-xiyejb");
+			attr(p0, "class", "svelte-1fclbrf");
+			attr(p1, "class", "svelte-1fclbrf");
+			attr(p2, "class", "svelte-1fclbrf");
+			attr(p3, "class", "svelte-1fclbrf");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -119,8 +119,8 @@ function create_fragment(ctx) {
 			create_component(card.$$.fragment);
 			if (img.src !== (img_src_value = "/img/_MG_0902_edit2.jpg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "");
-			attr(img, "class", "svelte-xiyejb");
-			attr(div, "class", "About svelte-xiyejb");
+			attr(img, "class", "svelte-1fclbrf");
+			attr(div, "class", "About svelte-1fclbrf");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);

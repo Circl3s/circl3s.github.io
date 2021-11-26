@@ -38,10 +38,10 @@ function create_fragment(ctx) {
 			t1 = space();
 			div0 = element("div");
 			if (default_slot) default_slot.c();
-			attr(button, "class", "icon svelte-126dhc5");
-			attr(div0, "class", "content svelte-126dhc5");
+			attr(button, "class", "icon svelte-1rjvynr");
+			attr(div0, "class", "content svelte-1rjvynr");
 			set_style(div0, "visibility", /*open*/ ctx[0] ? "visible" : "hidden");
-			attr(div1, "class", "Menu svelte-126dhc5");
+			attr(div1, "class", "Menu svelte-1rjvynr");
 		},
 		m(target, anchor) {
 			insert(target, div1, anchor);

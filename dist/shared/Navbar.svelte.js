@@ -47,7 +47,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (97:4) {#if anchors.length > 0}
+// (103:4) {#if anchors.length > 0}
 function create_if_block(ctx) {
 	let current_block_type_index;
 	let if_block;
@@ -117,7 +117,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (104:8) {:else}
+// (110:8) {:else}
 function create_else_block(ctx) {
 	let menu_1;
 	let updating_open;
@@ -177,7 +177,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (98:8) {#if wide}
+// (104:8) {#if wide}
 function create_if_block_1(ctx) {
 	let div;
 	let each_value = /*anchors*/ ctx[0];
@@ -237,7 +237,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (106:16) {#each anchors as anchor}
+// (112:16) {#each anchors as anchor}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*anchor*/ ctx[9] + "";
@@ -249,7 +249,7 @@ function create_each_block_1(ctx) {
 			a = element("a");
 			t = text(t_value);
 			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
-			attr(a, "class", "svelte-trpi34");
+			attr(a, "class", "svelte-1e3gemt");
 		},
 		m(target, anchor) {
 			insert(target, a, anchor);
@@ -268,7 +268,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (105:12) <Menu bind:open={menu}>
+// (111:12) <Menu bind:open={menu}>
 function create_default_slot(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*anchors*/ ctx[0];
@@ -324,7 +324,7 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (100:16) {#each anchors as anchor}
+// (106:16) {#each anchors as anchor}
 function create_each_block(ctx) {
 	let a;
 	let t_value = /*anchor*/ ctx[9] + "";
@@ -336,7 +336,7 @@ function create_each_block(ctx) {
 			a = element("a");
 			t = text(t_value);
 			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
-			attr(a, "class", "svelte-trpi34");
+			attr(a, "class", "svelte-1e3gemt");
 		},
 		m(target, anchor) {
 			insert(target, a, anchor);
@@ -383,10 +383,10 @@ function create_fragment(ctx) {
 			t0 = text(/*title*/ ctx[1]);
 			t1 = space();
 			if (if_block) if_block.c();
-			attr(h2, "class", "svelte-trpi34");
+			attr(h2, "class", "svelte-1e3gemt");
 			attr(a, "href", /*title_link*/ ctx[2]);
-			attr(a, "class", "svelte-trpi34");
-			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-trpi34");
+			attr(a, "class", "svelte-1e3gemt");
+			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-1e3gemt");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -448,7 +448,7 @@ function create_fragment(ctx) {
 				check_outros();
 			}
 
-			if (!current || dirty & /*scroll, menu*/ 24 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-trpi34")) {
+			if (!current || dirty & /*scroll, menu*/ 24 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-1e3gemt")) {
 				attr(div, "class", div_class_value);
 			}
 		},

@@ -704,8 +704,8 @@ video {
 .h-52 {
 	height: 13rem;
 }
-.h-64 {
-	height: 16rem;
+.h-40 {
+	height: 10rem;
 }
 .h-32 {
 	height: 8rem;
@@ -719,6 +719,9 @@ video {
 .h-24 {
 	height: 6rem;
 }
+.min-h-\[16rem\] {
+	min-height: 16rem;
+}
 .w-screen {
 	width: 100vw;
 }
@@ -727,6 +730,9 @@ video {
 }
 .w-36 {
 	width: 9rem;
+}
+.w-80 {
+	width: 20rem;
 }
 .w-12 {
 	width: 3rem;
@@ -917,10 +923,6 @@ video {
 .font-mono {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-.text-2xl {
-	font-size: 1.5rem;
-	line-height: 2rem;
-}
 .text-3xl {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
@@ -928,6 +930,10 @@ video {
 .text-sm {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
+}
+.text-2xl {
+	font-size: 1.5rem;
+	line-height: 2rem;
 }
 .text-xl {
 	font-size: 1.25rem;

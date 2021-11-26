@@ -1,5 +1,6 @@
 {
   "imports": {
+    "@supabase/supabase-js": "./@supabase/supabase-js.js",
     "svelte": "./svelte.js",
     "svelte-i18n": "./svelte-i18n.js",
     "svelte/internal": "./svelte/internal.js",

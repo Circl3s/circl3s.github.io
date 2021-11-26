@@ -18,7 +18,7 @@
     }
 
     .content {
-        @apply absolute text-white flex flex-col top-full right-0 bg-gray-800;
+        @apply absolute text-black flex flex-col top-full right-0 bg-gray-100 shadow-md;
     }
 
     .content :global(a) {

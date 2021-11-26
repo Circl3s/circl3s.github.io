@@ -31,7 +31,7 @@
     }
 
     a {
-        @apply text-xl m-4 duration-100 hover:text-purple-600;
+        @apply text-xl m-4 transition-colors duration-100 hover:text-purple-600;
     }
 </style>
 

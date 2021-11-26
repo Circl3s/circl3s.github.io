@@ -33,6 +33,7 @@ import {
 
 const { window: window_1 } = globals;
 import Menu from "./Menu.svelte.js";
+import { _ } from "../../_snowpack/pkg/svelte-i18n.js";
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
@@ -46,7 +47,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (83:4) {#if anchors.length > 0}
+// (97:4) {#if anchors.length > 0}
 function create_if_block(ctx) {
 	let current_block_type_index;
 	let if_block;
@@ -116,7 +117,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (90:8) {:else}
+// (104:8) {:else}
 function create_else_block(ctx) {
 	let menu_1;
 	let updating_open;
@@ -176,7 +177,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (84:8) {#if wide}
+// (98:8) {#if wide}
 function create_if_block_1(ctx) {
 	let div;
 	let each_value = /*anchors*/ ctx[0];
@@ -236,7 +237,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (92:16) {#each anchors as anchor}
+// (106:16) {#each anchors as anchor}
 function create_each_block_1(ctx) {
 	let a;
 	let t_value = /*anchor*/ ctx[9] + "";
@@ -248,7 +249,7 @@ function create_each_block_1(ctx) {
 			a = element("a");
 			t = text(t_value);
 			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
-			attr(a, "class", "svelte-4cmdoz");
+			attr(a, "class", "svelte-trpi34");
 		},
 		m(target, anchor) {
 			insert(target, a, anchor);
@@ -267,7 +268,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (91:12) <Menu bind:open={menu}>
+// (105:12) <Menu bind:open={menu}>
 function create_default_slot(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*anchors*/ ctx[0];
@@ -323,7 +324,7 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (86:16) {#each anchors as anchor}
+// (100:16) {#each anchors as anchor}
 function create_each_block(ctx) {
 	let a;
 	let t_value = /*anchor*/ ctx[9] + "";
@@ -335,7 +336,7 @@ function create_each_block(ctx) {
 			a = element("a");
 			t = text(t_value);
 			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
-			attr(a, "class", "svelte-4cmdoz");
+			attr(a, "class", "svelte-trpi34");
 		},
 		m(target, anchor) {
 			insert(target, a, anchor);
@@ -382,10 +383,10 @@ function create_fragment(ctx) {
 			t0 = text(/*title*/ ctx[1]);
 			t1 = space();
 			if (if_block) if_block.c();
-			attr(h2, "class", "svelte-4cmdoz");
+			attr(h2, "class", "svelte-trpi34");
 			attr(a, "href", /*title_link*/ ctx[2]);
-			attr(a, "class", "svelte-4cmdoz");
-			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-4cmdoz");
+			attr(a, "class", "svelte-trpi34");
+			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-trpi34");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -447,7 +448,7 @@ function create_fragment(ctx) {
 				check_outros();
 			}
 
-			if (!current || dirty & /*scroll, menu*/ 24 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-4cmdoz")) {
+			if (!current || dirty & /*scroll, menu*/ 24 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-trpi34")) {
 				attr(div, "class", div_class_value);
 			}
 		},

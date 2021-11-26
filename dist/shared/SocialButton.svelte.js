@@ -23,7 +23,7 @@ function create_fragment(ctx) {
 			img = element("img");
 			if (img.src !== (img_src_value = /*src*/ ctx[0])) attr(img, "src", img_src_value);
 			attr(img, "alt", /*alt*/ ctx[1]);
-			attr(img, "class", "svelte-1rg05wk");
+			attr(img, "class", "svelte-3l6x9a");
 		},
 		m(target, anchor) {
 			insert(target, img, anchor);

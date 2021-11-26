@@ -165,11 +165,11 @@ function create_fragment(ctx) {
 			create_component(button0.$$.fragment);
 			t10 = space();
 			create_component(button1.$$.fragment);
-			attr(h10, "class", "svelte-ez9vtu");
-			attr(div0, "class", "container svelte-ez9vtu");
-			attr(h11, "class", "svelte-ez9vtu");
-			attr(div1, "class", "container svelte-ez9vtu");
-			attr(div2, "class", "Social svelte-ez9vtu");
+			attr(h10, "class", "svelte-zt6s3q");
+			attr(div0, "class", "container svelte-zt6s3q");
+			attr(h11, "class", "svelte-zt6s3q");
+			attr(div1, "class", "container svelte-zt6s3q");
+			attr(div2, "class", "Social svelte-zt6s3q");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);

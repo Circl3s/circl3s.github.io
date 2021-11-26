@@ -24,6 +24,13 @@ function safe_not_equal(a, b) {
 function is_empty(obj) {
   return Object.keys(obj).length === 0;
 }
+function subscribe(store, ...callbacks) {
+  if (store == null) {
+    return noop;
+  }
+  const unsub = store.subscribe(...callbacks);
+  return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+}
 function create_slot(definition, ctx, $$scope, fn) {
   if (definition) {
     const slot_ctx = get_slot_context(definition, ctx, $$scope, fn);
@@ -576,4 +583,4 @@ class SvelteComponent {
   }
 }
 
-export { update_slot as A, globals as B, run_all as C, add_flush_callback as D, bind as E, empty as F, set_data as G, SvelteComponent as S, append as a, attr as b, create_component as c, destroy_component as d, detach as e, element as f, insert as g, space as h, init as i, transition_out as j, add_render_callback as k, check_outros as l, mount_component as m, noop as n, onMount as o, create_in_transition as p, group_outros as q, svg_element as r, safe_not_equal as s, transition_in as t, text as u, listen as v, binding_callbacks as w, destroy_each as x, set_style as y, create_slot as z };
+export { destroy_each as A, set_style as B, create_slot as C, update_slot as D, globals as E, add_flush_callback as F, bind as G, empty as H, set_data as I, SvelteComponent as S, subscribe as a, append as b, attr as c, create_component as d, destroy_component as e, detach as f, element as g, init as h, is_function as i, insert as j, space as k, transition_out as l, mount_component as m, noop as n, onMount as o, add_render_callback as p, check_outros as q, run_all as r, safe_not_equal as s, transition_in as t, create_in_transition as u, group_outros as v, svg_element as w, text as x, listen as y, binding_callbacks as z };

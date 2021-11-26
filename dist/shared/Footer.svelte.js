@@ -32,7 +32,7 @@ function create_fragment(ctx) {
 			t5 = space();
 			p2 = element("p");
 			p2.textContent = "All trademarks belong to their respective owners.";
-			attr(div, "class", "Footer svelte-wd0nsk");
+			attr(div, "class", "Footer svelte-16hgpng");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

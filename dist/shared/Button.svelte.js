@@ -28,7 +28,7 @@ function create_fragment(ctx) {
 		c() {
 			button = element("button");
 			if (default_slot) default_slot.c();
-			attr(button, "class", button_class_value = "Button from-" + /*color*/ ctx[0] + "-900 to-" + /*color*/ ctx[0] + "-700" + " svelte-1pnjy1k");
+			attr(button, "class", button_class_value = "Button from-" + /*color*/ ctx[0] + "-700 to-" + /*color*/ ctx[0] + "-500" + " svelte-1pnjy1k");
 			button.disabled = /*disabled*/ ctx[1];
 		},
 		m(target, anchor) {
@@ -52,7 +52,7 @@ function create_fragment(ctx) {
 				}
 			}
 
-			if (!current || dirty & /*color*/ 1 && button_class_value !== (button_class_value = "Button from-" + /*color*/ ctx[0] + "-900 to-" + /*color*/ ctx[0] + "-700" + " svelte-1pnjy1k")) {
+			if (!current || dirty & /*color*/ 1 && button_class_value !== (button_class_value = "Button from-" + /*color*/ ctx[0] + "-700 to-" + /*color*/ ctx[0] + "-500" + " svelte-1pnjy1k")) {
 				attr(button, "class", button_class_value);
 			}
 

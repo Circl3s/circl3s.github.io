@@ -11,7 +11,6 @@ import {
 	init,
 	insert,
 	mount_component,
-	noop,
 	safe_not_equal,
 	space,
 	text,
@@ -234,36 +233,6 @@ function create_content_slot(ctx) {
 	};
 }
 
-// (105:8) {#if window.WebGLRenderingContext}
-function create_if_block(ctx) {
-	let webgl;
-	let current;
-	webgl = new WebGL({ props: { shader_import: blobs } });
-
-	return {
-		c() {
-			create_component(webgl.$$.fragment);
-		},
-		m(target, anchor) {
-			mount_component(webgl, target, anchor);
-			current = true;
-		},
-		p: noop,
-		i(local) {
-			if (current) return;
-			transition_in(webgl.$$.fragment, local);
-			current = true;
-		},
-		o(local) {
-			transition_out(webgl.$$.fragment, local);
-			current = false;
-		},
-		d(detaching) {
-			destroy_component(webgl, detaching);
-		}
-	};
-}
-
 function create_fragment(ctx) {
 	let marker;
 	let t0;
@@ -299,8 +268,6 @@ function create_fragment(ctx) {
 			}
 		});
 
-	let if_block = window.WebGLRenderingContext && create_if_block(ctx);
-
 	return {
 		c() {
 			create_component(marker.$$.fragment);
@@ -314,7 +281,6 @@ function create_fragment(ctx) {
 			create_component(card1.$$.fragment);
 			t2 = space();
 			div3 = element("div");
-			if (if_block) if_block.c();
 			attr(div0, "class", "hobby svelte-18x7nsg");
 			attr(div1, "class", "hobby svelte-18x7nsg");
 			attr(div2, "class", "columns svelte-18x7nsg");
@@ -333,7 +299,6 @@ function create_fragment(ctx) {
 			mount_component(card1, div1, null);
 			append(div4, t2);
 			append(div4, div3);
-			if (if_block) if_block.m(div3, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -351,21 +316,18 @@ function create_fragment(ctx) {
 			}
 
 			card1.$set(card1_changes);
-			if (window.WebGLRenderingContext) if_block.p(ctx, dirty);
 		},
 		i(local) {
 			if (current) return;
 			transition_in(marker.$$.fragment, local);
 			transition_in(card0.$$.fragment, local);
 			transition_in(card1.$$.fragment, local);
-			transition_in(if_block);
 			current = true;
 		},
 		o(local) {
 			transition_out(marker.$$.fragment, local);
 			transition_out(card0.$$.fragment, local);
 			transition_out(card1.$$.fragment, local);
-			transition_out(if_block);
 			current = false;
 		},
 		d(detaching) {
@@ -374,7 +336,6 @@ function create_fragment(ctx) {
 			if (detaching) detach(div4);
 			destroy_component(card0);
 			destroy_component(card1);
-			if (if_block) if_block.d();
 		}
 	};
 }

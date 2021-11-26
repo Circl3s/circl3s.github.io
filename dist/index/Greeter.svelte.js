@@ -62,22 +62,22 @@ function create_if_block(ctx) {
 			attr(path0, "stroke-width", "2");
 			attr(svg0, "viewBox", "0 0 100 100");
 			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
-			attr(svg0, "class", "svelte-1f97r2g");
+			attr(svg0, "class", "svelte-1j3akls");
 			attr(path1, "d", "M2,50a48,48 0 1,0 96,0a48,48 0 1,0 -96,0");
 			attr(path1, "fill", "transparent");
 			attr(path1, "stroke", "white");
 			attr(path1, "stroke-width", "2");
 			attr(svg1, "viewBox", "0 0 100 100");
 			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
-			attr(svg1, "class", "svelte-1f97r2g");
+			attr(svg1, "class", "svelte-1j3akls");
 			attr(path2, "d", "M2,50a48,48 0 1,0 96,0a48,48 0 1,0 -96,0");
 			attr(path2, "fill", "transparent");
 			attr(path2, "stroke", "white");
 			attr(path2, "stroke-width", "2");
 			attr(svg2, "viewBox", "0 0 100 100");
 			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
-			attr(svg2, "class", "svelte-1f97r2g");
-			attr(div, "class", "row svelte-1f97r2g");
+			attr(svg2, "class", "svelte-1j3akls");
+			attr(div, "class", "row svelte-1j3akls");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -141,7 +141,7 @@ function create_fragment(ctx) {
 		c() {
 			div = element("div");
 			if (if_block) if_block.c();
-			attr(div, "class", "Greeter svelte-1f97r2g");
+			attr(div, "class", "Greeter svelte-1j3akls");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

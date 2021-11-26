@@ -44,7 +44,7 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (33:12) <Button disabled>
+// (35:12) <Button disabled>
 function create_default_slot(ctx) {
 	let t;
 
@@ -61,7 +61,7 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (31:8) 
+// (33:8) 
 function create_content_slot(ctx) {
 	let div;
 	let p;
@@ -157,7 +157,7 @@ function create_fragment(ctx) {
 			create_component(jswasmlogo.$$.fragment);
 			t1 = space();
 			create_component(card.$$.fragment);
-			attr(div, "class", "Toolbox svelte-kzgvst");
+			attr(div, "class", "Toolbox svelte-1go2lab");
 			set_style(div, "background-position-y", /*scroll*/ ctx[0] / 3 + "px");
 		},
 		m(target, anchor) {

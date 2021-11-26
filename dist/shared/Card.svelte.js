@@ -39,7 +39,7 @@ function create_fragment(ctx) {
 			t = space();
 			if (content_slot) content_slot.c();
 			attr(div0, "class", "text-2xl font-semibold mb-4");
-			attr(div1, "class", "Card svelte-6kfxux");
+			attr(div1, "class", "Card svelte-13esh46");
 		},
 		m(target, anchor) {
 			insert(target, div1, anchor);

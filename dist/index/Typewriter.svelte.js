@@ -30,11 +30,11 @@ function create_fragment(ctx) {
 			t0 = space();
 			span1 = element("span");
 			span1.textContent = "█";
-			attr(span0, "class", "svelte-1m69srl");
+			attr(span0, "class", "svelte-1wxu1f8");
 			set_style(span1, "visibility", "hidden");
 			attr(span1, "id", "fakecursor");
-			attr(span1, "class", "svelte-1m69srl");
-			attr(div, "class", "Typewriter svelte-1m69srl");
+			attr(span1, "class", "svelte-1wxu1f8");
+			attr(div, "class", "Typewriter svelte-1wxu1f8");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

@@ -22,8 +22,8 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svelte-ue1qbk" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"></path></svg>`;
-			attr(div, "class", "Notch svelte-ue1qbk");
+			div.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svelte-j2wfsi" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"></path></svg>`;
+			attr(div, "class", "Notch svelte-j2wfsi");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

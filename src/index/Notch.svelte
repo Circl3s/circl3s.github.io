@@ -5,12 +5,12 @@ import { slide } from "svelte/transition";
 
 <style>
     .Notch {
-        @apply bg-gray-900 w-full h-32 absolute bottom-0;
+        @apply bg-gray-200 w-full h-32 absolute bottom-0;
         clip-path: polygon(0 0, 0 100%, 100% 100%);
     }
 
     svg {
-        @apply h-full w-12 text-gray-800 my-auto mx-4;
+        @apply h-full w-12 text-gray-300 my-auto mx-4;
     }
 </style>
 

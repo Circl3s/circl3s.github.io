@@ -20,7 +20,7 @@
         background-attachment: fixed;
         background-position: top;
         background-size: cover; */
-        @apply bg-black w-full h-screen flex justify-center items-center flex-col;
+        @apply w-full h-screen flex justify-center items-center flex-col;
     }
 
     .row {

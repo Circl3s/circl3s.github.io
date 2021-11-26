@@ -9,7 +9,7 @@
 
 <style>
     .Toolbox {
-        @apply w-full flex flex-col md:flex-row items-center justify-center p-8;
+        @apply w-full flex flex-col md:flex-row items-center justify-center p-8 shadow-inner;
     }
 </style>
 

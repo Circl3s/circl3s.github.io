@@ -4,7 +4,7 @@
 
 <style>
     .Footer {
-        @apply bg-gray-900 text-gray-500 text-center p-4;
+        @apply bg-gray-200 text-gray-400 text-center p-4;
     }
 </style>
 

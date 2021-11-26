@@ -6,11 +6,11 @@ import Marker from "../shared/Marker.svelte";
 
 <style>
     .About {
-        @apply bg-gray-900 w-full flex flex-col md:flex-row items-center justify-center p-8;
+        @apply bg-gray-200 w-full flex flex-col md:flex-row items-center justify-center p-8;
     }
 
     img {
-        @apply rounded-full w-36 h-36 md:w-56 md:h-56 m-4 object-cover border-solid border-8 border-gray-800;
+        @apply rounded-full w-36 h-36 md:w-56 md:h-56 m-4 object-cover border-solid border-8 border-gray-100;
     }
 
     h2, p {

@@ -6,9 +6,7 @@
 
 <style>
     .Social {
-        /* height: calc(100vh - 5rem); */
-        background-color: #121214;
-        @apply w-full text-white text-center;
+        @apply w-full bg-gray-100 text-black text-center;
     }
 
     h1 {

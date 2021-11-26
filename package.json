@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "svelte": "^3.38.3",
+    "svelte-i18n": "^3.3.13",
     "svelte-preprocess": "^4.7.3"
   }
 }

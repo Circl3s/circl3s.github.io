@@ -105,7 +105,7 @@
 <style>
     .Typewriter {
         scrollbar-width: none;
-        @apply bg-gray-900 shadow-inner rounded-md w-full h-32 md:h-52 overflow-scroll my-4 p-4 font-mono text-sm md:text-base;
+        @apply bg-gray-900 text-white shadow-inner rounded-md w-full h-32 md:h-52 overflow-scroll my-4 p-4 font-mono text-sm md:text-base;
     }
 
     ::-webkit-scrollbar {

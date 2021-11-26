@@ -77,8 +77,8 @@ import blobs from "../shaders/blobs.frag";
         </div>
     </div>
     <div class="bg">
-        {#if window.WebGLRenderingContext}
+        <!-- {#if window.WebGLRenderingContext}
             <WebGL shader_import={blobs} />
-        {/if}
+        {/if} -->
     </div>
 </div>

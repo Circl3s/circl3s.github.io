@@ -4,7 +4,7 @@
 
 <style>
     .Card {
-        @apply z-10 text-white bg-gray-800 rounded-md shadow-md m-4 p-4 w-full md:max-w-xl;
+        @apply z-10 text-black bg-gray-100 rounded-md shadow-md m-4 p-4 w-full md:max-w-xl;
     }
 </style>
 

@@ -1,5 +1,6 @@
 <script>
     import Menu from "./Menu.svelte";
+    import { _ } from "svelte-i18n";
 
     export let anchors = [];
     export let title = "Circl3s";
@@ -22,7 +23,7 @@
     }
 
     .bg {
-        @apply bg-gray-800 shadow-lg;
+        @apply bg-gray-100 shadow-lg text-black;
     }
 
     h2 {
@@ -30,7 +31,7 @@
     }
 
     a {
-        @apply text-xl m-4;
+        @apply text-xl m-4 duration-100 hover:text-purple-600;
     }
 </style>
 

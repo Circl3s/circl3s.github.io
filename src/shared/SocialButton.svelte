@@ -8,7 +8,7 @@
 
 <style>
     img {
-        @apply transition duration-200 w-24 h-24 m-4 filter grayscale brightness-75 hover:filter-none hover:cursor-pointer;
+        @apply transition duration-200 w-24 h-24 m-4 filter grayscale brightness-75 opacity-50 hover:opacity-100 hover:filter-none hover:cursor-pointer;
     }
 </style>
 

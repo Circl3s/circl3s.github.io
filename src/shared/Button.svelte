@@ -21,6 +21,6 @@
     }
 </style>
 
-<button class="Button from-{color}-900 to-{color}-700" {disabled} on:click={action}>
+<button class="Button from-{color}-700 to-{color}-500" {disabled} on:click={action}>
     <slot></slot>
 </button>

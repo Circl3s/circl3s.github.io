@@ -38,7 +38,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (125:8) {:else}
+// (127:8) {:else}
 function create_else_block(ctx) {
 	let each_1_anchor;
 	let current;
@@ -122,7 +122,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (123:8) {#if post_array.length == 0}
+// (125:8) {#if post_array.length == 0}
 function create_if_block(ctx) {
 	let h3;
 
@@ -130,7 +130,7 @@ function create_if_block(ctx) {
 		c() {
 			h3 = element("h3");
 			h3.textContent = "Getting posts...";
-			attr(h3, "class", "svelte-1o89cfd");
+			attr(h3, "class", "svelte-1786xje");
 		},
 		m(target, anchor) {
 			insert(target, h3, anchor);
@@ -146,7 +146,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (128:20) 
+// (130:20) 
 function create_title_slot(ctx) {
 	let h2;
 	let t_value = /*post*/ ctx[5].title + "";
@@ -171,7 +171,7 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (129:20) 
+// (131:20) 
 function create_content_slot(ctx) {
 	let div;
 	let timestamp;
@@ -202,11 +202,11 @@ function create_content_slot(ctx) {
 			p = element("p");
 			t2 = text(t2_value);
 			t3 = space();
-			attr(img, "class", "thumb svelte-1o89cfd");
+			attr(img, "class", "thumb svelte-1786xje");
 			if (img.src !== (img_src_value = "https://chailagpncxzrnujqznl.supabase.in/storage/v1/object/public/post-images/" + /*post*/ ctx[5].image)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*post*/ ctx[5].alt);
-			attr(p, "class", "svelte-1o89cfd");
-			attr(div, "class", "content svelte-1o89cfd");
+			attr(p, "class", "svelte-1786xje");
+			attr(div, "class", "content svelte-1786xje");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -251,13 +251,14 @@ function create_content_slot(ctx) {
 	};
 }
 
-// (126:12) {#each post_array as post}
+// (128:12) {#each post_array as post}
 function create_each_block(ctx) {
 	let card;
 	let current;
 
 	card = new Card({
 			props: {
+				size: "sm",
 				$$slots: {
 					content: [create_content_slot],
 					title: [create_title_slot]
@@ -335,10 +336,10 @@ function create_fragment(ctx) {
 			t3 = space();
 			div0 = element("div");
 			if_block.c();
-			attr(h1, "class", "svelte-1o89cfd");
-			attr(div0, "class", "items svelte-1o89cfd");
+			attr(h1, "class", "svelte-1786xje");
+			attr(div0, "class", "items svelte-1786xje");
 			attr(div0, "id", "items");
-			attr(div1, "class", "News svelte-1o89cfd");
+			attr(div1, "class", "News svelte-1786xje");
 		},
 		m(target, anchor) {
 			mount_component(cosmeticnotch, target, anchor);

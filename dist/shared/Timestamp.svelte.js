@@ -61,7 +61,7 @@ function instance($$self, $$props, $$invalidate) {
 			if (days > 28) {
 				$$invalidate(0, stamp.innerText = time.toDateString(), stamp);
 			} else if (days > 0 && days < 28) {
-				$$invalidate(0, stamp.innerText = `${days} ${days == 1 ? "day" : "days"} ago`, stamp);
+				$$invalidate(0, stamp.innerText = `${days == 1 ? "Yesterday" : days + " days ago"}`, stamp);
 			} else if (days < 1) {
 				$$invalidate(0, stamp.innerText = `${hours} ${hours == 1 ? "hour" : "hours"} ago`, stamp);
 			} else if (hours < 1) {

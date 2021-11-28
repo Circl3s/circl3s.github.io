@@ -46,14 +46,7 @@ function create_fragment(ctx) {
 	let t6;
 	let footer;
 	let current;
-
-	navbar = new Navbar({
-			props: {
-				title: "Circl3s",
-				anchors: /*anchors*/ ctx[0]
-			}
-		});
-
+	navbar = new Navbar({ props: { anchors: /*anchors*/ ctx[0] } });
 	greeter = new Greeter({});
 	about = new About({});
 	hobbies = new Hobbies({});

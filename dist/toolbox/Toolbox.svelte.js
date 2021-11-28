@@ -32,7 +32,7 @@ function create_fragment(ctx) {
 
 	navbar = new Navbar({
 			props: {
-				title: "Circl3s' Toolbox",
+				subtitle: "Toolbox",
 				anchors: /*anchors*/ ctx[0]
 			}
 		});

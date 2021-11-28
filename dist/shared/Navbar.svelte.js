@@ -37,17 +37,60 @@ import { _ } from "../../_snowpack/pkg/svelte-i18n.js";
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i];
+	child_ctx[12] = list[i];
 	return child_ctx;
 }
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i];
+	child_ctx[12] = list[i];
 	return child_ctx;
 }
 
-// (103:4) {#if anchors.length > 0}
+// (132:12) {#if subtitle}
+function create_if_block_2(ctx) {
+	let span;
+	let t1;
+	let a;
+	let h3;
+	let t2;
+
+	return {
+		c() {
+			span = element("span");
+			span.textContent = "|";
+			t1 = space();
+			a = element("a");
+			h3 = element("h3");
+			t2 = text(/*subtitle*/ ctx[2]);
+			attr(span, "class", "svelte-gmrf8f");
+			attr(h3, "class", "svelte-gmrf8f");
+			attr(a, "href", /*subtitle_link*/ ctx[4]);
+			attr(a, "class", "svelte-gmrf8f");
+		},
+		m(target, anchor) {
+			insert(target, span, anchor);
+			insert(target, t1, anchor);
+			insert(target, a, anchor);
+			append(a, h3);
+			append(h3, t2);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*subtitle*/ 4) set_data(t2, /*subtitle*/ ctx[2]);
+
+			if (dirty & /*subtitle_link*/ 16) {
+				attr(a, "href", /*subtitle_link*/ ctx[4]);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(span);
+			if (detaching) detach(t1);
+			if (detaching) detach(a);
+		}
+	};
+}
+
+// (138:4) {#if anchors.length > 0}
 function create_if_block(ctx) {
 	let current_block_type_index;
 	let if_block;
@@ -57,7 +100,7 @@ function create_if_block(ctx) {
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*wide*/ ctx[5]) return 0;
+		if (/*wide*/ ctx[8]) return 0;
 		return 1;
 	}
 
@@ -117,14 +160,14 @@ function create_if_block(ctx) {
 	};
 }
 
-// (110:8) {:else}
+// (145:8) {:else}
 function create_else_block(ctx) {
 	let menu_1;
 	let updating_open;
 	let current;
 
 	function menu_1_open_binding(value) {
-		/*menu_1_open_binding*/ ctx[8](value);
+		/*menu_1_open_binding*/ ctx[11](value);
 	}
 
 	let menu_1_props = {
@@ -132,8 +175,8 @@ function create_else_block(ctx) {
 		$$scope: { ctx }
 	};
 
-	if (/*menu*/ ctx[3] !== void 0) {
-		menu_1_props.open = /*menu*/ ctx[3];
+	if (/*menu*/ ctx[6] !== void 0) {
+		menu_1_props.open = /*menu*/ ctx[6];
 	}
 
 	menu_1 = new Menu({ props: menu_1_props });
@@ -150,13 +193,13 @@ function create_else_block(ctx) {
 		p(ctx, dirty) {
 			const menu_1_changes = {};
 
-			if (dirty & /*$$scope, anchors*/ 16385) {
+			if (dirty & /*$$scope, anchors*/ 131073) {
 				menu_1_changes.$$scope = { dirty, ctx };
 			}
 
-			if (!updating_open && dirty & /*menu*/ 8) {
+			if (!updating_open && dirty & /*menu*/ 64) {
 				updating_open = true;
-				menu_1_changes.open = /*menu*/ ctx[3];
+				menu_1_changes.open = /*menu*/ ctx[6];
 				add_flush_callback(() => updating_open = false);
 			}
 
@@ -177,7 +220,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (104:8) {#if wide}
+// (139:8) {#if wide}
 function create_if_block_1(ctx) {
 	let div;
 	let each_value = /*anchors*/ ctx[0];
@@ -237,10 +280,10 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (112:16) {#each anchors as anchor}
+// (147:16) {#each anchors as anchor}
 function create_each_block_1(ctx) {
 	let a;
-	let t_value = /*anchor*/ ctx[9] + "";
+	let t_value = /*anchor*/ ctx[12] + "";
 	let t;
 	let a_href_value;
 
@@ -248,17 +291,17 @@ function create_each_block_1(ctx) {
 		c() {
 			a = element("a");
 			t = text(t_value);
-			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
-			attr(a, "class", "svelte-1e3gemt");
+			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[12].toLowerCase());
+			attr(a, "class", "svelte-gmrf8f");
 		},
 		m(target, anchor) {
 			insert(target, a, anchor);
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[9] + "")) set_data(t, t_value);
+			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[12] + "")) set_data(t, t_value);
 
-			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase())) {
+			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[12].toLowerCase())) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -268,7 +311,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (111:12) <Menu bind:open={menu}>
+// (146:12) <Menu bind:open={menu}>
 function create_default_slot(ctx) {
 	let each_1_anchor;
 	let each_value_1 = /*anchors*/ ctx[0];
@@ -324,10 +367,10 @@ function create_default_slot(ctx) {
 	};
 }
 
-// (106:16) {#each anchors as anchor}
+// (141:16) {#each anchors as anchor}
 function create_each_block(ctx) {
 	let a;
-	let t_value = /*anchor*/ ctx[9] + "";
+	let t_value = /*anchor*/ ctx[12] + "";
 	let t;
 	let a_href_value;
 
@@ -335,17 +378,17 @@ function create_each_block(ctx) {
 		c() {
 			a = element("a");
 			t = text(t_value);
-			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase());
-			attr(a, "class", "svelte-1e3gemt");
+			attr(a, "href", a_href_value = "#" + /*anchor*/ ctx[12].toLowerCase());
+			attr(a, "class", "svelte-gmrf8f");
 		},
 		m(target, anchor) {
 			insert(target, a, anchor);
 			append(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[9] + "")) set_data(t, t_value);
+			if (dirty & /*anchors*/ 1 && t_value !== (t_value = /*anchor*/ ctx[12] + "")) set_data(t, t_value);
 
-			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[9].toLowerCase())) {
+			if (dirty & /*anchors*/ 1 && a_href_value !== (a_href_value = "#" + /*anchor*/ ctx[12].toLowerCase())) {
 				attr(a, "href", a_href_value);
 			}
 		},
@@ -363,48 +406,58 @@ function create_fragment(ctx) {
 	};
 
 	let scrolling_timeout;
-	let div;
+	let div1;
+	let div0;
 	let a;
 	let h2;
 	let t0;
 	let t1;
-	let div_class_value;
+	let t2;
+	let div1_class_value;
 	let current;
 	let mounted;
 	let dispose;
-	add_render_callback(/*onwindowscroll*/ ctx[7]);
-	let if_block = /*anchors*/ ctx[0].length > 0 && create_if_block(ctx);
+	add_render_callback(/*onwindowscroll*/ ctx[10]);
+	let if_block0 = /*subtitle*/ ctx[2] && create_if_block_2(ctx);
+	let if_block1 = /*anchors*/ ctx[0].length > 0 && create_if_block(ctx);
 
 	return {
 		c() {
-			div = element("div");
+			div1 = element("div");
+			div0 = element("div");
 			a = element("a");
 			h2 = element("h2");
 			t0 = text(/*title*/ ctx[1]);
 			t1 = space();
-			if (if_block) if_block.c();
-			attr(h2, "class", "svelte-1e3gemt");
-			attr(a, "href", /*title_link*/ ctx[2]);
-			attr(a, "class", "svelte-1e3gemt");
-			attr(div, "class", div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-1e3gemt");
+			if (if_block0) if_block0.c();
+			t2 = space();
+			if (if_block1) if_block1.c();
+			attr(h2, "class", "svelte-gmrf8f");
+			attr(a, "href", /*title_link*/ ctx[3]);
+			attr(a, "class", "svelte-gmrf8f");
+			attr(div0, "class", "title-block svelte-gmrf8f");
+			attr(div1, "class", div1_class_value = "Navbar " + (/*scroll*/ ctx[7] == 0 && !/*menu*/ ctx[6] ? "" : "bg") + " " + (/*always_visible*/ ctx[5] ? "bg" : "") + " svelte-gmrf8f");
 		},
 		m(target, anchor) {
-			insert(target, div, anchor);
-			append(div, a);
+			insert(target, div1, anchor);
+			append(div1, div0);
+			append(div0, a);
 			append(a, h2);
 			append(h2, t0);
-			append(div, t1);
-			if (if_block) if_block.m(div, null);
+			append(div0, t1);
+			if (if_block0) if_block0.m(div0, null);
+			append(div1, t2);
+			if (if_block1) if_block1.m(div1, null);
 			current = true;
 
 			if (!mounted) {
 				dispose = [
-					listen(window_1, "resize", /*handleResize*/ ctx[6]),
+					listen(window_1, "resize", /*handleResize*/ ctx[9]),
 					listen(window_1, "scroll", () => {
 						scrolling = true;
 						clearTimeout(scrolling_timeout);
 						scrolling_timeout = setTimeout(clear_scrolling, 100);
-						/*onwindowscroll*/ ctx[7]();
+						/*onwindowscroll*/ ctx[10]();
 					})
 				];
 
@@ -412,58 +465,72 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*scroll*/ 16 && !scrolling) {
+			if (dirty & /*scroll*/ 128 && !scrolling) {
 				scrolling = true;
 				clearTimeout(scrolling_timeout);
-				scrollTo(window_1.pageXOffset, /*scroll*/ ctx[4]);
+				scrollTo(window_1.pageXOffset, /*scroll*/ ctx[7]);
 				scrolling_timeout = setTimeout(clear_scrolling, 100);
 			}
 
 			if (!current || dirty & /*title*/ 2) set_data(t0, /*title*/ ctx[1]);
 
-			if (!current || dirty & /*title_link*/ 4) {
-				attr(a, "href", /*title_link*/ ctx[2]);
+			if (!current || dirty & /*title_link*/ 8) {
+				attr(a, "href", /*title_link*/ ctx[3]);
+			}
+
+			if (/*subtitle*/ ctx[2]) {
+				if (if_block0) {
+					if_block0.p(ctx, dirty);
+				} else {
+					if_block0 = create_if_block_2(ctx);
+					if_block0.c();
+					if_block0.m(div0, null);
+				}
+			} else if (if_block0) {
+				if_block0.d(1);
+				if_block0 = null;
 			}
 
 			if (/*anchors*/ ctx[0].length > 0) {
-				if (if_block) {
-					if_block.p(ctx, dirty);
+				if (if_block1) {
+					if_block1.p(ctx, dirty);
 
 					if (dirty & /*anchors*/ 1) {
-						transition_in(if_block, 1);
+						transition_in(if_block1, 1);
 					}
 				} else {
-					if_block = create_if_block(ctx);
-					if_block.c();
-					transition_in(if_block, 1);
-					if_block.m(div, null);
+					if_block1 = create_if_block(ctx);
+					if_block1.c();
+					transition_in(if_block1, 1);
+					if_block1.m(div1, null);
 				}
-			} else if (if_block) {
+			} else if (if_block1) {
 				group_outros();
 
-				transition_out(if_block, 1, 1, () => {
-					if_block = null;
+				transition_out(if_block1, 1, 1, () => {
+					if_block1 = null;
 				});
 
 				check_outros();
 			}
 
-			if (!current || dirty & /*scroll, menu*/ 24 && div_class_value !== (div_class_value = "Navbar " + (/*scroll*/ ctx[4] == 0 && !/*menu*/ ctx[3] ? "" : "bg") + " svelte-1e3gemt")) {
-				attr(div, "class", div_class_value);
+			if (!current || dirty & /*scroll, menu, always_visible*/ 224 && div1_class_value !== (div1_class_value = "Navbar " + (/*scroll*/ ctx[7] == 0 && !/*menu*/ ctx[6] ? "" : "bg") + " " + (/*always_visible*/ ctx[5] ? "bg" : "") + " svelte-gmrf8f")) {
+				attr(div1, "class", div1_class_value);
 			}
 		},
 		i(local) {
 			if (current) return;
-			transition_in(if_block);
+			transition_in(if_block1);
 			current = true;
 		},
 		o(local) {
-			transition_out(if_block);
+			transition_out(if_block1);
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div);
-			if (if_block) if_block.d();
+			if (detaching) detach(div1);
+			if (if_block0) if_block0.d();
+			if (if_block1) if_block1.d();
 			mounted = false;
 			run_all(dispose);
 		}
@@ -473,34 +540,43 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { anchors = [] } = $$props;
 	let { title = "Circl3s" } = $$props;
-	let { title_link = "#" } = $$props;
+	let { subtitle } = $$props;
+	let { title_link = subtitle ? "/" : "#" } = $$props;
+	let { subtitle_link = "#" } = $$props;
+	let { always_visible = false } = $$props;
 	let menu;
 	let scroll = 0;
 	let wide = window.innerWidth > 768;
 
 	function handleResize(e) {
-		$$invalidate(5, wide = window.innerWidth > 768);
+		$$invalidate(8, wide = window.innerWidth > 768);
 	}
 
 	function onwindowscroll() {
-		$$invalidate(4, scroll = window_1.pageYOffset)
+		$$invalidate(7, scroll = window_1.pageYOffset)
 	}
 
 	function menu_1_open_binding(value) {
 		menu = value;
-		$$invalidate(3, menu);
+		$$invalidate(6, menu);
 	}
 
 	$$self.$$set = $$props => {
 		if ("anchors" in $$props) $$invalidate(0, anchors = $$props.anchors);
 		if ("title" in $$props) $$invalidate(1, title = $$props.title);
-		if ("title_link" in $$props) $$invalidate(2, title_link = $$props.title_link);
+		if ("subtitle" in $$props) $$invalidate(2, subtitle = $$props.subtitle);
+		if ("title_link" in $$props) $$invalidate(3, title_link = $$props.title_link);
+		if ("subtitle_link" in $$props) $$invalidate(4, subtitle_link = $$props.subtitle_link);
+		if ("always_visible" in $$props) $$invalidate(5, always_visible = $$props.always_visible);
 	};
 
 	return [
 		anchors,
 		title,
+		subtitle,
 		title_link,
+		subtitle_link,
+		always_visible,
 		menu,
 		scroll,
 		wide,
@@ -513,7 +589,15 @@ function instance($$self, $$props, $$invalidate) {
 class Navbar extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { anchors: 0, title: 1, title_link: 2 });
+
+		init(this, options, instance, create_fragment, safe_not_equal, {
+			anchors: 0,
+			title: 1,
+			subtitle: 2,
+			title_link: 3,
+			subtitle_link: 4,
+			always_visible: 5
+		});
 	}
 }
 

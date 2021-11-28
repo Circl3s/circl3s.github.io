@@ -25,11 +25,12 @@ function create_fragment(ctx) {
 	let div1;
 	let div0;
 	let t;
+	let div1_class_value;
 	let current;
-	const title_slot_template = /*#slots*/ ctx[1].title;
-	const title_slot = create_slot(title_slot_template, ctx, /*$$scope*/ ctx[0], get_title_slot_context);
-	const content_slot_template = /*#slots*/ ctx[1].content;
-	const content_slot = create_slot(content_slot_template, ctx, /*$$scope*/ ctx[0], get_content_slot_context);
+	const title_slot_template = /*#slots*/ ctx[2].title;
+	const title_slot = create_slot(title_slot_template, ctx, /*$$scope*/ ctx[1], get_title_slot_context);
+	const content_slot_template = /*#slots*/ ctx[2].content;
+	const content_slot = create_slot(content_slot_template, ctx, /*$$scope*/ ctx[1], get_content_slot_context);
 
 	return {
 		c() {
@@ -39,7 +40,7 @@ function create_fragment(ctx) {
 			t = space();
 			if (content_slot) content_slot.c();
 			attr(div0, "class", "text-2xl font-semibold mb-4");
-			attr(div1, "class", "Card svelte-13esh46");
+			attr(div1, "class", div1_class_value = "Card max-w-" + /*size*/ ctx[0] + " svelte-575rmt");
 		},
 		m(target, anchor) {
 			insert(target, div1, anchor);
@@ -59,15 +60,19 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (title_slot) {
-				if (title_slot.p && (!current || dirty & /*$$scope*/ 1)) {
-					update_slot(title_slot, title_slot_template, ctx, /*$$scope*/ ctx[0], !current ? -1 : dirty, get_title_slot_changes, get_title_slot_context);
+				if (title_slot.p && (!current || dirty & /*$$scope*/ 2)) {
+					update_slot(title_slot, title_slot_template, ctx, /*$$scope*/ ctx[1], !current ? -1 : dirty, get_title_slot_changes, get_title_slot_context);
 				}
 			}
 
 			if (content_slot) {
-				if (content_slot.p && (!current || dirty & /*$$scope*/ 1)) {
-					update_slot(content_slot, content_slot_template, ctx, /*$$scope*/ ctx[0], !current ? -1 : dirty, get_content_slot_changes, get_content_slot_context);
+				if (content_slot.p && (!current || dirty & /*$$scope*/ 2)) {
+					update_slot(content_slot, content_slot_template, ctx, /*$$scope*/ ctx[1], !current ? -1 : dirty, get_content_slot_changes, get_content_slot_context);
 				}
+			}
+
+			if (!current || dirty & /*size*/ 1 && div1_class_value !== (div1_class_value = "Card max-w-" + /*size*/ ctx[0] + " svelte-575rmt")) {
+				attr(div1, "class", div1_class_value);
 			}
 		},
 		i(local) {
@@ -91,18 +96,20 @@ function create_fragment(ctx) {
 
 function instance($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
+	let { size = "xl" } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("$$scope" in $$props) $$invalidate(0, $$scope = $$props.$$scope);
+		if ("size" in $$props) $$invalidate(0, size = $$props.size);
+		if ("$$scope" in $$props) $$invalidate(1, $$scope = $$props.$$scope);
 	};
 
-	return [$$scope, slots];
+	return [size, $$scope, slots];
 }
 
 class Card extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, {});
+		init(this, options, instance, create_fragment, safe_not_equal, { size: 0 });
 	}
 }
 

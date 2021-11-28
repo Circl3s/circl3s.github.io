@@ -148,13 +148,13 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (97:20) <Button disabled>
+// (97:20) <Button href="/programming" target="_self">
 function create_default_slot(ctx) {
 	let t;
 
 	return {
 		c() {
-			t = text("Browse (coming soon)");
+			t = text("Browse");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -178,7 +178,8 @@ function create_content_slot(ctx) {
 
 	button = new Button({
 			props: {
-				disabled: true,
+				href: "/programming",
+				target: "_self",
 				$$slots: { default: [create_default_slot] },
 				$$scope: { ctx }
 			}

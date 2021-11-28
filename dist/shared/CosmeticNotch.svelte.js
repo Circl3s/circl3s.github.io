@@ -16,43 +16,49 @@ import { onMount } from "../../_snowpack/pkg/svelte.js";
 
 function create_fragment(ctx) {
 	let div;
+	let div_class_value;
 
 	return {
 		c() {
 			div = element_1("div");
-			attr(div, "class", "CosmeticNotch svelte-16mtxcc");
+			attr(div, "class", div_class_value = "CosmeticNotch bg-" + /*color*/ ctx[0] + " svelte-1itqs90");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
-			/*div_binding*/ ctx[2](div);
+			/*div_binding*/ ctx[3](div);
 		},
-		p: noop,
+		p(ctx, [dirty]) {
+			if (dirty & /*color*/ 1 && div_class_value !== (div_class_value = "CosmeticNotch bg-" + /*color*/ ctx[0] + " svelte-1itqs90")) {
+				attr(div, "class", div_class_value);
+			}
+		},
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div);
-			/*div_binding*/ ctx[2](null);
+			/*div_binding*/ ctx[3](null);
 		}
 	};
 }
 
 function instance($$self, $$props, $$invalidate) {
 	let { orientation = "bottom-right" } = $$props;
+	let { color = "gray-200" } = $$props;
 	let element;
 
 	onMount(() => {
 		switch (orientation.toLowerCase()) {
 			case "bottom-right":
-				$$invalidate(0, element.style.clipPath = "polygon(0 100%, 100% 0, 100% 100%)", element);
+				$$invalidate(1, element.style.clipPath = "polygon(0 100%, 100% 0, 100% 100%)", element);
 				break;
 			case "top-right":
-				$$invalidate(0, element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%)", element);
+				$$invalidate(1, element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%)", element);
 				break;
 			case "top-left":
-				$$invalidate(0, element.style.clipPath = "polygon(0 0, 100% 0, 0 100%)", element);
+				$$invalidate(1, element.style.clipPath = "polygon(0 0, 100% 0, 0 100%)", element);
 				break;
 			case "bottom-left":
-				$$invalidate(0, element.style.clipPath = "polygon(0 100%, 100% 100%, 0 0)", element);
+				$$invalidate(1, element.style.clipPath = "polygon(0 100%, 100% 100%, 0 0)", element);
 				break;
 			default:
 				break;
@@ -62,21 +68,22 @@ function instance($$self, $$props, $$invalidate) {
 	function div_binding($$value) {
 		binding_callbacks[$$value ? "unshift" : "push"](() => {
 			element = $$value;
-			$$invalidate(0, element);
+			$$invalidate(1, element);
 		});
 	}
 
 	$$self.$$set = $$props => {
-		if ("orientation" in $$props) $$invalidate(1, orientation = $$props.orientation);
+		if ("orientation" in $$props) $$invalidate(2, orientation = $$props.orientation);
+		if ("color" in $$props) $$invalidate(0, color = $$props.color);
 	};
 
-	return [element, orientation, div_binding];
+	return [color, element, orientation, div_binding];
 }
 
 class CosmeticNotch extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { orientation: 1 });
+		init(this, options, instance, create_fragment, safe_not_equal, { orientation: 2, color: 0 });
 	}
 }
 

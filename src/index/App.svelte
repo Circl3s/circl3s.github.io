@@ -23,7 +23,7 @@
 </style>
 
 <div class="App">
-    <Navbar title="Circl3s" {anchors} />
+    <Navbar {anchors} />
     <Greeter />
     <About />
     <Hobbies />

@@ -34,6 +34,13 @@ module.exports = {
       "to-blue-500",
       "from-indigo-700",
       "to-indigo-500",
+      "max-w-xs",
+      "max-w-sm",
+      "max-w-md",
+      "max-w-lg",
+      "max-w-xl",
+      "max-w-2xl",
+      "max-w-3xl"
     ],
     enabled: "production",
   },

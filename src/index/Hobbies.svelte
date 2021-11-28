@@ -69,8 +69,8 @@ import blobs from "../shaders/blobs.frag";
                         I have a grasp on component-based frontend building having used Flutter and Svelte. 
                         I often spend my free time learning new technologies, like WebGL, WebAssembly, PWA, etc.
                     </p>
-                    <Button disabled>
-                        Browse (coming soon)
+                    <Button href="/programming" target="_self">
+                        Browse
                     </Button>
                 </div>
             </Card>

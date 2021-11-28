@@ -15,7 +15,7 @@
             if (days > 28) {
                 stamp.innerText = time.toDateString();
             } else if (days > 0 && days < 28) {
-                stamp.innerText = `${days} ${days == 1 ? "day" : "days"} ago`;
+                stamp.innerText = `${days == 1 ? "Yesterday" : days + " days ago"}`;
             } else if (days < 1) {
                 stamp.innerText = `${hours} ${hours == 1 ? "hour" : "hours"} ago`;
             } else if (hours < 1) {

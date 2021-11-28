@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
 
     export let orientation = "bottom-right";
+    export let color = "gray-200";
     let element;
 
     onMount(() => {
@@ -26,10 +27,10 @@
 
 <style>
     .CosmeticNotch {
-        @apply bg-gray-200 w-full h-32;
+        @apply w-full h-32;
     }
 </style>
 
-<div class="CosmeticNotch" bind:this="{element}">
+<div class="CosmeticNotch bg-{color}" bind:this="{element}">
 
 </div>

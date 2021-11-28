@@ -47,7 +47,7 @@
     }
 
     .items {
-        @apply min-h-[16rem] flex flex-row justify-center items-center overflow-x-auto;
+        @apply min-h-[16rem] w-full flex flex-row justify-center items-center overflow-x-auto;
     }
 
     .thumb {
@@ -55,7 +55,7 @@
     }
 
     .content {
-        @apply w-80 m-0;
+        @apply w-full m-0;
     }
 
     .content > p {
@@ -72,7 +72,7 @@
             <h3 bind:this="{ph_text}">Getting posts...</h3>
         {:else}
             {#each post_array as post}
-                <Card>
+                <Card size="sm">
                     <h2 slot="title">{post.title}</h2>
                     <div class="content" slot="content">
                         <Timestamp time={new Date(post.created_at)} />

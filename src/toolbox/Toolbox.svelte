@@ -11,7 +11,7 @@
 </style>
 
 <div class="Toolbox">
-    <Navbar title="Circl3s' Toolbox" {anchors} />
+    <Navbar subtitle="Toolbox" {anchors} />
     <About />
     <Footer />
 </div>

@@ -19,7 +19,7 @@
 
 <style>
     .TechInfo {
-        @apply m-4 p-2 min-w-[8rem] h-[min-content] w-full md:w-2/5 flex flex-col justify-center rounded-md shadow-md;
+        @apply m-4 p-2 min-w-[8rem] h-[min-content] w-full md:w-2/5 flex flex-col justify-center rounded-md shadow-md hover:brightness-125 duration-200;
     }
 
     .header {

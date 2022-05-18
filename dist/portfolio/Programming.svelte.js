@@ -26,7 +26,7 @@ import Portfolio from "./Portfolio.svelte.js";
 import Section from "../shared/Section.svelte.js";
 import TechInfo from "../shared/TechInfo.svelte.js";
 
-function create_default_slot_5(ctx) {
+function create_default_slot_9(ctx) {
 	let h1;
 	let t1;
 	let div1;
@@ -38,11 +38,11 @@ function create_default_slot_5(ctx) {
 			t1 = space();
 			div1 = element("div");
 
-			div1.innerHTML = `<div class="col svelte-ki5nvh"><p>I love programming. Here are some of the projects I made.<br/>
+			div1.innerHTML = `<div class="col svelte-1byclsg"><p>I love programming. Here are some of the projects I made.<br/>
                     (This section will be expanded)</p></div>`;
 
-			attr(h1, "class", "svelte-ki5nvh");
-			attr(div1, "class", "content svelte-ki5nvh");
+			attr(h1, "class", "svelte-1byclsg");
+			attr(div1, "class", "content svelte-1byclsg");
 		},
 		m(target, anchor) {
 			insert(target, h1, anchor);
@@ -57,8 +57,8 @@ function create_default_slot_5(ctx) {
 	};
 }
 
-// (141:12) 
-function create_title_slot_3(ctx) {
+// (108:12) 
+function create_title_slot_5(ctx) {
 	let h2;
 
 	return {
@@ -76,15 +76,15 @@ function create_title_slot_3(ctx) {
 	};
 }
 
-// (154:24) 
-function create_header_slot_7(ctx) {
+// (121:24) 
+function create_header_slot_12(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-ki5nvh");
+			attr(img, "class", "logo svelte-1byclsg");
 			if (img.src !== (img_src_value = "/img/svelte-logotype.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Svelte");
 			attr(img, "slot", "header");
@@ -98,8 +98,8 @@ function create_header_slot_7(ctx) {
 	};
 }
 
-// (155:24) 
-function create_content_slot_11(ctx) {
+// (122:24) 
+function create_content_slot_18(ctx) {
 	let p;
 
 	return {
@@ -117,15 +117,15 @@ function create_content_slot_11(ctx) {
 	};
 }
 
-// (160:24) 
-function create_header_slot_6(ctx) {
+// (127:24) 
+function create_header_slot_11(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<img class="logo svelte-ki5nvh" src="/img/snowpack.svg" alt="Snowpack Logo"/>Snowpack`;
-			attr(div, "class", "logotype text-2xl svelte-ki5nvh");
+			div.innerHTML = `<img class="logo svelte-1byclsg" src="/img/snowpack.svg" alt="Snowpack Logo"/>Snowpack`;
+			attr(div, "class", "logotype text-2xl svelte-1byclsg");
 			attr(div, "slot", "header");
 		},
 		m(target, anchor) {
@@ -137,8 +137,8 @@ function create_header_slot_6(ctx) {
 	};
 }
 
-// (161:24) 
-function create_content_slot_10(ctx) {
+// (128:24) 
+function create_content_slot_17(ctx) {
 	let p;
 
 	return {
@@ -156,15 +156,15 @@ function create_content_slot_10(ctx) {
 	};
 }
 
-// (166:24) 
-function create_header_slot_5(ctx) {
+// (133:24) 
+function create_header_slot_10(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-ki5nvh");
+			attr(img, "class", "logo svelte-1byclsg");
 			if (img.src !== (img_src_value = "/img/tailwindcss-logotype.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -178,8 +178,8 @@ function create_header_slot_5(ctx) {
 	};
 }
 
-// (167:24) 
-function create_content_slot_9(ctx) {
+// (134:24) 
+function create_content_slot_16(ctx) {
 	let p;
 
 	return {
@@ -197,15 +197,15 @@ function create_content_slot_9(ctx) {
 	};
 }
 
-// (172:24) 
-function create_header_slot_4(ctx) {
+// (139:24) 
+function create_header_slot_9(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-ki5nvh");
+			attr(img, "class", "logo svelte-1byclsg");
 			if (img.src !== (img_src_value = "/img/supabase-logo-wordmark--dark.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Supabase");
 			attr(img, "slot", "header");
@@ -219,8 +219,8 @@ function create_header_slot_4(ctx) {
 	};
 }
 
-// (173:24) 
-function create_content_slot_8(ctx) {
+// (140:24) 
+function create_content_slot_15(ctx) {
 	let p;
 
 	return {
@@ -238,8 +238,8 @@ function create_content_slot_8(ctx) {
 	};
 }
 
-// (178:16) <Button href="https://github.com/Circl3s/circl3s.github.io/">
-function create_default_slot_4(ctx) {
+// (145:16) <Button href="https://github.com/Circl3s/circl3s.github.io/">
+function create_default_slot_8(ctx) {
 	let t;
 
 	return {
@@ -255,8 +255,8 @@ function create_default_slot_4(ctx) {
 	};
 }
 
-// (142:12) 
-function create_content_slot_7(ctx) {
+// (109:12) 
+function create_content_slot_14(ctx) {
 	let div1;
 	let p0;
 	let t4;
@@ -279,8 +279,8 @@ function create_content_slot_7(ctx) {
 				bg_color: "#F73C00",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_11],
-					header: [create_header_slot_7]
+					content: [create_content_slot_18],
+					header: [create_header_slot_12]
 				},
 				$$scope: { ctx }
 			}
@@ -291,8 +291,8 @@ function create_content_slot_7(ctx) {
 				bg_color: "#2E5E82",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_10],
-					header: [create_header_slot_6]
+					content: [create_content_slot_17],
+					header: [create_header_slot_11]
 				},
 				$$scope: { ctx }
 			}
@@ -303,8 +303,8 @@ function create_content_slot_7(ctx) {
 				bg_color: "#FFFFFF",
 				text_color: "black",
 				$$slots: {
-					content: [create_content_slot_9],
-					header: [create_header_slot_5]
+					content: [create_content_slot_16],
+					header: [create_header_slot_10]
 				},
 				$$scope: { ctx }
 			}
@@ -315,8 +315,8 @@ function create_content_slot_7(ctx) {
 				bg_color: "#1E1E1E",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_8],
-					header: [create_header_slot_4]
+					content: [create_content_slot_15],
+					header: [create_header_slot_9]
 				},
 				$$scope: { ctx }
 			}
@@ -325,7 +325,7 @@ function create_content_slot_7(ctx) {
 	button = new Button({
 			props: {
 				href: "https://github.com/Circl3s/circl3s.github.io/",
-				$$slots: { default: [create_default_slot_4] },
+				$$slots: { default: [create_default_slot_8] },
 				$$scope: { ctx }
 			}
 		});
@@ -352,8 +352,8 @@ function create_content_slot_7(ctx) {
 			create_component(techinfo3.$$.fragment);
 			t10 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-ki5nvh");
-			attr(div0, "class", "techstack svelte-ki5nvh");
+			attr(p0, "class", "status svelte-1byclsg");
+			attr(div0, "class", "techstack svelte-1byclsg");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -440,7 +440,661 @@ function create_content_slot_7(ctx) {
 	};
 }
 
-// (184:12) 
+// (151:12) 
+function create_title_slot_4(ctx) {
+	let h2;
+
+	return {
+		c() {
+			h2 = element("h2");
+			h2.textContent = "Cybertracks";
+			attr(h2, "slot", "title");
+		},
+		m(target, anchor) {
+			insert(target, h2, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(h2);
+		}
+	};
+}
+
+// (163:24) 
+function create_header_slot_8(ctx) {
+	let img;
+	let img_src_value;
+
+	return {
+		c() {
+			img = element("img");
+			attr(img, "class", "logo svelte-1byclsg");
+			if (img.src !== (img_src_value = "/img/React.png")) attr(img, "src", img_src_value);
+			attr(img, "alt", "React");
+			attr(img, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, img, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (164:24) 
+function create_content_slot_13(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "The one-page UI is built with custom React components.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (169:24) 
+function create_header_slot_7(ctx) {
+	let img;
+	let img_src_value;
+
+	return {
+		c() {
+			img = element("img");
+			attr(img, "class", "logo svelte-1byclsg");
+			if (img.src !== (img_src_value = "/img/tailwindcss-logotype.svg")) attr(img, "src", img_src_value);
+			attr(img, "alt", "TailwindCSS");
+			attr(img, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, img, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (170:24) 
+function create_content_slot_12(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "TailwindCSS is used to style the website. It allowed me to maintain creative freedom and minimal stylesheet size while keeping the styles standardized.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (175:24) 
+function create_header_slot_6(ctx) {
+	let img;
+	let img_src_value;
+
+	return {
+		c() {
+			img = element("img");
+			attr(img, "class", "logo svelte-1byclsg");
+			if (img.src !== (img_src_value = "/img/Tonejs.png")) attr(img, "src", img_src_value);
+			attr(img, "alt", "TailwindCSS");
+			attr(img, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, img, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (176:24) 
+function create_content_slot_11(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "All audio is sequenced, generated and processed by the Web Audio API through the use of Tone.js.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (182:20) <Button disabled>
+function create_default_slot_7(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("Open app (soon)");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (185:20) <Button href="https://github.com/Circl3s/cybertracks">
+function create_default_slot_6(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("View source code");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (152:12) 
+function create_content_slot_10(ctx) {
+	let div2;
+	let p0;
+	let t4;
+	let p1;
+	let t6;
+	let div0;
+	let techinfo0;
+	let t7;
+	let techinfo1;
+	let t8;
+	let techinfo2;
+	let t9;
+	let div1;
+	let button0;
+	let t10;
+	let button1;
+	let current;
+
+	techinfo0 = new TechInfo({
+			props: {
+				bg_color: "#282C34",
+				text_color: "white",
+				$$slots: {
+					content: [create_content_slot_13],
+					header: [create_header_slot_8]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	techinfo1 = new TechInfo({
+			props: {
+				bg_color: "#FFFFFF",
+				text_color: "black",
+				$$slots: {
+					content: [create_content_slot_12],
+					header: [create_header_slot_7]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	techinfo2 = new TechInfo({
+			props: {
+				bg_color: "#000000",
+				text_color: "white",
+				$$slots: {
+					content: [create_content_slot_11],
+					header: [create_header_slot_6]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	button0 = new Button({
+			props: {
+				disabled: true,
+				$$slots: { default: [create_default_slot_7] },
+				$$scope: { ctx }
+			}
+		});
+
+	button1 = new Button({
+			props: {
+				href: "https://github.com/Circl3s/cybertracks",
+				$$slots: { default: [create_default_slot_6] },
+				$$scope: { ctx }
+			}
+		});
+
+	return {
+		c() {
+			div2 = element("div");
+			p0 = element("p");
+
+			p0.innerHTML = `Access: <code class="text-yellow-500">Soon</code><br/>
+                    Development: <code class="text-green-500">Active</code>`;
+
+			t4 = space();
+			p1 = element("p");
+			p1.textContent = "A tracker-style music creation tool for the web. \n                    I wanted to honor the long-forgotten great-grandfathers of Digital Audio Workstations by implementing their unique workflow on a website.";
+			t6 = space();
+			div0 = element("div");
+			create_component(techinfo0.$$.fragment);
+			t7 = space();
+			create_component(techinfo1.$$.fragment);
+			t8 = space();
+			create_component(techinfo2.$$.fragment);
+			t9 = space();
+			div1 = element("div");
+			create_component(button0.$$.fragment);
+			t10 = space();
+			create_component(button1.$$.fragment);
+			attr(p0, "class", "status svelte-1byclsg");
+			attr(div0, "class", "techstack svelte-1byclsg");
+			attr(div1, "class", "actions svelte-1byclsg");
+			attr(div2, "class", "description");
+			attr(div2, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, div2, anchor);
+			append(div2, p0);
+			append(div2, t4);
+			append(div2, p1);
+			append(div2, t6);
+			append(div2, div0);
+			mount_component(techinfo0, div0, null);
+			append(div0, t7);
+			mount_component(techinfo1, div0, null);
+			append(div0, t8);
+			mount_component(techinfo2, div0, null);
+			append(div2, t9);
+			append(div2, div1);
+			mount_component(button0, div1, null);
+			append(div1, t10);
+			mount_component(button1, div1, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const techinfo0_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo0_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo0.$set(techinfo0_changes);
+			const techinfo1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo1_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo1.$set(techinfo1_changes);
+			const techinfo2_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo2_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo2.$set(techinfo2_changes);
+			const button0_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button0_changes.$$scope = { dirty, ctx };
+			}
+
+			button0.$set(button0_changes);
+			const button1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button1_changes.$$scope = { dirty, ctx };
+			}
+
+			button1.$set(button1_changes);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(techinfo0.$$.fragment, local);
+			transition_in(techinfo1.$$.fragment, local);
+			transition_in(techinfo2.$$.fragment, local);
+			transition_in(button0.$$.fragment, local);
+			transition_in(button1.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(techinfo0.$$.fragment, local);
+			transition_out(techinfo1.$$.fragment, local);
+			transition_out(techinfo2.$$.fragment, local);
+			transition_out(button0.$$.fragment, local);
+			transition_out(button1.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(div2);
+			destroy_component(techinfo0);
+			destroy_component(techinfo1);
+			destroy_component(techinfo2);
+			destroy_component(button0);
+			destroy_component(button1);
+		}
+	};
+}
+
+// (192:12) 
+function create_title_slot_3(ctx) {
+	let h2;
+
+	return {
+		c() {
+			h2 = element("h2");
+			h2.textContent = "Neko Launcher";
+			attr(h2, "slot", "title");
+		},
+		m(target, anchor) {
+			insert(target, h2, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(h2);
+		}
+	};
+}
+
+// (204:24) 
+function create_header_slot_5(ctx) {
+	let img;
+	let img_src_value;
+
+	return {
+		c() {
+			img = element("img");
+			if (img.src !== (img_src_value = "/img/Flutter.svg")) attr(img, "src", img_src_value);
+			attr(img, "alt", "Flutter");
+			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, img, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (205:24) 
+function create_content_slot_9(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "The desktop app is built with the Flutter framework using Material widgets.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (210:24) 
+function create_header_slot_4(ctx) {
+	let img;
+	let img_src_value;
+
+	return {
+		c() {
+			img = element("img");
+			attr(img, "class", "logo svelte-1byclsg");
+			if (img.src !== (img_src_value = "/img/supabase-logo-wordmark--dark.svg")) attr(img, "src", img_src_value);
+			attr(img, "alt", "Supabase");
+			attr(img, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, img, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (211:24) 
+function create_content_slot_8(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "Using the launcher you can register and login, customize your profile and socialize with other users. Supabase is the all-in-one backend handling this.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (217:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo/releases" color="green">
+function create_default_slot_5(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("Download");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (220:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo">
+function create_default_slot_4(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("View source code");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (193:12) 
+function create_content_slot_7(ctx) {
+	let div2;
+	let p0;
+	let t4;
+	let p1;
+	let t6;
+	let div0;
+	let techinfo0;
+	let t7;
+	let techinfo1;
+	let t8;
+	let div1;
+	let button0;
+	let t9;
+	let button1;
+	let current;
+
+	techinfo0 = new TechInfo({
+			props: {
+				bg_color: "#042B59",
+				text_color: "white",
+				$$slots: {
+					content: [create_content_slot_9],
+					header: [create_header_slot_5]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	techinfo1 = new TechInfo({
+			props: {
+				bg_color: "#1E1E1E",
+				text_color: "white",
+				$$slots: {
+					content: [create_content_slot_8],
+					header: [create_header_slot_4]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	button0 = new Button({
+			props: {
+				href: "https://github.com/Neko-Services/neko_launcher_neo/releases",
+				color: "green",
+				$$slots: { default: [create_default_slot_5] },
+				$$scope: { ctx }
+			}
+		});
+
+	button1 = new Button({
+			props: {
+				href: "https://github.com/Neko-Services/neko_launcher_neo",
+				$$slots: { default: [create_default_slot_4] },
+				$$scope: { ctx }
+			}
+		});
+
+	return {
+		c() {
+			div2 = element("div");
+			p0 = element("p");
+
+			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
+                    Development: <code class="text-green-500">Active</code>`;
+
+			t4 = space();
+			p1 = element("p");
+			p1.textContent = "A game launcher focused on, but not limited to anime-style visual novels. \n                    Allows players to track their play time, categorize their games collection and even socialize, while being customizable.";
+			t6 = space();
+			div0 = element("div");
+			create_component(techinfo0.$$.fragment);
+			t7 = space();
+			create_component(techinfo1.$$.fragment);
+			t8 = space();
+			div1 = element("div");
+			create_component(button0.$$.fragment);
+			t9 = space();
+			create_component(button1.$$.fragment);
+			attr(p0, "class", "status svelte-1byclsg");
+			attr(div0, "class", "techstack svelte-1byclsg");
+			attr(div1, "class", "actions svelte-1byclsg");
+			attr(div2, "class", "description");
+			attr(div2, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, div2, anchor);
+			append(div2, p0);
+			append(div2, t4);
+			append(div2, p1);
+			append(div2, t6);
+			append(div2, div0);
+			mount_component(techinfo0, div0, null);
+			append(div0, t7);
+			mount_component(techinfo1, div0, null);
+			append(div2, t8);
+			append(div2, div1);
+			mount_component(button0, div1, null);
+			append(div1, t9);
+			mount_component(button1, div1, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const techinfo0_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo0_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo0.$set(techinfo0_changes);
+			const techinfo1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo1_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo1.$set(techinfo1_changes);
+			const button0_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button0_changes.$$scope = { dirty, ctx };
+			}
+
+			button0.$set(button0_changes);
+			const button1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button1_changes.$$scope = { dirty, ctx };
+			}
+
+			button1.$set(button1_changes);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(techinfo0.$$.fragment, local);
+			transition_in(techinfo1.$$.fragment, local);
+			transition_in(button0.$$.fragment, local);
+			transition_in(button1.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(techinfo0.$$.fragment, local);
+			transition_out(techinfo1.$$.fragment, local);
+			transition_out(button0.$$.fragment, local);
+			transition_out(button1.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(div2);
+			destroy_component(techinfo0);
+			destroy_component(techinfo1);
+			destroy_component(button0);
+			destroy_component(button1);
+		}
+	};
+}
+
+// (227:12) 
 function create_title_slot_2(ctx) {
 	let h2;
 
@@ -459,7 +1113,7 @@ function create_title_slot_2(ctx) {
 	};
 }
 
-// (196:24) 
+// (239:24) 
 function create_header_slot_3(ctx) {
 	let img;
 	let img_src_value;
@@ -467,7 +1121,7 @@ function create_header_slot_3(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-ki5nvh");
+			attr(img, "class", "logo svelte-1byclsg");
 			if (img.src !== (img_src_value = "/img/crystal_logo.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Crystal");
 			attr(img, "slot", "header");
@@ -481,7 +1135,7 @@ function create_header_slot_3(ctx) {
 	};
 }
 
-// (197:24) 
+// (240:24) 
 function create_content_slot_6(ctx) {
 	let p;
 
@@ -500,7 +1154,7 @@ function create_content_slot_6(ctx) {
 	};
 }
 
-// (202:24) 
+// (245:24) 
 function create_header_slot_2(ctx) {
 	let img;
 	let img_src_value;
@@ -508,7 +1162,7 @@ function create_header_slot_2(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-ki5nvh");
+			attr(img, "class", "logo svelte-1byclsg");
 			if (img.src !== (img_src_value = "/img/BASH_logo-transparent-bg-color.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Bash");
 			attr(img, "slot", "header");
@@ -522,7 +1176,7 @@ function create_header_slot_2(ctx) {
 	};
 }
 
-// (203:24) 
+// (246:24) 
 function create_content_slot_5(ctx) {
 	let p;
 
@@ -541,7 +1195,7 @@ function create_content_slot_5(ctx) {
 	};
 }
 
-// (208:16) <Button href="https://github.com/I-love-os/LoveShell">
+// (251:16) <Button href="https://github.com/I-love-os/LoveShell">
 function create_default_slot_3(ctx) {
 	let t;
 
@@ -558,7 +1212,7 @@ function create_default_slot_3(ctx) {
 	};
 }
 
-// (185:12) 
+// (228:12) 
 function create_content_slot_4(ctx) {
 	let div1;
 	let p0;
@@ -623,8 +1277,8 @@ function create_content_slot_4(ctx) {
 			create_component(techinfo1.$$.fragment);
 			t8 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-ki5nvh");
-			attr(div0, "class", "techstack svelte-ki5nvh");
+			attr(p0, "class", "status svelte-1byclsg");
+			attr(div0, "class", "techstack svelte-1byclsg");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -687,7 +1341,7 @@ function create_content_slot_4(ctx) {
 	};
 }
 
-// (213:12) 
+// (256:12) 
 function create_title_slot_1(ctx) {
 	let h2;
 
@@ -706,7 +1360,7 @@ function create_title_slot_1(ctx) {
 	};
 }
 
-// (224:24) 
+// (267:24) 
 function create_header_slot_1(ctx) {
 	let img;
 	let img_src_value;
@@ -714,7 +1368,7 @@ function create_header_slot_1(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-ki5nvh");
+			attr(img, "class", "logo svelte-1byclsg");
 			if (img.src !== (img_src_value = "/img/PICO-8_logo.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "PICO-8");
 			attr(img, "slot", "header");
@@ -728,7 +1382,7 @@ function create_header_slot_1(ctx) {
 	};
 }
 
-// (225:24) 
+// (268:24) 
 function create_content_slot_3(ctx) {
 	let p;
 
@@ -747,7 +1401,7 @@ function create_content_slot_3(ctx) {
 	};
 }
 
-// (230:16) <Button href="https://github.com/Circl3s/circl3s-super-breakout/">
+// (273:16) <Button href="https://github.com/Circl3s/circl3s-super-breakout/">
 function create_default_slot_2(ctx) {
 	let t;
 
@@ -764,7 +1418,7 @@ function create_default_slot_2(ctx) {
 	};
 }
 
-// (214:12) 
+// (257:12) 
 function create_content_slot_2(ctx) {
 	let div1;
 	let p0;
@@ -813,8 +1467,8 @@ function create_content_slot_2(ctx) {
 			create_component(techinfo.$$.fragment);
 			t9 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-ki5nvh");
-			attr(div0, "class", "techstack svelte-ki5nvh");
+			attr(p0, "class", "status svelte-1byclsg");
+			attr(div0, "class", "techstack svelte-1byclsg");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -865,7 +1519,7 @@ function create_content_slot_2(ctx) {
 	};
 }
 
-// (235:12) 
+// (278:12) 
 function create_title_slot(ctx) {
 	let h2;
 
@@ -884,15 +1538,15 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (246:24) 
+// (289:24) 
 function create_header_slot(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<img class="logo svelte-ki5nvh" src="/img/webcomponents-logo.svg" alt="WebComponents Logo"/>WEBCOMPONENTS`;
-			attr(div, "class", "font-normal logotype text-lg self-center text-black svelte-ki5nvh");
+			div.innerHTML = `<img class="logo svelte-1byclsg" src="/img/webcomponents-logo.svg" alt="WebComponents Logo"/>WEBCOMPONENTS`;
+			attr(div, "class", "font-normal logotype text-lg self-center text-black svelte-1byclsg");
 			attr(div, "slot", "header");
 		},
 		m(target, anchor) {
@@ -904,14 +1558,14 @@ function create_header_slot(ctx) {
 	};
 }
 
-// (247:24) 
+// (290:24) 
 function create_content_slot_1(ctx) {
 	let p;
 
 	return {
 		c() {
 			p = element("p");
-			p.textContent = "This site is written in vanilla Javascript using the cutting edge Web Components standard to harness the power of reusable components without using heavy frameworks and toolchains.";
+			p.textContent = "This site is written in vanilla Javascript using the Web Components standard to harness the power of reusable components without using heavy frameworks and toolchains.";
 			attr(p, "slot", "content");
 		},
 		m(target, anchor) {
@@ -923,7 +1577,7 @@ function create_content_slot_1(ctx) {
 	};
 }
 
-// (252:16) <Button href="https://github.com/Circl3s/helix/">
+// (295:16) <Button href="https://github.com/Circl3s/helix/">
 function create_default_slot_1(ctx) {
 	let t;
 
@@ -940,7 +1594,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (236:12) 
+// (279:12) 
 function create_content_slot(ctx) {
 	let div1;
 	let p0;
@@ -989,8 +1643,8 @@ function create_content_slot(ctx) {
 			create_component(techinfo.$$.fragment);
 			t7 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-ki5nvh");
-			attr(div0, "class", "techstack svelte-ki5nvh");
+			attr(p0, "class", "status svelte-1byclsg");
+			attr(div0, "class", "techstack svelte-1byclsg");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1041,7 +1695,7 @@ function create_content_slot(ctx) {
 	};
 }
 
-// (139:4) <Portfolio>
+// (106:4) <Portfolio>
 function create_default_slot(ctx) {
 	let card0;
 	let t0;
@@ -1050,9 +1704,35 @@ function create_default_slot(ctx) {
 	let card2;
 	let t2;
 	let card3;
+	let t3;
+	let card4;
+	let t4;
+	let card5;
 	let current;
 
 	card0 = new Card({
+			props: {
+				size: "2xl",
+				$$slots: {
+					content: [create_content_slot_14],
+					title: [create_title_slot_5]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	card1 = new Card({
+			props: {
+				size: "2xl",
+				$$slots: {
+					content: [create_content_slot_10],
+					title: [create_title_slot_4]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	card2 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1063,7 +1743,7 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card1 = new Card({
+	card3 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1074,7 +1754,7 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card2 = new Card({
+	card4 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1085,7 +1765,7 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card3 = new Card({
+	card5 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1105,6 +1785,10 @@ function create_default_slot(ctx) {
 			create_component(card2.$$.fragment);
 			t2 = space();
 			create_component(card3.$$.fragment);
+			t3 = space();
+			create_component(card4.$$.fragment);
+			t4 = space();
+			create_component(card5.$$.fragment);
 		},
 		m(target, anchor) {
 			mount_component(card0, target, anchor);
@@ -1114,6 +1798,10 @@ function create_default_slot(ctx) {
 			mount_component(card2, target, anchor);
 			insert(target, t2, anchor);
 			mount_component(card3, target, anchor);
+			insert(target, t3, anchor);
+			mount_component(card4, target, anchor);
+			insert(target, t4, anchor);
+			mount_component(card5, target, anchor);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -1145,6 +1833,20 @@ function create_default_slot(ctx) {
 			}
 
 			card3.$set(card3_changes);
+			const card4_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				card4_changes.$$scope = { dirty, ctx };
+			}
+
+			card4.$set(card4_changes);
+			const card5_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				card5_changes.$$scope = { dirty, ctx };
+			}
+
+			card5.$set(card5_changes);
 		},
 		i(local) {
 			if (current) return;
@@ -1152,6 +1854,8 @@ function create_default_slot(ctx) {
 			transition_in(card1.$$.fragment, local);
 			transition_in(card2.$$.fragment, local);
 			transition_in(card3.$$.fragment, local);
+			transition_in(card4.$$.fragment, local);
+			transition_in(card5.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -1159,6 +1863,8 @@ function create_default_slot(ctx) {
 			transition_out(card1.$$.fragment, local);
 			transition_out(card2.$$.fragment, local);
 			transition_out(card3.$$.fragment, local);
+			transition_out(card4.$$.fragment, local);
+			transition_out(card5.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
@@ -1169,6 +1875,10 @@ function create_default_slot(ctx) {
 			destroy_component(card2, detaching);
 			if (detaching) detach(t2);
 			destroy_component(card3, detaching);
+			if (detaching) detach(t3);
+			destroy_component(card4, detaching);
+			if (detaching) detach(t4);
+			destroy_component(card5, detaching);
 		}
 	};
 }
@@ -1193,7 +1903,7 @@ function create_fragment(ctx) {
 
 	section = new Section({
 			props: {
-				$$slots: { default: [create_default_slot_5] },
+				$$slots: { default: [create_default_slot_9] },
 				$$scope: { ctx }
 			}
 		});
@@ -1217,7 +1927,7 @@ function create_fragment(ctx) {
 			create_component(portfolio.$$.fragment);
 			t2 = space();
 			create_component(footer.$$.fragment);
-			attr(div, "class", "Programming svelte-ki5nvh");
+			attr(div, "class", "Programming svelte-1byclsg");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

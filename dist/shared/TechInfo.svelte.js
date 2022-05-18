@@ -45,10 +45,10 @@ function create_fragment(ctx) {
 			t = space();
 			div1 = element("div");
 			if (content_slot) content_slot.c();
-			attr(div0, "class", "header svelte-qfcipt");
+			attr(div0, "class", "header svelte-xq2a5u");
 			attr(div1, "class", "content");
 			set_style(div1, "display", /*open*/ ctx[0] ? "block" : "none");
-			attr(div2, "class", "TechInfo svelte-qfcipt");
+			attr(div2, "class", "TechInfo svelte-xq2a5u");
 			set_style(div2, "background-color", /*bg_color*/ ctx[1]);
 			set_style(div2, "color", /*text_color*/ ctx[2]);
 		},

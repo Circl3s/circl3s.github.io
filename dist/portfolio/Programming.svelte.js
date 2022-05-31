@@ -26,10 +26,40 @@ import Portfolio from "./Portfolio.svelte.js";
 import Section from "../shared/Section.svelte.js";
 import TechInfo from "../shared/TechInfo.svelte.js";
 
+function create_default_slot_10(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("Visit my Github");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (98:4) <Section>
 function create_default_slot_9(ctx) {
 	let h1;
 	let t1;
 	let div1;
+	let div0;
+	let p;
+	let t4;
+	let button;
+	let current;
+
+	button = new Button({
+			props: {
+				href: "https://github.com/Circl3s/",
+				$$slots: { default: [create_default_slot_10] },
+				$$scope: { ctx }
+			}
+		});
 
 	return {
 		c() {
@@ -37,27 +67,56 @@ function create_default_slot_9(ctx) {
 			h1.textContent = "Programming";
 			t1 = space();
 			div1 = element("div");
+			div0 = element("div");
+			p = element("p");
 
-			div1.innerHTML = `<div class="col svelte-1byclsg"><p>I love programming. Here are some of the projects I made.<br/>
-                    (This section will be expanded)</p></div>`;
+			p.innerHTML = `I love programming. Here are some of the projects I made.<br/>
+                    (This section will be expanded)`;
 
-			attr(h1, "class", "svelte-1byclsg");
-			attr(div1, "class", "content svelte-1byclsg");
+			t4 = space();
+			create_component(button.$$.fragment);
+			attr(h1, "class", "svelte-uu0hjm");
+			attr(div0, "class", "col svelte-uu0hjm");
+			attr(div1, "class", "content svelte-uu0hjm");
 		},
 		m(target, anchor) {
 			insert(target, h1, anchor);
 			insert(target, t1, anchor);
 			insert(target, div1, anchor);
+			append(div1, div0);
+			append(div0, p);
+			append(div0, t4);
+			mount_component(button, div0, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const button_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button_changes.$$scope = { dirty, ctx };
+			}
+
+			button.$set(button_changes);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(button.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(button.$$.fragment, local);
+			current = false;
 		},
 		d(detaching) {
 			if (detaching) detach(h1);
 			if (detaching) detach(t1);
 			if (detaching) detach(div1);
+			destroy_component(button);
 		}
 	};
 }
 
-// (108:12) 
+// (114:12) 
 function create_title_slot_5(ctx) {
 	let h2;
 
@@ -76,7 +135,7 @@ function create_title_slot_5(ctx) {
 	};
 }
 
-// (121:24) 
+// (127:24) 
 function create_header_slot_12(ctx) {
 	let img;
 	let img_src_value;
@@ -84,7 +143,7 @@ function create_header_slot_12(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/svelte-logotype.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Svelte");
 			attr(img, "slot", "header");
@@ -98,7 +157,7 @@ function create_header_slot_12(ctx) {
 	};
 }
 
-// (122:24) 
+// (128:24) 
 function create_content_slot_18(ctx) {
 	let p;
 
@@ -117,15 +176,15 @@ function create_content_slot_18(ctx) {
 	};
 }
 
-// (127:24) 
+// (133:24) 
 function create_header_slot_11(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<img class="logo svelte-1byclsg" src="/img/snowpack.svg" alt="Snowpack Logo"/>Snowpack`;
-			attr(div, "class", "logotype text-2xl svelte-1byclsg");
+			div.innerHTML = `<img class="logo svelte-uu0hjm" src="/img/snowpack.svg" alt="Snowpack Logo"/>Snowpack`;
+			attr(div, "class", "logotype text-2xl svelte-uu0hjm");
 			attr(div, "slot", "header");
 		},
 		m(target, anchor) {
@@ -137,7 +196,7 @@ function create_header_slot_11(ctx) {
 	};
 }
 
-// (128:24) 
+// (134:24) 
 function create_content_slot_17(ctx) {
 	let p;
 
@@ -156,7 +215,7 @@ function create_content_slot_17(ctx) {
 	};
 }
 
-// (133:24) 
+// (139:24) 
 function create_header_slot_10(ctx) {
 	let img;
 	let img_src_value;
@@ -164,7 +223,7 @@ function create_header_slot_10(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/tailwindcss-logotype.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -178,7 +237,7 @@ function create_header_slot_10(ctx) {
 	};
 }
 
-// (134:24) 
+// (140:24) 
 function create_content_slot_16(ctx) {
 	let p;
 
@@ -197,7 +256,7 @@ function create_content_slot_16(ctx) {
 	};
 }
 
-// (139:24) 
+// (145:24) 
 function create_header_slot_9(ctx) {
 	let img;
 	let img_src_value;
@@ -205,7 +264,7 @@ function create_header_slot_9(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/supabase-logo-wordmark--dark.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Supabase");
 			attr(img, "slot", "header");
@@ -219,7 +278,7 @@ function create_header_slot_9(ctx) {
 	};
 }
 
-// (140:24) 
+// (146:24) 
 function create_content_slot_15(ctx) {
 	let p;
 
@@ -238,7 +297,7 @@ function create_content_slot_15(ctx) {
 	};
 }
 
-// (145:16) <Button href="https://github.com/Circl3s/circl3s.github.io/">
+// (151:16) <Button href="https://github.com/Circl3s/circl3s.github.io/">
 function create_default_slot_8(ctx) {
 	let t;
 
@@ -255,7 +314,7 @@ function create_default_slot_8(ctx) {
 	};
 }
 
-// (109:12) 
+// (115:12) 
 function create_content_slot_14(ctx) {
 	let div1;
 	let p0;
@@ -352,8 +411,8 @@ function create_content_slot_14(ctx) {
 			create_component(techinfo3.$$.fragment);
 			t10 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-1byclsg");
-			attr(div0, "class", "techstack svelte-1byclsg");
+			attr(p0, "class", "status svelte-uu0hjm");
+			attr(div0, "class", "techstack svelte-uu0hjm");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -440,7 +499,7 @@ function create_content_slot_14(ctx) {
 	};
 }
 
-// (151:12) 
+// (157:12) 
 function create_title_slot_4(ctx) {
 	let h2;
 
@@ -459,7 +518,7 @@ function create_title_slot_4(ctx) {
 	};
 }
 
-// (163:24) 
+// (169:24) 
 function create_header_slot_8(ctx) {
 	let img;
 	let img_src_value;
@@ -467,7 +526,7 @@ function create_header_slot_8(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/React.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "React");
 			attr(img, "slot", "header");
@@ -481,7 +540,7 @@ function create_header_slot_8(ctx) {
 	};
 }
 
-// (164:24) 
+// (170:24) 
 function create_content_slot_13(ctx) {
 	let p;
 
@@ -500,7 +559,7 @@ function create_content_slot_13(ctx) {
 	};
 }
 
-// (169:24) 
+// (175:24) 
 function create_header_slot_7(ctx) {
 	let img;
 	let img_src_value;
@@ -508,7 +567,7 @@ function create_header_slot_7(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/tailwindcss-logotype.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -522,7 +581,7 @@ function create_header_slot_7(ctx) {
 	};
 }
 
-// (170:24) 
+// (176:24) 
 function create_content_slot_12(ctx) {
 	let p;
 
@@ -541,7 +600,7 @@ function create_content_slot_12(ctx) {
 	};
 }
 
-// (175:24) 
+// (181:24) 
 function create_header_slot_6(ctx) {
 	let img;
 	let img_src_value;
@@ -549,7 +608,7 @@ function create_header_slot_6(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/Tonejs.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -563,7 +622,7 @@ function create_header_slot_6(ctx) {
 	};
 }
 
-// (176:24) 
+// (182:24) 
 function create_content_slot_11(ctx) {
 	let p;
 
@@ -582,7 +641,7 @@ function create_content_slot_11(ctx) {
 	};
 }
 
-// (182:20) <Button disabled>
+// (188:20) <Button disabled>
 function create_default_slot_7(ctx) {
 	let t;
 
@@ -599,7 +658,7 @@ function create_default_slot_7(ctx) {
 	};
 }
 
-// (185:20) <Button href="https://github.com/Circl3s/cybertracks">
+// (191:20) <Button href="https://github.com/Circl3s/cybertracks">
 function create_default_slot_6(ctx) {
 	let t;
 
@@ -616,7 +675,7 @@ function create_default_slot_6(ctx) {
 	};
 }
 
-// (152:12) 
+// (158:12) 
 function create_content_slot_10(ctx) {
 	let div2;
 	let p0;
@@ -711,9 +770,9 @@ function create_content_slot_10(ctx) {
 			create_component(button0.$$.fragment);
 			t10 = space();
 			create_component(button1.$$.fragment);
-			attr(p0, "class", "status svelte-1byclsg");
-			attr(div0, "class", "techstack svelte-1byclsg");
-			attr(div1, "class", "actions svelte-1byclsg");
+			attr(p0, "class", "status svelte-uu0hjm");
+			attr(div0, "class", "techstack svelte-uu0hjm");
+			attr(div1, "class", "actions svelte-uu0hjm");
 			attr(div2, "class", "description");
 			attr(div2, "slot", "content");
 		},
@@ -801,7 +860,7 @@ function create_content_slot_10(ctx) {
 	};
 }
 
-// (192:12) 
+// (198:12) 
 function create_title_slot_3(ctx) {
 	let h2;
 
@@ -820,7 +879,7 @@ function create_title_slot_3(ctx) {
 	};
 }
 
-// (204:24) 
+// (210:24) 
 function create_header_slot_5(ctx) {
 	let img;
 	let img_src_value;
@@ -830,7 +889,7 @@ function create_header_slot_5(ctx) {
 			img = element("img");
 			if (img.src !== (img_src_value = "/img/Flutter.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Flutter");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			attr(img, "slot", "header");
 		},
 		m(target, anchor) {
@@ -842,7 +901,7 @@ function create_header_slot_5(ctx) {
 	};
 }
 
-// (205:24) 
+// (211:24) 
 function create_content_slot_9(ctx) {
 	let p;
 
@@ -861,7 +920,7 @@ function create_content_slot_9(ctx) {
 	};
 }
 
-// (210:24) 
+// (216:24) 
 function create_header_slot_4(ctx) {
 	let img;
 	let img_src_value;
@@ -869,7 +928,7 @@ function create_header_slot_4(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/supabase-logo-wordmark--dark.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Supabase");
 			attr(img, "slot", "header");
@@ -883,7 +942,7 @@ function create_header_slot_4(ctx) {
 	};
 }
 
-// (211:24) 
+// (217:24) 
 function create_content_slot_8(ctx) {
 	let p;
 
@@ -902,7 +961,7 @@ function create_content_slot_8(ctx) {
 	};
 }
 
-// (217:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo/releases" color="green">
+// (223:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo/releases" color="green">
 function create_default_slot_5(ctx) {
 	let t;
 
@@ -919,7 +978,7 @@ function create_default_slot_5(ctx) {
 	};
 }
 
-// (220:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo">
+// (226:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo">
 function create_default_slot_4(ctx) {
 	let t;
 
@@ -936,7 +995,7 @@ function create_default_slot_4(ctx) {
 	};
 }
 
-// (193:12) 
+// (199:12) 
 function create_content_slot_7(ctx) {
 	let div2;
 	let p0;
@@ -1016,9 +1075,9 @@ function create_content_slot_7(ctx) {
 			create_component(button0.$$.fragment);
 			t9 = space();
 			create_component(button1.$$.fragment);
-			attr(p0, "class", "status svelte-1byclsg");
-			attr(div0, "class", "techstack svelte-1byclsg");
-			attr(div1, "class", "actions svelte-1byclsg");
+			attr(p0, "class", "status svelte-uu0hjm");
+			attr(div0, "class", "techstack svelte-uu0hjm");
+			attr(div1, "class", "actions svelte-uu0hjm");
 			attr(div2, "class", "description");
 			attr(div2, "slot", "content");
 		},
@@ -1094,7 +1153,7 @@ function create_content_slot_7(ctx) {
 	};
 }
 
-// (227:12) 
+// (233:12) 
 function create_title_slot_2(ctx) {
 	let h2;
 
@@ -1113,7 +1172,7 @@ function create_title_slot_2(ctx) {
 	};
 }
 
-// (239:24) 
+// (245:24) 
 function create_header_slot_3(ctx) {
 	let img;
 	let img_src_value;
@@ -1121,7 +1180,7 @@ function create_header_slot_3(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/crystal_logo.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Crystal");
 			attr(img, "slot", "header");
@@ -1135,7 +1194,7 @@ function create_header_slot_3(ctx) {
 	};
 }
 
-// (240:24) 
+// (246:24) 
 function create_content_slot_6(ctx) {
 	let p;
 
@@ -1154,7 +1213,7 @@ function create_content_slot_6(ctx) {
 	};
 }
 
-// (245:24) 
+// (251:24) 
 function create_header_slot_2(ctx) {
 	let img;
 	let img_src_value;
@@ -1162,7 +1221,7 @@ function create_header_slot_2(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/BASH_logo-transparent-bg-color.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Bash");
 			attr(img, "slot", "header");
@@ -1176,7 +1235,7 @@ function create_header_slot_2(ctx) {
 	};
 }
 
-// (246:24) 
+// (252:24) 
 function create_content_slot_5(ctx) {
 	let p;
 
@@ -1195,7 +1254,7 @@ function create_content_slot_5(ctx) {
 	};
 }
 
-// (251:16) <Button href="https://github.com/I-love-os/LoveShell">
+// (257:16) <Button href="https://github.com/I-love-os/LoveShell">
 function create_default_slot_3(ctx) {
 	let t;
 
@@ -1212,7 +1271,7 @@ function create_default_slot_3(ctx) {
 	};
 }
 
-// (228:12) 
+// (234:12) 
 function create_content_slot_4(ctx) {
 	let div1;
 	let p0;
@@ -1277,8 +1336,8 @@ function create_content_slot_4(ctx) {
 			create_component(techinfo1.$$.fragment);
 			t8 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-1byclsg");
-			attr(div0, "class", "techstack svelte-1byclsg");
+			attr(p0, "class", "status svelte-uu0hjm");
+			attr(div0, "class", "techstack svelte-uu0hjm");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1341,7 +1400,7 @@ function create_content_slot_4(ctx) {
 	};
 }
 
-// (256:12) 
+// (262:12) 
 function create_title_slot_1(ctx) {
 	let h2;
 
@@ -1360,7 +1419,7 @@ function create_title_slot_1(ctx) {
 	};
 }
 
-// (267:24) 
+// (273:24) 
 function create_header_slot_1(ctx) {
 	let img;
 	let img_src_value;
@@ -1368,7 +1427,7 @@ function create_header_slot_1(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-1byclsg");
+			attr(img, "class", "logo svelte-uu0hjm");
 			if (img.src !== (img_src_value = "/img/PICO-8_logo.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "PICO-8");
 			attr(img, "slot", "header");
@@ -1382,7 +1441,7 @@ function create_header_slot_1(ctx) {
 	};
 }
 
-// (268:24) 
+// (274:24) 
 function create_content_slot_3(ctx) {
 	let p;
 
@@ -1401,7 +1460,7 @@ function create_content_slot_3(ctx) {
 	};
 }
 
-// (273:16) <Button href="https://github.com/Circl3s/circl3s-super-breakout/">
+// (279:16) <Button href="https://github.com/Circl3s/circl3s-super-breakout/">
 function create_default_slot_2(ctx) {
 	let t;
 
@@ -1418,7 +1477,7 @@ function create_default_slot_2(ctx) {
 	};
 }
 
-// (257:12) 
+// (263:12) 
 function create_content_slot_2(ctx) {
 	let div1;
 	let p0;
@@ -1467,8 +1526,8 @@ function create_content_slot_2(ctx) {
 			create_component(techinfo.$$.fragment);
 			t9 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-1byclsg");
-			attr(div0, "class", "techstack svelte-1byclsg");
+			attr(p0, "class", "status svelte-uu0hjm");
+			attr(div0, "class", "techstack svelte-uu0hjm");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1519,7 +1578,7 @@ function create_content_slot_2(ctx) {
 	};
 }
 
-// (278:12) 
+// (284:12) 
 function create_title_slot(ctx) {
 	let h2;
 
@@ -1538,15 +1597,15 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (289:24) 
+// (295:24) 
 function create_header_slot(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<img class="logo svelte-1byclsg" src="/img/webcomponents-logo.svg" alt="WebComponents Logo"/>WEBCOMPONENTS`;
-			attr(div, "class", "font-normal logotype text-lg self-center text-black svelte-1byclsg");
+			div.innerHTML = `<img class="logo svelte-uu0hjm" src="/img/webcomponents-logo.svg" alt="WebComponents Logo"/>WEBCOMPONENTS`;
+			attr(div, "class", "font-normal logotype text-lg self-center text-black svelte-uu0hjm");
 			attr(div, "slot", "header");
 		},
 		m(target, anchor) {
@@ -1558,7 +1617,7 @@ function create_header_slot(ctx) {
 	};
 }
 
-// (290:24) 
+// (296:24) 
 function create_content_slot_1(ctx) {
 	let p;
 
@@ -1577,7 +1636,7 @@ function create_content_slot_1(ctx) {
 	};
 }
 
-// (295:16) <Button href="https://github.com/Circl3s/helix/">
+// (301:16) <Button href="https://github.com/Circl3s/helix/">
 function create_default_slot_1(ctx) {
 	let t;
 
@@ -1594,7 +1653,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (279:12) 
+// (285:12) 
 function create_content_slot(ctx) {
 	let div1;
 	let p0;
@@ -1643,8 +1702,8 @@ function create_content_slot(ctx) {
 			create_component(techinfo.$$.fragment);
 			t7 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-1byclsg");
-			attr(div0, "class", "techstack svelte-1byclsg");
+			attr(p0, "class", "status svelte-uu0hjm");
+			attr(div0, "class", "techstack svelte-uu0hjm");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1695,7 +1754,7 @@ function create_content_slot(ctx) {
 	};
 }
 
-// (106:4) <Portfolio>
+// (112:4) <Portfolio>
 function create_default_slot(ctx) {
 	let card0;
 	let t0;
@@ -1927,7 +1986,7 @@ function create_fragment(ctx) {
 			create_component(portfolio.$$.fragment);
 			t2 = space();
 			create_component(footer.$$.fragment);
-			attr(div, "class", "Programming svelte-1byclsg");
+			attr(div, "class", "Programming svelte-uu0hjm");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);

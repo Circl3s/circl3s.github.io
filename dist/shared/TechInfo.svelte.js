@@ -4,12 +4,14 @@ import {
 	SvelteComponent,
 	append,
 	attr,
+	binding_callbacks,
 	create_slot,
 	detach,
 	element,
 	init,
 	insert,
 	listen,
+	run_all,
 	safe_not_equal,
 	set_style,
 	space,
@@ -32,10 +34,10 @@ function create_fragment(ctx) {
 	let current;
 	let mounted;
 	let dispose;
-	const header_slot_template = /*#slots*/ ctx[5].header;
-	const header_slot = create_slot(header_slot_template, ctx, /*$$scope*/ ctx[4], get_header_slot_context);
-	const content_slot_template = /*#slots*/ ctx[5].content;
-	const content_slot = create_slot(content_slot_template, ctx, /*$$scope*/ ctx[4], get_content_slot_context);
+	const header_slot_template = /*#slots*/ ctx[8].header;
+	const header_slot = create_slot(header_slot_template, ctx, /*$$scope*/ ctx[7], get_header_slot_context);
+	const content_slot_template = /*#slots*/ ctx[8].content;
+	const content_slot = create_slot(content_slot_template, ctx, /*$$scope*/ ctx[7], get_content_slot_context);
 
 	return {
 		c() {
@@ -45,10 +47,10 @@ function create_fragment(ctx) {
 			t = space();
 			div1 = element("div");
 			if (content_slot) content_slot.c();
-			attr(div0, "class", "header svelte-xq2a5u");
+			attr(div0, "class", "header svelte-k2u1hy");
 			attr(div1, "class", "content");
 			set_style(div1, "display", /*open*/ ctx[0] ? "block" : "none");
-			attr(div2, "class", "TechInfo svelte-xq2a5u");
+			attr(div2, "class", "TechInfo svelte-k2u1hy");
 			set_style(div2, "background-color", /*bg_color*/ ctx[1]);
 			set_style(div2, "color", /*text_color*/ ctx[2]);
 		},
@@ -67,23 +69,29 @@ function create_fragment(ctx) {
 				content_slot.m(div1, null);
 			}
 
+			/*div2_binding*/ ctx[9](div2);
 			current = true;
 
 			if (!mounted) {
-				dispose = listen(div0, "click", /*toggle*/ ctx[3]);
+				dispose = [
+					listen(div0, "click", /*toggle*/ ctx[4]),
+					listen(div0, "mouseenter", /*lightUp*/ ctx[5]),
+					listen(div0, "mouseleave", /*lightDown*/ ctx[6])
+				];
+
 				mounted = true;
 			}
 		},
 		p(ctx, [dirty]) {
 			if (header_slot) {
-				if (header_slot.p && (!current || dirty & /*$$scope*/ 16)) {
-					update_slot(header_slot, header_slot_template, ctx, /*$$scope*/ ctx[4], !current ? -1 : dirty, get_header_slot_changes, get_header_slot_context);
+				if (header_slot.p && (!current || dirty & /*$$scope*/ 128)) {
+					update_slot(header_slot, header_slot_template, ctx, /*$$scope*/ ctx[7], !current ? -1 : dirty, get_header_slot_changes, get_header_slot_context);
 				}
 			}
 
 			if (content_slot) {
-				if (content_slot.p && (!current || dirty & /*$$scope*/ 16)) {
-					update_slot(content_slot, content_slot_template, ctx, /*$$scope*/ ctx[4], !current ? -1 : dirty, get_content_slot_changes, get_content_slot_context);
+				if (content_slot.p && (!current || dirty & /*$$scope*/ 128)) {
+					update_slot(content_slot, content_slot_template, ctx, /*$$scope*/ ctx[7], !current ? -1 : dirty, get_content_slot_changes, get_content_slot_context);
 				}
 			}
 
@@ -114,8 +122,9 @@ function create_fragment(ctx) {
 			if (detaching) detach(div2);
 			if (header_slot) header_slot.d(detaching);
 			if (content_slot) content_slot.d(detaching);
+			/*div2_binding*/ ctx[9](null);
 			mounted = false;
-			dispose();
+			run_all(dispose);
 		}
 	};
 }
@@ -125,24 +134,50 @@ function instance($$self, $$props, $$invalidate) {
 	let { bg_color = "#e4e4e7" } = $$props;
 	let { text_color = "#000000" } = $$props;
 	let { open = false } = $$props;
-	let twisty;
+	let div;
 
 	function toggle() {
 		$$invalidate(0, open = !open);
+	}
+
+	function lightUp() {
+		$$invalidate(3, div.style.filter = "brightness(1.25)", div);
+	}
+
+	function lightDown() {
+		$$invalidate(3, div.style.filter = "none", div);
 	}
 
 	onMount(() => {
 		
 	});
 
+	function div2_binding($$value) {
+		binding_callbacks[$$value ? "unshift" : "push"](() => {
+			div = $$value;
+			$$invalidate(3, div);
+		});
+	}
+
 	$$self.$$set = $$props => {
 		if ("bg_color" in $$props) $$invalidate(1, bg_color = $$props.bg_color);
 		if ("text_color" in $$props) $$invalidate(2, text_color = $$props.text_color);
 		if ("open" in $$props) $$invalidate(0, open = $$props.open);
-		if ("$$scope" in $$props) $$invalidate(4, $$scope = $$props.$$scope);
+		if ("$$scope" in $$props) $$invalidate(7, $$scope = $$props.$$scope);
 	};
 
-	return [open, bg_color, text_color, toggle, $$scope, slots];
+	return [
+		open,
+		bg_color,
+		text_color,
+		div,
+		toggle,
+		lightUp,
+		lightDown,
+		$$scope,
+		slots,
+		div2_binding
+	];
 }
 
 class TechInfo extends SvelteComponent {

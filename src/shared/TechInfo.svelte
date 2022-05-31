@@ -6,10 +6,18 @@
     export let text_color = "#000000";
     export let open = false;
 
-    let twisty;
+    let div;
 
     function toggle() {
         open = !open;
+    }
+
+    function lightUp() {
+        div.style.filter = "brightness(1.25)";
+    }
+
+    function lightDown() {
+        div.style.filter = "none";
     }
 
     onMount(() => {
@@ -19,7 +27,7 @@
 
 <style>
     .TechInfo {
-        @apply m-4 p-2 min-w-[8rem] h-[min-content] w-full md:w-2/5 flex flex-col justify-center rounded-md shadow-md hover:brightness-125 duration-200;
+        @apply m-4 p-2 min-w-[8rem] h-[min-content] w-full md:w-2/5 flex flex-col justify-center rounded-md shadow-md duration-200;
     }
 
     .header {
@@ -27,8 +35,8 @@
     }
 </style>
 
-<div class="TechInfo" style="background-color: {bg_color}; color: {text_color}">
-    <div class="header" on:click="{toggle}">
+<div class="TechInfo" style="background-color: {bg_color}; color: {text_color}" bind:this="{div}">
+    <div class="header" on:click="{toggle}" on:mouseenter="{lightUp}" on:mouseleave="{lightDown}">
         <slot name="header"></slot>
     </div>
     <div class="content" style="display: {open ? 'block' : 'none'}"><slot name="content"></slot></div>

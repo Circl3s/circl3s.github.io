@@ -18,7 +18,7 @@
     }
 
     .col {
-        @apply md:w-80 m-8;
+        @apply md:w-80 m-8 flex flex-col items-center;
     }
 
     .logo {
@@ -57,6 +57,9 @@
                     I love programming. Here are some of the projects I made.<br>
                     (This section will be expanded)
                 </p>
+                <Button href="https://github.com/Circl3s/">
+                    Visit my Github
+                </Button>
             </div>
         </div>
     </Section>

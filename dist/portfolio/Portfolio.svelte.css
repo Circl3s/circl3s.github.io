@@ -1,6 +1,7 @@
-.Portfolio.svelte-uqnng2{display:flex;flex-direction:column;padding:2rem
-}.Portfolio.svelte-uqnng2>.Card{align-self:center
-}@media(min-width: 768px){.Portfolio.svelte-uqnng2>.Card{align-self:flex-start
-    }.Portfolio.svelte-uqnng2>.Card:nth-child(even){align-self:flex-end
-    }}.Portfolio.svelte-uqnng2 a{text-decoration:underline
+.Portfolio.svelte-1op8zd8{display:flex;flex-direction:column;padding:2rem
+}.bg.svelte-1op8zd8{position:fixed;bottom:0px;height:100%;width:100%;background-image:linear-gradient(to top right, var(--tw-gradient-stops));--tw-gradient-from:#4c1d95;--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to, rgba(76, 29, 149, 0));--tw-gradient-to:#1e3a8a;z-index:-1
+}.Portfolio.svelte-1op8zd8>.Card{align-self:center
+}@media(min-width: 768px){.Portfolio.svelte-1op8zd8>.Card{align-self:flex-start
+        }.Portfolio.svelte-1op8zd8>.Card:nth-child(even){align-self:flex-end
+        }}.Portfolio.svelte-1op8zd8 a{text-decoration:underline
 }

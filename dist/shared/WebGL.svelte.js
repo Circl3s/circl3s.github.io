@@ -6,6 +6,7 @@ import {
 	binding_callbacks,
 	detach,
 	element,
+	globals,
 	init,
 	insert,
 	listen,
@@ -13,6 +14,7 @@ import {
 	safe_not_equal
 } from "../../_snowpack/pkg/svelte/internal.js";
 
+const { window: window_1 } = globals;
 import { onMount } from "../../_snowpack/pkg/svelte.js";
 
 function create_fragment(ctx) {
@@ -23,14 +25,14 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			canvas_1 = element("canvas");
-			attr(canvas_1, "class", "WebGL svelte-1b0v5du");
+			attr(canvas_1, "class", "WebGL svelte-6tls7n");
 		},
 		m(target, anchor) {
 			insert(target, canvas_1, anchor);
 			/*canvas_1_binding*/ ctx[3](canvas_1);
 
 			if (!mounted) {
-				dispose = listen(window, "resize", /*handleResize*/ ctx[1]);
+				dispose = listen(window_1, "resize", /*handleResize*/ ctx[1]);
 				mounted = true;
 			}
 		},
@@ -135,9 +137,11 @@ void main() {
 			gl.useProgram(program);
 			var timeLocation = gl.getUniformLocation(program, "u_time");
 			var resLocation = gl.getUniformLocation(program, "u_resolution");
+			var scrollLocation = gl.getUniformLocation(program, "u_scroll");
 
 			function renderLoop(time) {
-				gl.uniform1f(timeLocation, time / 5000 % 1);
+				gl.uniform1f(timeLocation, time);
+				gl.uniform1f(scrollLocation, window.scrollY);
 				gl.uniform2f(resLocation, canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height);
 				gl.drawArrays(gl.TRIANGLES, 0, 3);
 				requestAnimationFrame(renderLoop);

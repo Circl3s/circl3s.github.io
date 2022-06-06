@@ -11,6 +11,7 @@ import {
 	init,
 	insert,
 	mount_component,
+	noop,
 	safe_not_equal,
 	space,
 	transition_in,
@@ -19,32 +20,73 @@ import {
 } from "../../_snowpack/pkg/svelte/internal.js";
 
 import CosmeticNotch from "../shared/CosmeticNotch.svelte.js";
+import WebGL from "../shared/WebGL.svelte.js";
+import gradient from "../shaders/gradient.js";
+
+function create_if_block(ctx) {
+	let webgl;
+	let current;
+	webgl = new WebGL({ props: { shader_import: gradient } });
+
+	return {
+		c() {
+			create_component(webgl.$$.fragment);
+		},
+		m(target, anchor) {
+			mount_component(webgl, target, anchor);
+			current = true;
+		},
+		p: noop,
+		i(local) {
+			if (current) return;
+			transition_in(webgl.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(webgl.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			destroy_component(webgl, detaching);
+		}
+	};
+}
 
 function create_fragment(ctx) {
-	let div;
-	let t;
+	let div0;
+	let t0;
+	let div1;
+	let t1;
 	let cosmeticnotch;
 	let current;
 	const default_slot_template = /*#slots*/ ctx[1].default;
 	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[0], null);
+	let if_block = window.WebGLRenderingContext && create_if_block(ctx);
 	cosmeticnotch = new CosmeticNotch({ props: { orientation: "bottom-right" } });
 
 	return {
 		c() {
-			div = element("div");
+			div0 = element("div");
 			if (default_slot) default_slot.c();
-			t = space();
+			t0 = space();
+			div1 = element("div");
+			if (if_block) if_block.c();
+			t1 = space();
 			create_component(cosmeticnotch.$$.fragment);
-			attr(div, "class", "Portfolio svelte-uqnng2");
+			attr(div0, "class", "Portfolio svelte-1op8zd8");
+			attr(div1, "class", "bg svelte-1op8zd8");
 		},
 		m(target, anchor) {
-			insert(target, div, anchor);
+			insert(target, div0, anchor);
 
 			if (default_slot) {
-				default_slot.m(div, null);
+				default_slot.m(div0, null);
 			}
 
-			insert(target, t, anchor);
+			insert(target, t0, anchor);
+			insert(target, div1, anchor);
+			if (if_block) if_block.m(div1, null);
+			insert(target, t1, anchor);
 			mount_component(cosmeticnotch, target, anchor);
 			current = true;
 		},
@@ -54,22 +96,29 @@ function create_fragment(ctx) {
 					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[0], !current ? -1 : dirty, null, null);
 				}
 			}
+
+			if (window.WebGLRenderingContext) if_block.p(ctx, dirty);
 		},
 		i(local) {
 			if (current) return;
 			transition_in(default_slot, local);
+			transition_in(if_block);
 			transition_in(cosmeticnotch.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
 			transition_out(default_slot, local);
+			transition_out(if_block);
 			transition_out(cosmeticnotch.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div);
+			if (detaching) detach(div0);
 			if (default_slot) default_slot.d(detaching);
-			if (detaching) detach(t);
+			if (detaching) detach(t0);
+			if (detaching) detach(div1);
+			if (if_block) if_block.d();
+			if (detaching) detach(t1);
 			destroy_component(cosmeticnotch, detaching);
 		}
 	};

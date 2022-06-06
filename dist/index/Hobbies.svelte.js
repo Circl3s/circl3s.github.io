@@ -11,6 +11,7 @@ import {
 	init,
 	insert,
 	mount_component,
+	noop,
 	safe_not_equal,
 	space,
 	text,
@@ -24,7 +25,7 @@ import Marker from "../shared/Marker.svelte.js";
 import Sequencer from "./Sequencer.svelte.js";
 import Typewriter from "./Typewriter.svelte.js";
 import WebGL from "../shared/WebGL.svelte.js";
-import blobs from "../shaders/blobs.js";
+import gradient from "../shaders/gradient.js";
 
 function create_title_slot_1(ctx) {
 	let h2;
@@ -89,7 +90,7 @@ function create_content_slot_1(ctx) {
 			p.textContent = "I started listening to electronic music when I was a little kid and became interested in making it myself soon after. \n                        I released my first track on YouTube in 2014 and since then my various tracks and covers have gathered over 1 million streams in total. \n                        Over the years I realized I am much more interested in the sound design aspect of creating electronic music than the composition itself, and therefore have spent my life mastering various synthesis methods and collecting hardware synthesizers. \n                        Genres like Electro House and Synthwave are my bread and butter, but I also like to experiment and even dabble in cinematic/orchestral composing.";
 			t2 = space();
 			create_component(button.$$.fragment);
-			attr(p, "class", "svelte-18x7nsg");
+			attr(p, "class", "svelte-w8pws7");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -194,7 +195,7 @@ function create_content_slot(ctx) {
 			p.textContent = "I've been deeply invested in computers and programming for a long time. \n                        I've written in many programming and scripting languages, predominantly Javascript, Python, Crystal and PowerShell, but I'm always learning new languages and frameworks. \n                        Other languages I'm learning or have used in the past include Rust, PHP, Ruby and Lua among others. \n                        I have experience using MySQL and Redis databases and have utilized SSR, designed APIs and written server-side applications that interact with them. \n                        I have a grasp on component-based frontend building having used Flutter and Svelte. \n                        I often spend my free time learning new technologies, like WebGL, WebAssembly, PWA, etc.";
 			t2 = space();
 			create_component(button.$$.fragment);
-			attr(p, "class", "svelte-18x7nsg");
+			attr(p, "class", "svelte-w8pws7");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -234,6 +235,36 @@ function create_content_slot(ctx) {
 	};
 }
 
+// (105:8) {#if window.WebGLRenderingContext}
+function create_if_block(ctx) {
+	let webgl;
+	let current;
+	webgl = new WebGL({ props: { shader_import: gradient } });
+
+	return {
+		c() {
+			create_component(webgl.$$.fragment);
+		},
+		m(target, anchor) {
+			mount_component(webgl, target, anchor);
+			current = true;
+		},
+		p: noop,
+		i(local) {
+			if (current) return;
+			transition_in(webgl.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(webgl.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			destroy_component(webgl, detaching);
+		}
+	};
+}
+
 function create_fragment(ctx) {
 	let marker;
 	let t0;
@@ -269,6 +300,8 @@ function create_fragment(ctx) {
 			}
 		});
 
+	let if_block = window.WebGLRenderingContext && create_if_block(ctx);
+
 	return {
 		c() {
 			create_component(marker.$$.fragment);
@@ -282,11 +315,12 @@ function create_fragment(ctx) {
 			create_component(card1.$$.fragment);
 			t2 = space();
 			div3 = element("div");
-			attr(div0, "class", "hobby svelte-18x7nsg");
-			attr(div1, "class", "hobby svelte-18x7nsg");
-			attr(div2, "class", "columns svelte-18x7nsg");
-			attr(div3, "class", "bg svelte-18x7nsg");
-			attr(div4, "class", "Hobbies svelte-18x7nsg");
+			if (if_block) if_block.c();
+			attr(div0, "class", "hobby svelte-w8pws7");
+			attr(div1, "class", "hobby svelte-w8pws7");
+			attr(div2, "class", "columns svelte-w8pws7");
+			attr(div3, "class", "bg svelte-w8pws7");
+			attr(div4, "class", "Hobbies svelte-w8pws7");
 		},
 		m(target, anchor) {
 			mount_component(marker, target, anchor);
@@ -300,6 +334,7 @@ function create_fragment(ctx) {
 			mount_component(card1, div1, null);
 			append(div4, t2);
 			append(div4, div3);
+			if (if_block) if_block.m(div3, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -317,18 +352,21 @@ function create_fragment(ctx) {
 			}
 
 			card1.$set(card1_changes);
+			if (window.WebGLRenderingContext) if_block.p(ctx, dirty);
 		},
 		i(local) {
 			if (current) return;
 			transition_in(marker.$$.fragment, local);
 			transition_in(card0.$$.fragment, local);
 			transition_in(card1.$$.fragment, local);
+			transition_in(if_block);
 			current = true;
 		},
 		o(local) {
 			transition_out(marker.$$.fragment, local);
 			transition_out(card0.$$.fragment, local);
 			transition_out(card1.$$.fragment, local);
+			transition_out(if_block);
 			current = false;
 		},
 		d(detaching) {
@@ -337,6 +375,7 @@ function create_fragment(ctx) {
 			if (detaching) detach(div4);
 			destroy_component(card0);
 			destroy_component(card1);
+			if (if_block) if_block.d();
 		}
 	};
 }

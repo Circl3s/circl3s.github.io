@@ -103,7 +103,7 @@ void main() {
             var scrollLocation = gl.getUniformLocation(program, "u_scroll");
 
             function renderLoop(time) {
-                gl.uniform1f(timeLocation, time);
+                gl.uniform1f(timeLocation, time / 1000);
                 gl.uniform1f(scrollLocation, window.scrollY);
                 gl.uniform2f(resLocation, canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height);
                 gl.drawArrays(gl.TRIANGLES, 0, 3);

@@ -9,9 +9,10 @@ const vec3 blue = vec3(0.118,0.227,0.541);
 
 void main() {
     vec2 screenspace = gl_FragCoord.xy / u_resolution.xy;
-    float wave1 = sin(screenspace.x * 10.0 + u_scroll / 600.0 + u_time / 3.0) / 8.0 + 0.75;
-    float wave2 = sin(screenspace.x * 6.5 + u_scroll / 400.0 + u_time / 2.0) / 8.0 + 0.5;
-    float wave3 = sin(screenspace.x * 3.0 + u_scroll / 200.0 + u_time) / 8.0 + 0.25;
+    float aspect_ratio = u_resolution.x / u_resolution.y;
+    float wave1 = sin(screenspace.x * 5.0 * aspect_ratio + u_scroll / 600.0 + u_time / 3.1) / 8.0 + 0.75;
+    float wave2 = sin(screenspace.x * 3.0 * aspect_ratio + u_scroll / 400.0 + u_time / 1.9) / 8.0 + 0.5;
+    float wave3 = sin(screenspace.x * 1.5 * aspect_ratio + u_scroll / 200.0 + u_time) / 8.0 + 0.25;
     if (screenspace.y < wave3) {
         gl_FragColor = vec4(mix(purple, blue, 0.30), 1.0);
     } else if (screenspace.y < wave2) {

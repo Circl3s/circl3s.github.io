@@ -100,9 +100,11 @@ void main() {
 
             var timeLocation = gl.getUniformLocation(program, "u_time");
             var resLocation = gl.getUniformLocation(program, "u_resolution");
+            var scrollLocation = gl.getUniformLocation(program, "u_scroll");
 
             function renderLoop(time) {
-                gl.uniform1f(timeLocation, (time / 5000) % 1);
+                gl.uniform1f(timeLocation, time);
+                gl.uniform1f(scrollLocation, window.scrollY);
                 gl.uniform2f(resLocation, canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height);
                 gl.drawArrays(gl.TRIANGLES, 0, 3);
                 requestAnimationFrame(renderLoop);
@@ -116,7 +118,7 @@ void main() {
 
 <style>
     .WebGL {
-        @apply w-full h-full top-0;
+        @apply w-full h-full top-0 bg-gradient-to-tr from-purple-900 to-blue-900;
     }
 </style>
 

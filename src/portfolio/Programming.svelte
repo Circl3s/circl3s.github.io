@@ -9,10 +9,6 @@
 </script>
 
 <style>
-    .Programming {
-        @apply bg-gradient-to-tr from-purple-900 to-blue-900;
-    }
-
     .content {
         @apply flex flex-col-reverse md:flex-row justify-center items-center;
     }

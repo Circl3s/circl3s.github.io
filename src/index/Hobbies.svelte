@@ -6,7 +6,7 @@ import Sequencer from "./Sequencer.svelte";
 import Typewriter from "./Typewriter.svelte";
 import WebGL from "../shared/WebGL.svelte";
 
-import blobs from "../shaders/blobs.frag";
+import gradient from "../shaders/gradient.frag";
 </script>
 
 <style>
@@ -15,7 +15,7 @@ import blobs from "../shaders/blobs.frag";
     }
 
     .bg {
-        @apply w-full h-full fixed bottom-0 bg-gradient-to-b from-gray-900 to-black;
+        @apply w-full h-full fixed bottom-0 bg-gradient-to-tr from-purple-900 to-blue-900;
         z-index: -1;
     }
 
@@ -77,8 +77,8 @@ import blobs from "../shaders/blobs.frag";
         </div>
     </div>
     <div class="bg">
-        <!-- {#if window.WebGLRenderingContext}
-            <WebGL shader_import={blobs} />
-        {/if} -->
+        {#if window.WebGLRenderingContext}
+            <WebGL shader_import={gradient} />
+        {/if}
     </div>
 </div>

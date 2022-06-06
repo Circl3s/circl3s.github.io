@@ -16,12 +16,6 @@
     }
 </script>
 
-<style>
-    .App {
-        @apply bg-gradient-to-tr from-purple-900 to-blue-900;
-    }
-</style>
-
 <div class="App">
     <Navbar {anchors} />
     <Greeter />

@@ -641,7 +641,7 @@ function create_content_slot_11(ctx) {
 	};
 }
 
-// (181:20) <Button href="https://circl3s.github.io/cybertracks">
+// (181:20) <Button href="https://circl3s.github.io/cybertracks" color="green">
 function create_default_slot_7(ctx) {
 	let t;
 
@@ -734,6 +734,7 @@ function create_content_slot_10(ctx) {
 	button0 = new Button({
 			props: {
 				href: "https://circl3s.github.io/cybertracks",
+				color: "green",
 				$$slots: { default: [create_default_slot_7] },
 				$$scope: { ctx }
 			}
@@ -752,7 +753,7 @@ function create_content_slot_10(ctx) {
 			div2 = element("div");
 			p0 = element("p");
 
-			p0.innerHTML = `Access: <code class="text-yellow-500">Soon</code><br/>
+			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
                     Development: <code class="text-green-500">Active</code>`;
 
 			t4 = space();

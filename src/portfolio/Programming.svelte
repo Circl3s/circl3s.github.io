@@ -107,7 +107,7 @@
             <h2 slot="title">Cybertracks</h2>
             <div class="description" slot="content">
                 <p class="status">
-                    Access: <code class="text-yellow-500">Soon</code><br>
+                    Access: <code class="text-green-500">Public</code><br>
                     Development: <code class="text-green-500">Active</code>
                 </p>
                 <p>
@@ -135,7 +135,7 @@
                     </TechInfo>
                 </div>
                 <div class="actions">
-                    <Button href="https://circl3s.github.io/cybertracks">
+                    <Button href="https://circl3s.github.io/cybertracks" color="green">
                         Open app
                     </Button>
                     <Button href="https://github.com/Circl3s/cybertracks">

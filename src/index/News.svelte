@@ -3,6 +3,7 @@
     import Card from "../shared/Card.svelte";
     import CosmeticNotch from "../shared/CosmeticNotch.svelte";
     import Timestamp from "../shared/Timestamp.svelte";
+    import Button from "../shared/Button.svelte";
     import { onMount } from "svelte";
 
     import { createClient } from "@supabase/supabase-js";
@@ -15,9 +16,8 @@
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     async function populate() {
-        let { data: posts, error} = await supabase.from("posts").select("*");
-        console.log(posts);
-        console.log(error);
+        let { data: posts, error} = await supabase.from("posts").select("*").limit(3);
+
         if (error) {
             ph_text.innerText = "Error while getting posts."
         } else if (posts.length == 0) {
@@ -42,12 +42,16 @@
         @apply text-gray-300 text-3xl font-semibold;
     }
 
+    .mobile-first {
+        @apply hidden first:flex md:flex;
+    }
+
     .News {
         @apply flex flex-col justify-center items-center bg-gray-200 p-4;
     }
 
     .items {
-        @apply min-h-[16rem] w-full flex flex-row justify-center items-center overflow-x-auto;
+        @apply min-h-[16rem] w-full flex flex-col md:flex-row justify-center items-center;
     }
 
     .thumb {
@@ -72,14 +76,21 @@
             <h3 bind:this="{ph_text}">Getting posts...</h3>
         {:else}
             {#each post_array as post}
-                <Card size="sm">
-                    <h2 slot="title">{post.title}</h2>
-                    <div class="content" slot="content">
-                        <Timestamp time={new Date(post.created_at)} />
-                        <img class="thumb" src="https://chailagpncxzrnujqznl.supabase.in/storage/v1/object/public/post-images/{post.image}" alt="{post.alt}">
-                        <p>{post.content}</p>
-                    </div>
-                </Card>
+                <div class="mobile-first">
+                    <Card size="sm">
+                        <h2 slot="title">{post.title}</h2>
+                        <div class="content" slot="content">
+                            <Timestamp time={new Date(post.created_at)} />
+                            <img class="thumb" src="https://chailagpncxzrnujqznl.supabase.in/storage/v1/object/public/post-images/{post.image}" alt="{post.alt}">
+                            <p>{post.content}</p>
+                            {#if post.link}
+                                <Button href={post.link}>
+                                    {post.action ?? "Open"}
+                                </Button>
+                            {/if}
+                        </div>
+                    </Card>
+                </div>
             {/each}
         {/if}
         

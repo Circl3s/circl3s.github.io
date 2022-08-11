@@ -135,8 +135,8 @@
                     </TechInfo>
                 </div>
                 <div class="actions">
-                    <Button disabled>
-                        Open app (soon)
+                    <Button href="https://circl3s.github.io/cybertracks">
+                        Open app
                     </Button>
                     <Button href="https://github.com/Circl3s/cybertracks">
                         View source code

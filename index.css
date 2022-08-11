@@ -1118,6 +1118,10 @@ html {
     }
 }
 
+.first\:flex:first-child {
+	display: flex;
+}
+
 .hover\:opacity-100:hover {
 	opacity: 1;
 }

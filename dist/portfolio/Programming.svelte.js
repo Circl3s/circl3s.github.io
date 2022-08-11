@@ -641,13 +641,13 @@ function create_content_slot_11(ctx) {
 	};
 }
 
-// (181:20) <Button disabled>
+// (181:20) <Button href="https://circl3s.github.io/cybertracks">
 function create_default_slot_7(ctx) {
 	let t;
 
 	return {
 		c() {
-			t = text("Open app (soon)");
+			t = text("Open app");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -733,7 +733,7 @@ function create_content_slot_10(ctx) {
 
 	button0 = new Button({
 			props: {
-				disabled: true,
+				href: "https://circl3s.github.io/cybertracks",
 				$$slots: { default: [create_default_slot_7] },
 				$$scope: { ctx }
 			}

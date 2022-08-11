@@ -29,6 +29,7 @@ import Marker from "../shared/Marker.svelte.js";
 import Card from "../shared/Card.svelte.js";
 import CosmeticNotch from "../shared/CosmeticNotch.svelte.js";
 import Timestamp from "../shared/Timestamp.svelte.js";
+import Button from "../shared/Button.svelte.js";
 import { onMount } from "../../_snowpack/pkg/svelte.js";
 import { createClient } from "../../_snowpack/pkg/@supabase/supabase-js.js";
 
@@ -38,7 +39,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (127:8) {:else}
+// (151:8) {:else}
 function create_else_block(ctx) {
 	let each_1_anchor;
 	let current;
@@ -122,7 +123,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (125:8) {#if post_array.length == 0}
+// (149:8) {#if post_array.length == 0}
 function create_if_block(ctx) {
 	let h3;
 
@@ -130,7 +131,7 @@ function create_if_block(ctx) {
 		c() {
 			h3 = element("h3");
 			h3.textContent = "Getting posts...";
-			attr(h3, "class", "svelte-1786xje");
+			attr(h3, "class", "svelte-p1xt1o");
 		},
 		m(target, anchor) {
 			insert(target, h3, anchor);
@@ -146,7 +147,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (130:20) 
+// (155:24) 
 function create_title_slot(ctx) {
 	let h2;
 	let t_value = /*post*/ ctx[5].title + "";
@@ -171,7 +172,74 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (131:20) 
+// (160:28) {#if post.link}
+function create_if_block_1(ctx) {
+	let button;
+	let current;
+
+	button = new Button({
+			props: {
+				href: /*post*/ ctx[5].link,
+				$$slots: { default: [create_default_slot] },
+				$$scope: { ctx }
+			}
+		});
+
+	return {
+		c() {
+			create_component(button.$$.fragment);
+		},
+		m(target, anchor) {
+			mount_component(button, target, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const button_changes = {};
+			if (dirty & /*post_array*/ 2) button_changes.href = /*post*/ ctx[5].link;
+
+			if (dirty & /*$$scope, post_array*/ 258) {
+				button_changes.$$scope = { dirty, ctx };
+			}
+
+			button.$set(button_changes);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(button.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(button.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			destroy_component(button, detaching);
+		}
+	};
+}
+
+// (161:32) <Button href={post.link}>
+function create_default_slot(ctx) {
+	let t_value = (/*post*/ ctx[5].action ?? "Open") + "";
+	let t;
+
+	return {
+		c() {
+			t = text(t_value);
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*post_array*/ 2 && t_value !== (t_value = (/*post*/ ctx[5].action ?? "Open") + "")) set_data(t, t_value);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (156:24) 
 function create_content_slot(ctx) {
 	let div;
 	let timestamp;
@@ -192,6 +260,8 @@ function create_content_slot(ctx) {
 			}
 		});
 
+	let if_block = /*post*/ ctx[5].link && create_if_block_1(ctx);
+
 	return {
 		c() {
 			div = element("div");
@@ -202,11 +272,12 @@ function create_content_slot(ctx) {
 			p = element("p");
 			t2 = text(t2_value);
 			t3 = space();
-			attr(img, "class", "thumb svelte-1786xje");
+			if (if_block) if_block.c();
+			attr(img, "class", "thumb svelte-p1xt1o");
 			if (img.src !== (img_src_value = "https://chailagpncxzrnujqznl.supabase.in/storage/v1/object/public/post-images/" + /*post*/ ctx[5].image)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*post*/ ctx[5].alt);
-			attr(p, "class", "svelte-1786xje");
-			attr(div, "class", "content svelte-1786xje");
+			attr(p, "class", "svelte-p1xt1o");
+			attr(div, "class", "content svelte-p1xt1o");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -218,6 +289,7 @@ function create_content_slot(ctx) {
 			append(div, p);
 			append(p, t2);
 			append(div, t3);
+			if (if_block) if_block.m(div, null);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -234,26 +306,54 @@ function create_content_slot(ctx) {
 			}
 
 			if ((!current || dirty & /*post_array*/ 2) && t2_value !== (t2_value = /*post*/ ctx[5].content + "")) set_data(t2, t2_value);
+
+			if (/*post*/ ctx[5].link) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+
+					if (dirty & /*post_array*/ 2) {
+						transition_in(if_block, 1);
+					}
+				} else {
+					if_block = create_if_block_1(ctx);
+					if_block.c();
+					transition_in(if_block, 1);
+					if_block.m(div, null);
+				}
+			} else if (if_block) {
+				group_outros();
+
+				transition_out(if_block, 1, 1, () => {
+					if_block = null;
+				});
+
+				check_outros();
+			}
 		},
 		i(local) {
 			if (current) return;
 			transition_in(timestamp.$$.fragment, local);
+			transition_in(if_block);
 			current = true;
 		},
 		o(local) {
 			transition_out(timestamp.$$.fragment, local);
+			transition_out(if_block);
 			current = false;
 		},
 		d(detaching) {
 			if (detaching) detach(div);
 			destroy_component(timestamp);
+			if (if_block) if_block.d();
 		}
 	};
 }
 
-// (128:12) {#each post_array as post}
+// (152:12) {#each post_array as post}
 function create_each_block(ctx) {
+	let div;
 	let card;
+	let t;
 	let current;
 
 	card = new Card({
@@ -269,10 +369,15 @@ function create_each_block(ctx) {
 
 	return {
 		c() {
+			div = element("div");
 			create_component(card.$$.fragment);
+			t = space();
+			attr(div, "class", "mobile-first svelte-p1xt1o");
 		},
 		m(target, anchor) {
-			mount_component(card, target, anchor);
+			insert(target, div, anchor);
+			mount_component(card, div, null);
+			append(div, t);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -294,7 +399,8 @@ function create_each_block(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			destroy_component(card, detaching);
+			if (detaching) detach(div);
+			destroy_component(card);
 		}
 	};
 }
@@ -336,10 +442,10 @@ function create_fragment(ctx) {
 			t3 = space();
 			div0 = element("div");
 			if_block.c();
-			attr(h1, "class", "svelte-1786xje");
-			attr(div0, "class", "items svelte-1786xje");
+			attr(h1, "class", "svelte-p1xt1o");
+			attr(div0, "class", "items svelte-p1xt1o");
 			attr(div0, "id", "items");
-			attr(div1, "class", "News svelte-1786xje");
+			attr(div1, "class", "News svelte-p1xt1o");
 		},
 		m(target, anchor) {
 			mount_component(cosmeticnotch, target, anchor);
@@ -413,9 +519,7 @@ function instance($$self, $$props, $$invalidate) {
 	const supabase = createClient(supabaseUrl, supabaseKey);
 
 	async function populate() {
-		let { data: posts, error } = await supabase.from("posts").select("*");
-		console.log(posts);
-		console.log(error);
+		let { data: posts, error } = await supabase.from("posts").select("*").limit(3);
 
 		if (error) {
 			$$invalidate(0, ph_text.innerText = "Error while getting posts.", ph_text);

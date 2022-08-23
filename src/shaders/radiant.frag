@@ -10,9 +10,9 @@ void main() {
     float amnt = longboi ? 10.0 : 20.0;
     vec2 scaled = vec2(st.x * amnt, st.y * amnt * ar);
     if (!longboi) {
-        scaled.x += u_time * 2.0 * (floor(scaled.y - 4.0) - 0.5);
+        scaled.x += u_time / 4.0 * (floor(scaled.y - 4.0) - 0.5);
     } else {
-        scaled.y += u_time * 2.0 * (floor(scaled.x - 4.0) - 0.5);
+        scaled.y += u_time / 4.0 * (floor(scaled.x - 4.0) - 0.5);
     }
     vec2 grid = fract(scaled);
     float circle = -1.0 * smoothstep(0.2, 0.23, distance(grid, vec2(0.5, 0.5))) + 1.0;

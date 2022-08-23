@@ -15,8 +15,8 @@
         z-index: -1;
     }
 
-    .Portfolio > :global(.Card) {
-        @apply self-center md:self-start md:even:self-end;
+    .Portfolio :global(.Card) {
+        @apply my-4 mx-0 md:mx-4;
     }
 
     .Portfolio :global(a) {

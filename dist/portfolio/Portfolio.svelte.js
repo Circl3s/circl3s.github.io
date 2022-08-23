@@ -73,8 +73,8 @@ function create_fragment(ctx) {
 			if (if_block) if_block.c();
 			t1 = space();
 			create_component(cosmeticnotch.$$.fragment);
-			attr(div0, "class", "Portfolio svelte-1op8zd8");
-			attr(div1, "class", "bg svelte-1op8zd8");
+			attr(div0, "class", "Portfolio svelte-5nua7k");
+			attr(div1, "class", "bg svelte-5nua7k");
 		},
 		m(target, anchor) {
 			insert(target, div0, anchor);

@@ -26,7 +26,7 @@ import Portfolio from "./Portfolio.svelte.js";
 import Section from "../shared/Section.svelte.js";
 import TechInfo from "../shared/TechInfo.svelte.js";
 
-function create_default_slot_10(ctx) {
+function create_default_slot_12(ctx) {
 	let t;
 
 	return {
@@ -42,8 +42,8 @@ function create_default_slot_10(ctx) {
 	};
 }
 
-// (91:4) <Section>
-function create_default_slot_9(ctx) {
+// (134:4) <Section>
+function create_default_slot_11(ctx) {
 	let h1;
 	let t1;
 	let div1;
@@ -56,7 +56,7 @@ function create_default_slot_9(ctx) {
 	button = new Button({
 			props: {
 				href: "https://github.com/Circl3s/",
-				$$slots: { default: [create_default_slot_10] },
+				$$slots: { default: [create_default_slot_12] },
 				$$scope: { ctx }
 			}
 		});
@@ -75,9 +75,9 @@ function create_default_slot_9(ctx) {
 
 			t4 = space();
 			create_component(button.$$.fragment);
-			attr(h1, "class", "svelte-16plr6j");
-			attr(div0, "class", "col svelte-16plr6j");
-			attr(div1, "class", "content svelte-16plr6j");
+			attr(h1, "class", "svelte-1apqkne");
+			attr(div0, "class", "col svelte-1apqkne");
+			attr(div1, "class", "content svelte-1apqkne");
 		},
 		m(target, anchor) {
 			insert(target, h1, anchor);
@@ -116,8 +116,8 @@ function create_default_slot_9(ctx) {
 	};
 }
 
-// (107:12) 
-function create_title_slot_5(ctx) {
+// (151:16) 
+function create_title_slot_6(ctx) {
 	let h2;
 
 	return {
@@ -135,15 +135,15 @@ function create_title_slot_5(ctx) {
 	};
 }
 
-// (120:24) 
-function create_header_slot_12(ctx) {
+// (164:28) 
+function create_header_slot_15(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/svelte-logotype.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Svelte");
 			attr(img, "slot", "header");
@@ -157,8 +157,8 @@ function create_header_slot_12(ctx) {
 	};
 }
 
-// (121:24) 
-function create_content_slot_18(ctx) {
+// (165:28) 
+function create_content_slot_22(ctx) {
 	let p;
 
 	return {
@@ -176,15 +176,15 @@ function create_content_slot_18(ctx) {
 	};
 }
 
-// (126:24) 
-function create_header_slot_11(ctx) {
+// (170:28) 
+function create_header_slot_14(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<img class="logo svelte-16plr6j" src="/img/snowpack.svg" alt="Snowpack Logo"/>Snowpack`;
-			attr(div, "class", "logotype text-2xl svelte-16plr6j");
+			div.innerHTML = `<img class="logo svelte-1apqkne" src="/img/snowpack.svg" alt="Snowpack Logo"/>Snowpack`;
+			attr(div, "class", "logotype text-2xl svelte-1apqkne");
 			attr(div, "slot", "header");
 		},
 		m(target, anchor) {
@@ -196,8 +196,8 @@ function create_header_slot_11(ctx) {
 	};
 }
 
-// (127:24) 
-function create_content_slot_17(ctx) {
+// (171:28) 
+function create_content_slot_21(ctx) {
 	let p;
 
 	return {
@@ -215,15 +215,15 @@ function create_content_slot_17(ctx) {
 	};
 }
 
-// (132:24) 
-function create_header_slot_10(ctx) {
+// (176:28) 
+function create_header_slot_13(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/tailwindcss-logotype.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -237,8 +237,8 @@ function create_header_slot_10(ctx) {
 	};
 }
 
-// (133:24) 
-function create_content_slot_16(ctx) {
+// (177:28) 
+function create_content_slot_20(ctx) {
 	let p;
 
 	return {
@@ -256,15 +256,15 @@ function create_content_slot_16(ctx) {
 	};
 }
 
-// (138:24) 
-function create_header_slot_9(ctx) {
+// (182:28) 
+function create_header_slot_12(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/supabase-logo-wordmark--dark.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Supabase");
 			attr(img, "slot", "header");
@@ -278,8 +278,8 @@ function create_header_slot_9(ctx) {
 	};
 }
 
-// (139:24) 
-function create_content_slot_15(ctx) {
+// (183:28) 
+function create_content_slot_19(ctx) {
 	let p;
 
 	return {
@@ -297,8 +297,8 @@ function create_content_slot_15(ctx) {
 	};
 }
 
-// (144:16) <Button href="https://github.com/Circl3s/circl3s.github.io/">
-function create_default_slot_8(ctx) {
+// (188:20) <Button href="https://github.com/Circl3s/circl3s.github.io/">
+function create_default_slot_10(ctx) {
 	let t;
 
 	return {
@@ -314,8 +314,8 @@ function create_default_slot_8(ctx) {
 	};
 }
 
-// (108:12) 
-function create_content_slot_14(ctx) {
+// (152:16) 
+function create_content_slot_18(ctx) {
 	let div1;
 	let p0;
 	let t4;
@@ -338,8 +338,8 @@ function create_content_slot_14(ctx) {
 				bg_color: "#F73C00",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_18],
-					header: [create_header_slot_12]
+					content: [create_content_slot_22],
+					header: [create_header_slot_15]
 				},
 				$$scope: { ctx }
 			}
@@ -350,8 +350,8 @@ function create_content_slot_14(ctx) {
 				bg_color: "#2E5E82",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_17],
-					header: [create_header_slot_11]
+					content: [create_content_slot_21],
+					header: [create_header_slot_14]
 				},
 				$$scope: { ctx }
 			}
@@ -362,8 +362,8 @@ function create_content_slot_14(ctx) {
 				bg_color: "#FFFFFF",
 				text_color: "black",
 				$$slots: {
-					content: [create_content_slot_16],
-					header: [create_header_slot_10]
+					content: [create_content_slot_20],
+					header: [create_header_slot_13]
 				},
 				$$scope: { ctx }
 			}
@@ -374,8 +374,8 @@ function create_content_slot_14(ctx) {
 				bg_color: "#1E1E1E",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_15],
-					header: [create_header_slot_9]
+					content: [create_content_slot_19],
+					header: [create_header_slot_12]
 				},
 				$$scope: { ctx }
 			}
@@ -384,7 +384,7 @@ function create_content_slot_14(ctx) {
 	button = new Button({
 			props: {
 				href: "https://github.com/Circl3s/circl3s.github.io/",
-				$$slots: { default: [create_default_slot_8] },
+				$$slots: { default: [create_default_slot_10] },
 				$$scope: { ctx }
 			}
 		});
@@ -395,11 +395,11 @@ function create_content_slot_14(ctx) {
 			p0 = element("p");
 
 			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
-                    Development: <code class="text-green-500">Active</code>`;
+                        Development: <code class="text-green-500">Active</code>`;
 
 			t4 = space();
 			p1 = element("p");
-			p1.textContent = "That's this site. \n                    I kinda overengineered it on purpose so there's a lot of technologies and frameworks at play here. \n                    The important part is that it's not a template, it's been built and styled from the ground up by me.";
+			p1.textContent = "That's this site. \n                        I kinda overengineered it on purpose so there's a lot of technologies and frameworks at play here. \n                        The important part is that it's not a template, it's been built and styled from the ground up by me.";
 			t6 = space();
 			div0 = element("div");
 			create_component(techinfo0.$$.fragment);
@@ -411,8 +411,8 @@ function create_content_slot_14(ctx) {
 			create_component(techinfo3.$$.fragment);
 			t10 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-16plr6j");
-			attr(div0, "class", "techstack svelte-16plr6j");
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -499,8 +499,8 @@ function create_content_slot_14(ctx) {
 	};
 }
 
-// (150:12) 
-function create_title_slot_4(ctx) {
+// (199:16) 
+function create_title_slot_5(ctx) {
 	let h2;
 
 	return {
@@ -518,15 +518,15 @@ function create_title_slot_4(ctx) {
 	};
 }
 
-// (162:24) 
-function create_header_slot_8(ctx) {
+// (211:28) 
+function create_header_slot_11(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/React.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "React");
 			attr(img, "slot", "header");
@@ -540,8 +540,8 @@ function create_header_slot_8(ctx) {
 	};
 }
 
-// (163:24) 
-function create_content_slot_13(ctx) {
+// (212:28) 
+function create_content_slot_17(ctx) {
 	let p;
 
 	return {
@@ -559,15 +559,15 @@ function create_content_slot_13(ctx) {
 	};
 }
 
-// (168:24) 
-function create_header_slot_7(ctx) {
+// (217:28) 
+function create_header_slot_10(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/tailwindcss-logotype.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -581,8 +581,8 @@ function create_header_slot_7(ctx) {
 	};
 }
 
-// (169:24) 
-function create_content_slot_12(ctx) {
+// (218:28) 
+function create_content_slot_16(ctx) {
 	let p;
 
 	return {
@@ -600,15 +600,15 @@ function create_content_slot_12(ctx) {
 	};
 }
 
-// (174:24) 
-function create_header_slot_6(ctx) {
+// (223:28) 
+function create_header_slot_9(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/Tonejs.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "TailwindCSS");
 			attr(img, "slot", "header");
@@ -622,8 +622,8 @@ function create_header_slot_6(ctx) {
 	};
 }
 
-// (175:24) 
-function create_content_slot_11(ctx) {
+// (224:28) 
+function create_content_slot_15(ctx) {
 	let p;
 
 	return {
@@ -641,8 +641,8 @@ function create_content_slot_11(ctx) {
 	};
 }
 
-// (181:20) <Button href="https://circl3s.github.io/cybertracks" color="green">
-function create_default_slot_7(ctx) {
+// (230:24) <Button href="https://circl3s.github.io/cybertracks" color="green">
+function create_default_slot_9(ctx) {
 	let t;
 
 	return {
@@ -658,8 +658,8 @@ function create_default_slot_7(ctx) {
 	};
 }
 
-// (184:20) <Button href="https://github.com/Circl3s/cybertracks">
-function create_default_slot_6(ctx) {
+// (233:24) <Button href="https://github.com/Circl3s/cybertracks">
+function create_default_slot_8(ctx) {
 	let t;
 
 	return {
@@ -675,8 +675,8 @@ function create_default_slot_6(ctx) {
 	};
 }
 
-// (151:12) 
-function create_content_slot_10(ctx) {
+// (200:16) 
+function create_content_slot_14(ctx) {
 	let div2;
 	let p0;
 	let t4;
@@ -700,8 +700,8 @@ function create_content_slot_10(ctx) {
 				bg_color: "#282C34",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_13],
-					header: [create_header_slot_8]
+					content: [create_content_slot_17],
+					header: [create_header_slot_11]
 				},
 				$$scope: { ctx }
 			}
@@ -712,8 +712,8 @@ function create_content_slot_10(ctx) {
 				bg_color: "#FFFFFF",
 				text_color: "black",
 				$$slots: {
-					content: [create_content_slot_12],
-					header: [create_header_slot_7]
+					content: [create_content_slot_16],
+					header: [create_header_slot_10]
 				},
 				$$scope: { ctx }
 			}
@@ -724,8 +724,8 @@ function create_content_slot_10(ctx) {
 				bg_color: "#000000",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_11],
-					header: [create_header_slot_6]
+					content: [create_content_slot_15],
+					header: [create_header_slot_9]
 				},
 				$$scope: { ctx }
 			}
@@ -735,7 +735,7 @@ function create_content_slot_10(ctx) {
 			props: {
 				href: "https://circl3s.github.io/cybertracks",
 				color: "green",
-				$$slots: { default: [create_default_slot_7] },
+				$$slots: { default: [create_default_slot_9] },
 				$$scope: { ctx }
 			}
 		});
@@ -743,7 +743,7 @@ function create_content_slot_10(ctx) {
 	button1 = new Button({
 			props: {
 				href: "https://github.com/Circl3s/cybertracks",
-				$$slots: { default: [create_default_slot_6] },
+				$$slots: { default: [create_default_slot_8] },
 				$$scope: { ctx }
 			}
 		});
@@ -754,11 +754,11 @@ function create_content_slot_10(ctx) {
 			p0 = element("p");
 
 			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
-                    Development: <code class="text-green-500">Active</code>`;
+                        Development: <code class="text-green-500">Active</code>`;
 
 			t4 = space();
 			p1 = element("p");
-			p1.textContent = "A tracker-style music creation tool for the web. \n                    I wanted to honor the long-forgotten great-grandfathers of Digital Audio Workstations by implementing their unique workflow on a website.";
+			p1.textContent = "A tracker-style music creation tool for the web. \n                        I wanted to honor the long-forgotten great-grandfathers of Digital Audio Workstations by implementing their unique workflow on a website.";
 			t6 = space();
 			div0 = element("div");
 			create_component(techinfo0.$$.fragment);
@@ -771,9 +771,9 @@ function create_content_slot_10(ctx) {
 			create_component(button0.$$.fragment);
 			t10 = space();
 			create_component(button1.$$.fragment);
-			attr(p0, "class", "status svelte-16plr6j");
-			attr(div0, "class", "techstack svelte-16plr6j");
-			attr(div1, "class", "actions svelte-16plr6j");
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
+			attr(div1, "class", "actions svelte-1apqkne");
 			attr(div2, "class", "description");
 			attr(div2, "slot", "content");
 		},
@@ -861,8 +861,8 @@ function create_content_slot_10(ctx) {
 	};
 }
 
-// (191:12) 
-function create_title_slot_3(ctx) {
+// (245:16) 
+function create_title_slot_4(ctx) {
 	let h2;
 
 	return {
@@ -880,8 +880,8 @@ function create_title_slot_3(ctx) {
 	};
 }
 
-// (203:24) 
-function create_header_slot_5(ctx) {
+// (257:28) 
+function create_header_slot_8(ctx) {
 	let img;
 	let img_src_value;
 
@@ -890,7 +890,7 @@ function create_header_slot_5(ctx) {
 			img = element("img");
 			if (img.src !== (img_src_value = "/img/Flutter.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Flutter");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			attr(img, "slot", "header");
 		},
 		m(target, anchor) {
@@ -902,8 +902,8 @@ function create_header_slot_5(ctx) {
 	};
 }
 
-// (204:24) 
-function create_content_slot_9(ctx) {
+// (258:28) 
+function create_content_slot_13(ctx) {
 	let p;
 
 	return {
@@ -921,15 +921,15 @@ function create_content_slot_9(ctx) {
 	};
 }
 
-// (209:24) 
-function create_header_slot_4(ctx) {
+// (263:28) 
+function create_header_slot_7(ctx) {
 	let img;
 	let img_src_value;
 
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/supabase-logo-wordmark--dark.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Supabase");
 			attr(img, "slot", "header");
@@ -943,8 +943,8 @@ function create_header_slot_4(ctx) {
 	};
 }
 
-// (210:24) 
-function create_content_slot_8(ctx) {
+// (264:28) 
+function create_content_slot_12(ctx) {
 	let p;
 
 	return {
@@ -962,8 +962,8 @@ function create_content_slot_8(ctx) {
 	};
 }
 
-// (216:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo/releases" color="green">
-function create_default_slot_5(ctx) {
+// (270:24) <Button href="https://github.com/Neko-Services/neko_launcher_neo/releases" color="green">
+function create_default_slot_7(ctx) {
 	let t;
 
 	return {
@@ -979,8 +979,8 @@ function create_default_slot_5(ctx) {
 	};
 }
 
-// (219:20) <Button href="https://github.com/Neko-Services/neko_launcher_neo">
-function create_default_slot_4(ctx) {
+// (273:24) <Button href="https://github.com/Neko-Services/neko_launcher_neo">
+function create_default_slot_6(ctx) {
 	let t;
 
 	return {
@@ -996,8 +996,8 @@ function create_default_slot_4(ctx) {
 	};
 }
 
-// (192:12) 
-function create_content_slot_7(ctx) {
+// (246:16) 
+function create_content_slot_11(ctx) {
 	let div2;
 	let p0;
 	let t4;
@@ -1019,8 +1019,8 @@ function create_content_slot_7(ctx) {
 				bg_color: "#042B59",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_9],
-					header: [create_header_slot_5]
+					content: [create_content_slot_13],
+					header: [create_header_slot_8]
 				},
 				$$scope: { ctx }
 			}
@@ -1031,8 +1031,8 @@ function create_content_slot_7(ctx) {
 				bg_color: "#1E1E1E",
 				text_color: "white",
 				$$slots: {
-					content: [create_content_slot_8],
-					header: [create_header_slot_4]
+					content: [create_content_slot_12],
+					header: [create_header_slot_7]
 				},
 				$$scope: { ctx }
 			}
@@ -1042,7 +1042,7 @@ function create_content_slot_7(ctx) {
 			props: {
 				href: "https://github.com/Neko-Services/neko_launcher_neo/releases",
 				color: "green",
-				$$slots: { default: [create_default_slot_5] },
+				$$slots: { default: [create_default_slot_7] },
 				$$scope: { ctx }
 			}
 		});
@@ -1050,7 +1050,7 @@ function create_content_slot_7(ctx) {
 	button1 = new Button({
 			props: {
 				href: "https://github.com/Neko-Services/neko_launcher_neo",
-				$$slots: { default: [create_default_slot_4] },
+				$$slots: { default: [create_default_slot_6] },
 				$$scope: { ctx }
 			}
 		});
@@ -1061,11 +1061,11 @@ function create_content_slot_7(ctx) {
 			p0 = element("p");
 
 			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
-                    Development: <code class="text-green-500">Active</code>`;
+                        Development: <code class="text-green-500">Active</code>`;
 
 			t4 = space();
 			p1 = element("p");
-			p1.textContent = "A game launcher focused on, but not limited to anime-style visual novels. \n                    Allows players to track their play time, categorize their games collection and even socialize, while being customizable.";
+			p1.textContent = "A game launcher focused on, but not limited to anime-style visual novels. \n                        Allows players to track their play time, categorize their games collection and even socialize, while being customizable.";
 			t6 = space();
 			div0 = element("div");
 			create_component(techinfo0.$$.fragment);
@@ -1076,9 +1076,9 @@ function create_content_slot_7(ctx) {
 			create_component(button0.$$.fragment);
 			t9 = space();
 			create_component(button1.$$.fragment);
-			attr(p0, "class", "status svelte-16plr6j");
-			attr(div0, "class", "techstack svelte-16plr6j");
-			attr(div1, "class", "actions svelte-16plr6j");
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
+			attr(div1, "class", "actions svelte-1apqkne");
 			attr(div2, "class", "description");
 			attr(div2, "slot", "content");
 		},
@@ -1154,7 +1154,364 @@ function create_content_slot_7(ctx) {
 	};
 }
 
-// (226:12) 
+// (285:16) 
+function create_title_slot_3(ctx) {
+	let h2;
+
+	return {
+		c() {
+			h2 = element("h2");
+			h2.textContent = "Vetch";
+			attr(h2, "slot", "title");
+		},
+		m(target, anchor) {
+			insert(target, h2, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(h2);
+		}
+	};
+}
+
+// (297:28) 
+function create_header_slot_6(ctx) {
+	let img;
+	let img_src_value;
+
+	return {
+		c() {
+			img = element("img");
+			attr(img, "class", "logo svelte-1apqkne");
+			if (img.src !== (img_src_value = "/img/v-logo.png")) attr(img, "src", img_src_value);
+			attr(img, "alt", "V");
+			attr(img, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, img, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(img);
+		}
+	};
+}
+
+// (298:28) 
+function create_content_slot_10(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "Vetch is written in V, a new, fast and safe language inspired by Go which produces small executables in record time.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (303:28) 
+function create_header_slot_5(ctx) {
+	let div;
+
+	return {
+		c() {
+			div = element("div");
+			div.innerHTML = `<img class="logo svelte-1apqkne" src="/img/PowerShell.png" alt="PowerShell Logo"/>PowerShell`;
+			attr(div, "class", "logotype text-2xl svelte-1apqkne");
+			attr(div, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, div, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(div);
+		}
+	};
+}
+
+// (304:28) 
+function create_content_slot_9(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "On Windows Vetch uses some PowerShell magic to fetch system info somewhat efficiently.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (309:28) 
+function create_header_slot_4(ctx) {
+	let div;
+
+	return {
+		c() {
+			div = element("div");
+			div.textContent = "*nix";
+			attr(div, "class", "logotype text-2xl svelte-1apqkne");
+			attr(div, "slot", "header");
+		},
+		m(target, anchor) {
+			insert(target, div, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(div);
+		}
+	};
+}
+
+// (310:28) 
+function create_content_slot_8(ctx) {
+	let p;
+
+	return {
+		c() {
+			p = element("p");
+			p.textContent = "On Unix-like operating systems Vetch uses standard Unix tools and tricks to fetch system info almost instantaneously.";
+			attr(p, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, p, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(p);
+		}
+	};
+}
+
+// (316:24) <Button disabled>
+function create_default_slot_5(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("Download (coming soon)");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (319:24) <Button href="https://github.com/Circl3s/vetch">
+function create_default_slot_4(ctx) {
+	let t;
+
+	return {
+		c() {
+			t = text("View source code");
+		},
+		m(target, anchor) {
+			insert(target, t, anchor);
+		},
+		d(detaching) {
+			if (detaching) detach(t);
+		}
+	};
+}
+
+// (286:16) 
+function create_content_slot_7(ctx) {
+	let div2;
+	let p0;
+	let t4;
+	let p1;
+	let t6;
+	let div0;
+	let techinfo0;
+	let t7;
+	let techinfo1;
+	let t8;
+	let techinfo2;
+	let t9;
+	let div1;
+	let button0;
+	let t10;
+	let button1;
+	let current;
+
+	techinfo0 = new TechInfo({
+			props: {
+				bg_color: "#334",
+				text_color: "#C9C5C4",
+				$$slots: {
+					content: [create_content_slot_10],
+					header: [create_header_slot_6]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	techinfo1 = new TechInfo({
+			props: {
+				bg_color: "#004880",
+				text_color: "white",
+				$$slots: {
+					content: [create_content_slot_9],
+					header: [create_header_slot_5]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	techinfo2 = new TechInfo({
+			props: {
+				bg_color: "#F0EDE3",
+				text_color: "#33290A",
+				$$slots: {
+					content: [create_content_slot_8],
+					header: [create_header_slot_4]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	button0 = new Button({
+			props: {
+				disabled: true,
+				$$slots: { default: [create_default_slot_5] },
+				$$scope: { ctx }
+			}
+		});
+
+	button1 = new Button({
+			props: {
+				href: "https://github.com/Circl3s/vetch",
+				$$slots: { default: [create_default_slot_4] },
+				$$scope: { ctx }
+			}
+		});
+
+	return {
+		c() {
+			div2 = element("div");
+			p0 = element("p");
+
+			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
+                        Development: <code class="text-green-500">Active</code>`;
+
+			t4 = space();
+			p1 = element("p");
+			p1.textContent = "Vetch is a simple, crossplatform system fetch program written in V.\n                        I was tired of all popular system fetches being only on Linux, so I made my own crossplatform one. And it's decently fast too!";
+			t6 = space();
+			div0 = element("div");
+			create_component(techinfo0.$$.fragment);
+			t7 = space();
+			create_component(techinfo1.$$.fragment);
+			t8 = space();
+			create_component(techinfo2.$$.fragment);
+			t9 = space();
+			div1 = element("div");
+			create_component(button0.$$.fragment);
+			t10 = space();
+			create_component(button1.$$.fragment);
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
+			attr(div1, "class", "actions svelte-1apqkne");
+			attr(div2, "class", "description");
+			attr(div2, "slot", "content");
+		},
+		m(target, anchor) {
+			insert(target, div2, anchor);
+			append(div2, p0);
+			append(div2, t4);
+			append(div2, p1);
+			append(div2, t6);
+			append(div2, div0);
+			mount_component(techinfo0, div0, null);
+			append(div0, t7);
+			mount_component(techinfo1, div0, null);
+			append(div0, t8);
+			mount_component(techinfo2, div0, null);
+			append(div2, t9);
+			append(div2, div1);
+			mount_component(button0, div1, null);
+			append(div1, t10);
+			mount_component(button1, div1, null);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const techinfo0_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo0_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo0.$set(techinfo0_changes);
+			const techinfo1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo1_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo1.$set(techinfo1_changes);
+			const techinfo2_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				techinfo2_changes.$$scope = { dirty, ctx };
+			}
+
+			techinfo2.$set(techinfo2_changes);
+			const button0_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button0_changes.$$scope = { dirty, ctx };
+			}
+
+			button0.$set(button0_changes);
+			const button1_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				button1_changes.$$scope = { dirty, ctx };
+			}
+
+			button1.$set(button1_changes);
+		},
+		i(local) {
+			if (current) return;
+			transition_in(techinfo0.$$.fragment, local);
+			transition_in(techinfo1.$$.fragment, local);
+			transition_in(techinfo2.$$.fragment, local);
+			transition_in(button0.$$.fragment, local);
+			transition_in(button1.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			transition_out(techinfo0.$$.fragment, local);
+			transition_out(techinfo1.$$.fragment, local);
+			transition_out(techinfo2.$$.fragment, local);
+			transition_out(button0.$$.fragment, local);
+			transition_out(button1.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) detach(div2);
+			destroy_component(techinfo0);
+			destroy_component(techinfo1);
+			destroy_component(techinfo2);
+			destroy_component(button0);
+			destroy_component(button1);
+		}
+	};
+}
+
+// (331:16) 
 function create_title_slot_2(ctx) {
 	let h2;
 
@@ -1173,7 +1530,7 @@ function create_title_slot_2(ctx) {
 	};
 }
 
-// (238:24) 
+// (343:28) 
 function create_header_slot_3(ctx) {
 	let img;
 	let img_src_value;
@@ -1181,7 +1538,7 @@ function create_header_slot_3(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/crystal_logo.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Crystal");
 			attr(img, "slot", "header");
@@ -1195,7 +1552,7 @@ function create_header_slot_3(ctx) {
 	};
 }
 
-// (239:24) 
+// (344:28) 
 function create_content_slot_6(ctx) {
 	let p;
 
@@ -1214,7 +1571,7 @@ function create_content_slot_6(ctx) {
 	};
 }
 
-// (244:24) 
+// (349:28) 
 function create_header_slot_2(ctx) {
 	let img;
 	let img_src_value;
@@ -1222,7 +1579,7 @@ function create_header_slot_2(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/BASH_logo-transparent-bg-color.svg")) attr(img, "src", img_src_value);
 			attr(img, "alt", "Bash");
 			attr(img, "slot", "header");
@@ -1236,7 +1593,7 @@ function create_header_slot_2(ctx) {
 	};
 }
 
-// (245:24) 
+// (350:28) 
 function create_content_slot_5(ctx) {
 	let p;
 
@@ -1255,7 +1612,7 @@ function create_content_slot_5(ctx) {
 	};
 }
 
-// (250:16) <Button href="https://github.com/I-love-os/LoveShell">
+// (355:20) <Button href="https://github.com/I-love-os/LoveShell">
 function create_default_slot_3(ctx) {
 	let t;
 
@@ -1272,7 +1629,7 @@ function create_default_slot_3(ctx) {
 	};
 }
 
-// (227:12) 
+// (332:16) 
 function create_content_slot_4(ctx) {
 	let div1;
 	let p0;
@@ -1325,11 +1682,11 @@ function create_content_slot_4(ctx) {
 			p0 = element("p");
 
 			p0.innerHTML = `Access: <code class="text-yellow-500">Source Only</code><br/>
-                    Development: <code class="text-red-500">Stopped</code>`;
+                        Development: <code class="text-red-500">Stopped</code>`;
 
 			t4 = space();
 			p1 = element("p");
-			p1.textContent = "LoveShell is a fast and customizable Linux shell I made with my friends. \n                    The main idea was to make a shell that is easy to use and configure to beginners and nice looking out of the box.";
+			p1.textContent = "LoveShell is a fast and customizable Linux shell I made with my friends. \n                        The main idea was to make a shell that is easy to use and configure to beginners and nice looking out of the box.";
 			t6 = space();
 			div0 = element("div");
 			create_component(techinfo0.$$.fragment);
@@ -1337,8 +1694,8 @@ function create_content_slot_4(ctx) {
 			create_component(techinfo1.$$.fragment);
 			t8 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-16plr6j");
-			attr(div0, "class", "techstack svelte-16plr6j");
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1401,7 +1758,7 @@ function create_content_slot_4(ctx) {
 	};
 }
 
-// (255:12) 
+// (362:16) 
 function create_title_slot_1(ctx) {
 	let h2;
 
@@ -1420,7 +1777,7 @@ function create_title_slot_1(ctx) {
 	};
 }
 
-// (266:24) 
+// (373:28) 
 function create_header_slot_1(ctx) {
 	let img;
 	let img_src_value;
@@ -1428,7 +1785,7 @@ function create_header_slot_1(ctx) {
 	return {
 		c() {
 			img = element("img");
-			attr(img, "class", "logo svelte-16plr6j");
+			attr(img, "class", "logo svelte-1apqkne");
 			if (img.src !== (img_src_value = "/img/PICO-8_logo.png")) attr(img, "src", img_src_value);
 			attr(img, "alt", "PICO-8");
 			attr(img, "slot", "header");
@@ -1442,7 +1799,7 @@ function create_header_slot_1(ctx) {
 	};
 }
 
-// (267:24) 
+// (374:28) 
 function create_content_slot_3(ctx) {
 	let p;
 
@@ -1461,7 +1818,7 @@ function create_content_slot_3(ctx) {
 	};
 }
 
-// (272:16) <Button href="https://github.com/Circl3s/circl3s-super-breakout/">
+// (379:20) <Button href="https://github.com/Circl3s/circl3s-super-breakout/">
 function create_default_slot_2(ctx) {
 	let t;
 
@@ -1478,7 +1835,7 @@ function create_default_slot_2(ctx) {
 	};
 }
 
-// (256:12) 
+// (363:16) 
 function create_content_slot_2(ctx) {
 	let div1;
 	let p0;
@@ -1517,7 +1874,7 @@ function create_content_slot_2(ctx) {
 			p0 = element("p");
 
 			p0.innerHTML = `Access: <code class="text-green-500">Public</code><br/>
-                    Development: <code class="text-yellow-500">On-hold</code>`;
+                        Development: <code class="text-yellow-500">On-hold</code>`;
 
 			t4 = space();
 			p1 = element("p");
@@ -1527,8 +1884,8 @@ function create_content_slot_2(ctx) {
 			create_component(techinfo.$$.fragment);
 			t9 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-16plr6j");
-			attr(div0, "class", "techstack svelte-16plr6j");
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1579,7 +1936,7 @@ function create_content_slot_2(ctx) {
 	};
 }
 
-// (277:12) 
+// (386:16) 
 function create_title_slot(ctx) {
 	let h2;
 
@@ -1598,15 +1955,15 @@ function create_title_slot(ctx) {
 	};
 }
 
-// (288:24) 
+// (397:28) 
 function create_header_slot(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = element("div");
-			div.innerHTML = `<img class="logo svelte-16plr6j" src="/img/webcomponents-logo.svg" alt="WebComponents Logo"/>WEBCOMPONENTS`;
-			attr(div, "class", "font-normal logotype text-lg self-center text-black svelte-16plr6j");
+			div.innerHTML = `<img class="logo svelte-1apqkne" src="/img/webcomponents-logo.svg" alt="WebComponents Logo"/>WEBCOMPONENTS`;
+			attr(div, "class", "font-normal logotype text-lg self-center text-black svelte-1apqkne");
 			attr(div, "slot", "header");
 		},
 		m(target, anchor) {
@@ -1618,7 +1975,7 @@ function create_header_slot(ctx) {
 	};
 }
 
-// (289:24) 
+// (398:28) 
 function create_content_slot_1(ctx) {
 	let p;
 
@@ -1637,7 +1994,7 @@ function create_content_slot_1(ctx) {
 	};
 }
 
-// (294:16) <Button href="https://github.com/Circl3s/helix/">
+// (403:20) <Button href="https://github.com/Circl3s/helix/">
 function create_default_slot_1(ctx) {
 	let t;
 
@@ -1654,7 +2011,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (278:12) 
+// (387:16) 
 function create_content_slot(ctx) {
 	let div1;
 	let p0;
@@ -1693,7 +2050,7 @@ function create_content_slot(ctx) {
 			p0 = element("p");
 
 			p0.innerHTML = `Access: <code class="text-yellow-500">Source only</code><br/>
-                    Development: <code class="text-green-500">Active</code>`;
+                        Development: <code class="text-green-500">Active</code>`;
 
 			t4 = space();
 			p1 = element("p");
@@ -1703,8 +2060,8 @@ function create_content_slot(ctx) {
 			create_component(techinfo.$$.fragment);
 			t7 = space();
 			create_component(button.$$.fragment);
-			attr(p0, "class", "status svelte-16plr6j");
-			attr(div0, "class", "techstack svelte-16plr6j");
+			attr(p0, "class", "status svelte-1apqkne");
+			attr(div0, "class", "techstack svelte-1apqkne");
 			attr(div1, "class", "description");
 			attr(div1, "slot", "content");
 		},
@@ -1755,22 +2112,50 @@ function create_content_slot(ctx) {
 	};
 }
 
-// (105:4) <Portfolio>
+// (148:4) <Portfolio>
 function create_default_slot(ctx) {
+	let div1;
 	let card0;
 	let t0;
-	let card1;
+	let div0;
 	let t1;
-	let card2;
+	let div3;
+	let card1;
 	let t2;
-	let card3;
+	let div2;
 	let t3;
-	let card4;
+	let div5;
+	let card2;
 	let t4;
+	let div4;
+	let t5;
+	let div7;
+	let card3;
+	let t6;
+	let div6;
+	let t7;
+	let div8;
+	let card4;
+	let t8;
+	let div9;
 	let card5;
+	let t9;
+	let div10;
+	let card6;
 	let current;
 
 	card0 = new Card({
+			props: {
+				size: "2xl",
+				$$slots: {
+					content: [create_content_slot_18],
+					title: [create_title_slot_6]
+				},
+				$$scope: { ctx }
+			}
+		});
+
+	card1 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1781,18 +2166,18 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card1 = new Card({
+	card2 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
-					content: [create_content_slot_10],
+					content: [create_content_slot_11],
 					title: [create_title_slot_4]
 				},
 				$$scope: { ctx }
 			}
 		});
 
-	card2 = new Card({
+	card3 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1803,7 +2188,7 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card3 = new Card({
+	card4 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1814,7 +2199,7 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card4 = new Card({
+	card5 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1825,7 +2210,7 @@ function create_default_slot(ctx) {
 			}
 		});
 
-	card5 = new Card({
+	card6 = new Card({
 			props: {
 				size: "2xl",
 				$$slots: {
@@ -1838,30 +2223,79 @@ function create_default_slot(ctx) {
 
 	return {
 		c() {
+			div1 = element("div");
 			create_component(card0.$$.fragment);
 			t0 = space();
-			create_component(card1.$$.fragment);
+			div0 = element("div");
+			div0.innerHTML = `<img src="img/githubio.png" alt="circl3s.github.io Screenshot" class="image svelte-1apqkne"/>`;
 			t1 = space();
-			create_component(card2.$$.fragment);
+			div3 = element("div");
+			create_component(card1.$$.fragment);
 			t2 = space();
-			create_component(card3.$$.fragment);
+			div2 = element("div");
+			div2.innerHTML = `<img src="img/cybertracks_screen.png" alt="Cybertracks Screenshot" class="image svelte-1apqkne"/>`;
 			t3 = space();
-			create_component(card4.$$.fragment);
+			div5 = element("div");
+			create_component(card2.$$.fragment);
 			t4 = space();
+			div4 = element("div");
+			div4.innerHTML = `<img src="img/Launcher.png" alt="Neko Launcher Screenshot" class="image svelte-1apqkne"/>`;
+			t5 = space();
+			div7 = element("div");
+			create_component(card3.$$.fragment);
+			t6 = space();
+			div6 = element("div");
+			div6.innerHTML = `<img src="https://raw.githubusercontent.com/Circl3s/vetch/master/img/vetch.png" alt="Vetch Screenshot" class="image svelte-1apqkne"/>`;
+			t7 = space();
+			div8 = element("div");
+			create_component(card4.$$.fragment);
+			t8 = space();
+			div9 = element("div");
 			create_component(card5.$$.fragment);
+			t9 = space();
+			div10 = element("div");
+			create_component(card6.$$.fragment);
+			attr(div0, "class", "wrapper svelte-1apqkne");
+			attr(div1, "class", "row svelte-1apqkne");
+			attr(div2, "class", "wrapper svelte-1apqkne");
+			attr(div3, "class", "row svelte-1apqkne");
+			attr(div4, "class", "wrapper svelte-1apqkne");
+			attr(div5, "class", "row svelte-1apqkne");
+			attr(div6, "class", "wrapper svelte-1apqkne");
+			attr(div7, "class", "row svelte-1apqkne");
+			attr(div8, "class", "row svelte-1apqkne");
+			attr(div9, "class", "row svelte-1apqkne");
+			attr(div10, "class", "row svelte-1apqkne");
 		},
 		m(target, anchor) {
-			mount_component(card0, target, anchor);
-			insert(target, t0, anchor);
-			mount_component(card1, target, anchor);
+			insert(target, div1, anchor);
+			mount_component(card0, div1, null);
+			append(div1, t0);
+			append(div1, div0);
 			insert(target, t1, anchor);
-			mount_component(card2, target, anchor);
-			insert(target, t2, anchor);
-			mount_component(card3, target, anchor);
+			insert(target, div3, anchor);
+			mount_component(card1, div3, null);
+			append(div3, t2);
+			append(div3, div2);
 			insert(target, t3, anchor);
-			mount_component(card4, target, anchor);
-			insert(target, t4, anchor);
-			mount_component(card5, target, anchor);
+			insert(target, div5, anchor);
+			mount_component(card2, div5, null);
+			append(div5, t4);
+			append(div5, div4);
+			insert(target, t5, anchor);
+			insert(target, div7, anchor);
+			mount_component(card3, div7, null);
+			append(div7, t6);
+			append(div7, div6);
+			insert(target, t7, anchor);
+			insert(target, div8, anchor);
+			mount_component(card4, div8, null);
+			insert(target, t8, anchor);
+			insert(target, div9, anchor);
+			mount_component(card5, div9, null);
+			insert(target, t9, anchor);
+			insert(target, div10, anchor);
+			mount_component(card6, div10, null);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -1907,6 +2341,13 @@ function create_default_slot(ctx) {
 			}
 
 			card5.$set(card5_changes);
+			const card6_changes = {};
+
+			if (dirty & /*$$scope*/ 1) {
+				card6_changes.$$scope = { dirty, ctx };
+			}
+
+			card6.$set(card6_changes);
 		},
 		i(local) {
 			if (current) return;
@@ -1916,6 +2357,7 @@ function create_default_slot(ctx) {
 			transition_in(card3.$$.fragment, local);
 			transition_in(card4.$$.fragment, local);
 			transition_in(card5.$$.fragment, local);
+			transition_in(card6.$$.fragment, local);
 			current = true;
 		},
 		o(local) {
@@ -1925,20 +2367,30 @@ function create_default_slot(ctx) {
 			transition_out(card3.$$.fragment, local);
 			transition_out(card4.$$.fragment, local);
 			transition_out(card5.$$.fragment, local);
+			transition_out(card6.$$.fragment, local);
 			current = false;
 		},
 		d(detaching) {
-			destroy_component(card0, detaching);
-			if (detaching) detach(t0);
-			destroy_component(card1, detaching);
+			if (detaching) detach(div1);
+			destroy_component(card0);
 			if (detaching) detach(t1);
-			destroy_component(card2, detaching);
-			if (detaching) detach(t2);
-			destroy_component(card3, detaching);
+			if (detaching) detach(div3);
+			destroy_component(card1);
 			if (detaching) detach(t3);
-			destroy_component(card4, detaching);
-			if (detaching) detach(t4);
-			destroy_component(card5, detaching);
+			if (detaching) detach(div5);
+			destroy_component(card2);
+			if (detaching) detach(t5);
+			if (detaching) detach(div7);
+			destroy_component(card3);
+			if (detaching) detach(t7);
+			if (detaching) detach(div8);
+			destroy_component(card4);
+			if (detaching) detach(t8);
+			if (detaching) detach(div9);
+			destroy_component(card5);
+			if (detaching) detach(t9);
+			if (detaching) detach(div10);
+			destroy_component(card6);
 		}
 	};
 }
@@ -1963,7 +2415,7 @@ function create_fragment(ctx) {
 
 	section = new Section({
 			props: {
-				$$slots: { default: [create_default_slot_9] },
+				$$slots: { default: [create_default_slot_11] },
 				$$scope: { ctx }
 			}
 		});

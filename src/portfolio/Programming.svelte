@@ -238,8 +238,8 @@
                         </TechInfo>
                     </div>
                     <div class="actions">
-                        <Button disabled>
-                            Download (coming soon)
+                        <Button href="https://github.com/Circl3s/vetch/releases/latest" color="green">
+                            Download
                         </Button>
                         <Button href="https://github.com/Circl3s/vetch">
                             View source code

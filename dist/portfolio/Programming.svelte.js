@@ -1292,13 +1292,13 @@ function create_content_slot_8(ctx) {
 	};
 }
 
-// (316:24) <Button disabled>
+// (316:24) <Button href="https://github.com/Circl3s/vetch/releases/latest" color="green">
 function create_default_slot_5(ctx) {
 	let t;
 
 	return {
 		c() {
-			t = text("Download (coming soon)");
+			t = text("Download");
 		},
 		m(target, anchor) {
 			insert(target, t, anchor);
@@ -1384,7 +1384,8 @@ function create_content_slot_7(ctx) {
 
 	button0 = new Button({
 			props: {
-				disabled: true,
+				href: "https://github.com/Circl3s/vetch/releases/latest",
+				color: "green",
 				$$slots: { default: [create_default_slot_5] },
 				$$scope: { ctx }
 			}

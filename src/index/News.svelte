@@ -55,7 +55,7 @@
     }
 
     .thumb {
-        @apply h-40 w-full object-cover rounded-md my-4;
+        @apply h-44 w-full object-cover rounded-md my-4;
     }
 
     .content {

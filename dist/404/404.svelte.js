@@ -21,7 +21,7 @@ import {
 import Navbar from "../shared/Navbar.svelte.js";
 import WebGL from "../shared/WebGL.svelte.js";
 import Card from "../shared/Card.svelte.js";
-import radiant from "../shaders/radiant.js";
+import blobs from "../shaders/blobs.js";
 
 function create_title_slot(ctx) {
 	let h2;
@@ -67,7 +67,7 @@ function create_content_slot(ctx) {
 function create_if_block(ctx) {
 	let webgl;
 	let current;
-	webgl = new WebGL({ props: { shader_import: radiant } });
+	webgl = new WebGL({ props: { shader_import: blobs } });
 
 	return {
 		c() {

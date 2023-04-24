@@ -16,7 +16,7 @@
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     async function populate() {
-        let { data: posts, error} = await supabase.from("posts").select("*").limit(3);
+        let { data: posts, error} = await supabase.from("posts").select("*").order("created_at", {ascending: false}).limit(3);
 
         if (error) {
             ph_text.innerText = "Error while getting posts."
@@ -24,7 +24,7 @@
             ph_text.innerText = "No posts found."
         } else {
             ph_text.style.display = "none";
-            post_array = posts.reverse();
+            post_array = posts;
         }
     }
 

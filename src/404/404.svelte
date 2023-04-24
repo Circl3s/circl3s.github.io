@@ -3,7 +3,7 @@
     import WebGL from "../shared/WebGL.svelte";
     import Card from "../shared/Card.svelte";
 
-    import radiant from "../shaders/radiant.frag";
+    import blobs from "../shaders/blobs.frag";
 </script>
 
 <style>
@@ -42,7 +42,7 @@
     </div>
     <div class="bg">
         {#if window.WebGLRenderingContext}
-            <WebGL shader_import={radiant} />
+            <WebGL shader_import={blobs} />
         {/if}
     </div>
 </div>

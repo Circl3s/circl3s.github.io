@@ -519,7 +519,7 @@ function instance($$self, $$props, $$invalidate) {
 	const supabase = createClient(supabaseUrl, supabaseKey);
 
 	async function populate() {
-		let { data: posts, error } = await supabase.from("posts").select("*").limit(3);
+		let { data: posts, error } = await supabase.from("posts").select("*").order("created_at", { ascending: false }).limit(3);
 
 		if (error) {
 			$$invalidate(0, ph_text.innerText = "Error while getting posts.", ph_text);
@@ -527,7 +527,7 @@ function instance($$self, $$props, $$invalidate) {
 			$$invalidate(0, ph_text.innerText = "No posts found.", ph_text);
 		} else {
 			$$invalidate(0, ph_text.style.display = "none", ph_text);
-			$$invalidate(1, post_array = posts.reverse());
+			$$invalidate(1, post_array = posts);
 		}
 	}
 

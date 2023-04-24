@@ -131,7 +131,7 @@ function create_if_block(ctx) {
 		c() {
 			h3 = element("h3");
 			h3.textContent = "Getting posts...";
-			attr(h3, "class", "svelte-p1xt1o");
+			attr(h3, "class", "svelte-e43o5l");
 		},
 		m(target, anchor) {
 			insert(target, h3, anchor);
@@ -273,11 +273,11 @@ function create_content_slot(ctx) {
 			t2 = text(t2_value);
 			t3 = space();
 			if (if_block) if_block.c();
-			attr(img, "class", "thumb svelte-p1xt1o");
+			attr(img, "class", "thumb svelte-e43o5l");
 			if (img.src !== (img_src_value = "https://chailagpncxzrnujqznl.supabase.in/storage/v1/object/public/post-images/" + /*post*/ ctx[5].image)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*post*/ ctx[5].alt);
-			attr(p, "class", "svelte-p1xt1o");
-			attr(div, "class", "content svelte-p1xt1o");
+			attr(p, "class", "svelte-e43o5l");
+			attr(div, "class", "content svelte-e43o5l");
 			attr(div, "slot", "content");
 		},
 		m(target, anchor) {
@@ -372,7 +372,7 @@ function create_each_block(ctx) {
 			div = element("div");
 			create_component(card.$$.fragment);
 			t = space();
-			attr(div, "class", "mobile-first svelte-p1xt1o");
+			attr(div, "class", "mobile-first svelte-e43o5l");
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -442,10 +442,10 @@ function create_fragment(ctx) {
 			t3 = space();
 			div0 = element("div");
 			if_block.c();
-			attr(h1, "class", "svelte-p1xt1o");
-			attr(div0, "class", "items svelte-p1xt1o");
+			attr(h1, "class", "svelte-e43o5l");
+			attr(div0, "class", "items svelte-e43o5l");
 			attr(div0, "id", "items");
-			attr(div1, "class", "News svelte-p1xt1o");
+			attr(div1, "class", "News svelte-e43o5l");
 		},
 		m(target, anchor) {
 			mount_component(cosmeticnotch, target, anchor);

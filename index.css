@@ -814,6 +814,9 @@ video {
 .items-center {
 	align-items: center;
 }
+.justify-end {
+	justify-content: flex-end;
+}
 .justify-center {
 	justify-content: center;
 }
@@ -823,8 +826,8 @@ video {
 .self-center {
 	align-self: center;
 }
-.overflow-scroll {
-	overflow: scroll;
+.overflow-hidden {
+	overflow: hidden;
 }
 .whitespace-nowrap {
 	white-space: nowrap;
@@ -1205,6 +1208,11 @@ html {
 
 	.md\:p-0 {
 		padding: 0px;
+	}
+
+	.md\:text-base {
+		font-size: 1rem;
+		line-height: 1.5rem;
 	}
 
 	.md\:even\:flex-row-reverse:nth-child(even) {

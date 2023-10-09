@@ -18,41 +18,43 @@ import {
 import { onMount } from "../../_snowpack/pkg/svelte.js";
 
 function create_fragment(ctx) {
-	let div;
+	let div1;
+	let div0;
 	let span0;
 	let t0;
 	let span1;
 
 	return {
 		c() {
-			div = element("div");
+			div1 = element("div");
+			div0 = element("div");
 			span0 = element("span");
 			t0 = space();
 			span1 = element("span");
 			span1.textContent = "█";
-			attr(span0, "class", "svelte-1wxu1f8");
 			set_style(span1, "visibility", "hidden");
 			attr(span1, "id", "fakecursor");
-			attr(span1, "class", "svelte-1wxu1f8");
-			attr(div, "class", "Typewriter svelte-1wxu1f8");
+			attr(div0, "class", "block");
+			attr(div1, "class", "Typewriter svelte-gzkm0v");
 		},
 		m(target, anchor) {
-			insert(target, div, anchor);
-			append(div, span0);
+			insert(target, div1, anchor);
+			append(div1, div0);
+			append(div0, span0);
 			/*span0_binding*/ ctx[3](span0);
-			append(div, t0);
-			append(div, span1);
+			append(div0, t0);
+			append(div0, span1);
 			/*span1_binding*/ ctx[4](span1);
-			/*div_binding*/ ctx[5](div);
+			/*div1_binding*/ ctx[5](div1);
 		},
 		p: noop,
 		i: noop,
 		o: noop,
 		d(detaching) {
-			if (detaching) detach(div);
+			if (detaching) detach(div1);
 			/*span0_binding*/ ctx[3](null);
 			/*span1_binding*/ ctx[4](null);
-			/*div_binding*/ ctx[5](null);
+			/*div1_binding*/ ctx[5](null);
 		}
 	};
 }
@@ -137,11 +139,6 @@ function instance($$self, $$props, $$invalidate) {
 			$$invalidate(0, editor.innerText += snippets[snippet_i].charAt(i), editor);
 			i++;
 			colorize();
-
-			if (writer.scrollHeight > writer.clientHeight && writer.scrollHeight - Math.abs(writer.scrollTop) !== writer.clientHeight) {
-				writer.scroll(0, writer.scrollHeight);
-			}
-
 			setTimeout(typeWriter, 3000 / snippets[snippet_i].length);
 		}
 	}
@@ -178,14 +175,14 @@ function instance($$self, $$props, $$invalidate) {
 		});
 	}
 
-	function div_binding($$value) {
+	function div1_binding($$value) {
 		binding_callbacks[$$value ? "unshift" : "push"](() => {
 			writer = $$value;
 			$$invalidate(2, writer);
 		});
 	}
 
-	return [editor, cursor, writer, span0_binding, span1_binding, div_binding];
+	return [editor, cursor, writer, span0_binding, span1_binding, div1_binding];
 }
 
 class Typewriter extends SvelteComponent {

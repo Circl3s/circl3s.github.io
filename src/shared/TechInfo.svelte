@@ -27,7 +27,7 @@
 
 <style>
     .TechInfo {
-        @apply m-4 p-2 min-w-[8rem] h-[min-content] w-full md:w-2/5 flex flex-col justify-center rounded-md shadow-md duration-200;
+        @apply m-4 p-2 min-w-[8rem] h-[min-content] w-full sm:w-2/5 flex flex-col justify-center rounded-md shadow-md duration-200;
     }
 
     .header {

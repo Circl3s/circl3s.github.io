@@ -47,10 +47,10 @@ function create_fragment(ctx) {
 			t = space();
 			div1 = element("div");
 			if (content_slot) content_slot.c();
-			attr(div0, "class", "header svelte-k2u1hy");
+			attr(div0, "class", "header svelte-1vij83t");
 			attr(div1, "class", "content");
 			set_style(div1, "display", /*open*/ ctx[0] ? "block" : "none");
-			attr(div2, "class", "TechInfo svelte-k2u1hy");
+			attr(div2, "class", "TechInfo svelte-1vij83t");
 			set_style(div2, "background-color", /*bg_color*/ ctx[1]);
 			set_style(div2, "color", /*text_color*/ ctx[2]);
 		},

@@ -1148,6 +1148,13 @@ html {
 	filter: none;
 }
 
+@media (min-width: 640px) {
+
+	.sm\:w-2\/5 {
+		width: 40%;
+	}
+}
+
 @media (min-width: 768px) {
 
 	.md\:m-1 {
@@ -1188,10 +1195,6 @@ html {
 
 	.md\:w-80 {
 		width: 20rem;
-	}
-
-	.md\:w-2\/5 {
-		width: 40%;
 	}
 
 	.md\:flex-row {

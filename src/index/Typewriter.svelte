@@ -77,10 +77,7 @@
         if (i < snippets[snippet_i].length) {
             editor.innerText += snippets[snippet_i].charAt(i);
             i++;
-            colorize()
-            if (writer.scrollHeight > writer.clientHeight && writer.scrollHeight - Math.abs(writer.scrollTop) !== writer.clientHeight) {
-                writer.scroll(0, writer.scrollHeight);
-            }
+            colorize();
             setTimeout(typeWriter, 3000 / snippets[snippet_i].length);
         }
     }
@@ -105,16 +102,13 @@
 <style>
     .Typewriter {
         scrollbar-width: none;
-        @apply bg-gray-900 text-white shadow-inner rounded-md w-full h-32 md:h-52 overflow-scroll my-4 p-4 font-mono text-sm md:text-base;
-    }
-
-    ::-webkit-scrollbar {
-        display: none;
+        @apply bg-gray-900 text-white shadow-inner rounded-md w-full h-32 md:h-52 overflow-hidden my-4 p-4 font-mono text-sm md:text-base flex justify-end flex-col md:block;
     }
 </style>
 
 <div class="Typewriter" bind:this={writer}>
-    <span bind:this={editor}></span>
-    <span style="visibility: hidden;" bind:this={cursor} id="fakecursor">█</span>
-    
+    <div class="block">
+        <span bind:this={editor}></span>
+        <span style="visibility: hidden;" bind:this={cursor} id="fakecursor">█</span>
+    </div>
 </div>

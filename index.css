@@ -790,8 +790,14 @@ video {
 .flex-grow {
 	flex-grow: 1;
 }
+.transform {
+	transform: var(--tw-transform);
+}
 .cursor-default {
 	cursor: default;
+}
+.cursor-pointer {
+	cursor: pointer;
 }
 .select-none {
 	user-select: none;
@@ -966,6 +972,9 @@ video {
 }
 .to-indigo-500 {
 	--tw-gradient-to: #6366f1;
+}
+.object-contain {
+	object-fit: contain;
 }
 .object-cover {
 	object-fit: cover;

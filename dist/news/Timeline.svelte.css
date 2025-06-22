@@ -1,0 +1,6 @@
+.Timeline.svelte-pgp7nd{display:flex;flex-grow:1;flex-direction:column
+}.bg.svelte-pgp7nd{position:fixed;bottom:0px;height:100%;width:100%;background-image:linear-gradient(to top right, var(--tw-gradient-stops));--tw-gradient-from:#4c1d95;--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to, rgba(76, 29, 149, 0));--tw-gradient-to:#1e3a8a;z-index:-1
+}.more.svelte-pgp7nd{margin:2.5rem;font-size:1.875rem;line-height:2.25rem;font-style:italic;--tw-text-opacity:1;color:rgba(113, 113, 122, var(--tw-text-opacity))
+}.news-grid.svelte-pgp7nd{display:grid;grid-template-columns:repeat(1, minmax(0, 1fr));align-items:center;justify-content:space-evenly;justify-items:center
+}@media(min-width: 768px){.news-grid.svelte-pgp7nd{grid-template-columns:repeat(3, minmax(0, 1fr))
+        }}

@@ -21,8 +21,8 @@ function create_fragment(ctx) {
 	let current;
 	let mounted;
 	let dispose;
-	const default_slot_template = /*#slots*/ ctx[6].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[5], null);
+	const default_slot_template = /*#slots*/ ctx[7].default;
+	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[6], null);
 
 	return {
 		c() {
@@ -47,8 +47,8 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (default_slot) {
-				if (default_slot.p && (!current || dirty & /*$$scope*/ 32)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[5], !current ? -1 : dirty, null, null);
+				if (default_slot.p && (!current || dirty & /*$$scope*/ 64)) {
+					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[6], !current ? -1 : dirty, null, null);
 				}
 			}
 
@@ -84,10 +84,15 @@ function instance($$self, $$props, $$invalidate) {
 	let { disabled = false } = $$props;
 	let { target = "" } = $$props;
 	let { href } = $$props;
+	let { callback } = $$props;
 
 	function action() {
 		if (href) {
 			window.open(href, target);
+		}
+
+		if (callback) {
+			callback();
 		}
 	}
 
@@ -96,10 +101,11 @@ function instance($$self, $$props, $$invalidate) {
 		if ("disabled" in $$props) $$invalidate(1, disabled = $$props.disabled);
 		if ("target" in $$props) $$invalidate(3, target = $$props.target);
 		if ("href" in $$props) $$invalidate(4, href = $$props.href);
-		if ("$$scope" in $$props) $$invalidate(5, $$scope = $$props.$$scope);
+		if ("callback" in $$props) $$invalidate(5, callback = $$props.callback);
+		if ("$$scope" in $$props) $$invalidate(6, $$scope = $$props.$$scope);
 	};
 
-	return [color, disabled, action, target, href, $$scope, slots];
+	return [color, disabled, action, target, href, callback, $$scope, slots];
 }
 
 class Button extends SvelteComponent {
@@ -110,7 +116,8 @@ class Button extends SvelteComponent {
 			color: 0,
 			disabled: 1,
 			target: 3,
-			href: 4
+			href: 4,
+			callback: 5
 		});
 	}
 }

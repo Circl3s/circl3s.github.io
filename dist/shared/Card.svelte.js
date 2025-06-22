@@ -40,7 +40,7 @@ function create_fragment(ctx) {
 			t = space();
 			if (content_slot) content_slot.c();
 			attr(div0, "class", "text-2xl font-semibold mb-4");
-			attr(div1, "class", div1_class_value = "Card max-w-" + /*size*/ ctx[0] + " svelte-575rmt");
+			attr(div1, "class", div1_class_value = "Card max-w-" + /*size*/ ctx[0] + " svelte-bsru");
 		},
 		m(target, anchor) {
 			insert(target, div1, anchor);
@@ -71,7 +71,7 @@ function create_fragment(ctx) {
 				}
 			}
 
-			if (!current || dirty & /*size*/ 1 && div1_class_value !== (div1_class_value = "Card max-w-" + /*size*/ ctx[0] + " svelte-575rmt")) {
+			if (!current || dirty & /*size*/ 1 && div1_class_value !== (div1_class_value = "Card max-w-" + /*size*/ ctx[0] + " svelte-bsru")) {
 				attr(div1, "class", div1_class_value);
 			}
 		},

@@ -21,7 +21,7 @@ import About from "./About.svelte.js";
 import Greeter from "./Greeter.svelte.js";
 import Hobbies from "./Hobbies.svelte.js";
 import Navbar from "../shared/Navbar.svelte.js";
-import News from "./News.svelte.js";
+import MiniNews from "./MiniNews.svelte.js";
 import Toolbox from "./Toolbox.svelte.js";
 import Social from "./Social.svelte.js";
 import Footer from "../shared/Footer.svelte.js";
@@ -37,7 +37,7 @@ function create_fragment(ctx) {
 	let t2;
 	let hobbies;
 	let t3;
-	let news;
+	let mininews;
 	let t4;
 	let toolbox;
 	let t5;
@@ -49,7 +49,7 @@ function create_fragment(ctx) {
 	greeter = new Greeter({});
 	about = new About({});
 	hobbies = new Hobbies({});
-	news = new News({});
+	mininews = new MiniNews({});
 	toolbox = new Toolbox({});
 	social = new Social({});
 	footer = new Footer({});
@@ -65,7 +65,7 @@ function create_fragment(ctx) {
 			t2 = space();
 			create_component(hobbies.$$.fragment);
 			t3 = space();
-			create_component(news.$$.fragment);
+			create_component(mininews.$$.fragment);
 			t4 = space();
 			create_component(toolbox.$$.fragment);
 			t5 = space();
@@ -84,7 +84,7 @@ function create_fragment(ctx) {
 			append(div, t2);
 			mount_component(hobbies, div, null);
 			append(div, t3);
-			mount_component(news, div, null);
+			mount_component(mininews, div, null);
 			append(div, t4);
 			mount_component(toolbox, div, null);
 			append(div, t5);
@@ -100,7 +100,7 @@ function create_fragment(ctx) {
 			transition_in(greeter.$$.fragment, local);
 			transition_in(about.$$.fragment, local);
 			transition_in(hobbies.$$.fragment, local);
-			transition_in(news.$$.fragment, local);
+			transition_in(mininews.$$.fragment, local);
 			transition_in(toolbox.$$.fragment, local);
 			transition_in(social.$$.fragment, local);
 			transition_in(footer.$$.fragment, local);
@@ -111,7 +111,7 @@ function create_fragment(ctx) {
 			transition_out(greeter.$$.fragment, local);
 			transition_out(about.$$.fragment, local);
 			transition_out(hobbies.$$.fragment, local);
-			transition_out(news.$$.fragment, local);
+			transition_out(mininews.$$.fragment, local);
 			transition_out(toolbox.$$.fragment, local);
 			transition_out(social.$$.fragment, local);
 			transition_out(footer.$$.fragment, local);
@@ -123,7 +123,7 @@ function create_fragment(ctx) {
 			destroy_component(greeter);
 			destroy_component(about);
 			destroy_component(hobbies);
-			destroy_component(news);
+			destroy_component(mininews);
 			destroy_component(toolbox);
 			destroy_component(social);
 			destroy_component(footer);

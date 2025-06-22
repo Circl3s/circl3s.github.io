@@ -18,12 +18,11 @@
     }
 
     .logo {
-        @apply p-0 m-0 object-contain;
-        image-rendering: crisp-edges;
+        @apply p-0 m-0 object-contain h-full;
     }
 
     .logotype {
-        @apply w-full h-full p-0 m-0 flex flex-row justify-center font-semibold;
+        @apply w-full h-full p-0 m-0 flex flex-row justify-center font-semibold items-center;
     }
 
     .techstack {
@@ -85,7 +84,7 @@
                         The important part is that it's not a template, it's been built and styled from the ground up by me.
                     </p>
                     <div class="techstack">
-                        <TechInfo bg_color="#F73C00" text_color="white">
+                        <TechInfo bg_color="#F73C00" text_color="white" cta>
                             <img class="logo" src="/img/svelte-logotype.png" alt="Svelte" slot="header" />
                             <p slot="content">
                                 The website is made out of custom reusable and responsive components built with Svelte.
@@ -204,6 +203,53 @@
             <div class="wrapper">
                 <img src="img/Launcher.png" alt="Neko Launcher Screenshot" class="image">
             </div>        
+        </div>
+        <div class="row">
+            <Card size="2xl">
+                <h2 slot="title">DAVbooru</h2>
+                <div class="description" slot="content">
+                    <p class="status">
+                        Access: <code class="text-yellow-500">Source Only</code><br>
+                        Development: <code class="text-green-500">Active</code>
+                    </p>
+                    <p>
+                        An image board (a "booru") that lets you organize and search through your existing collection of media hosted over WebDAV.
+                        Compiles to a single executable for your convenience and requires little to no setup.
+                    </p>
+                    <div class="techstack">
+                        <TechInfo bg_color="#FFFFFF" text_color="#000000">
+                            <img class="logo" src="/img/crystal_logo.svg" alt="Crystal" slot="header" />
+                            <p slot="content">
+                                The project is written in Crystal, using its Embedded Crystal Templates and web server.
+                            </p>
+                        </TechInfo>
+                        <TechInfo bg_color="#212529" text_color="#FFFFFF">
+                            <img class="logo" src="/img/Bootstrap_logo.png" alt="Bootstrap" slot="header" />
+                            <p slot="content">
+                                The website is styled using Bootstrap 5.
+                            </p>
+                        </TechInfo>
+                        <TechInfo bg_color="#FFFFFF" text_color="#003b57">
+                            <img class="logo" src="/img/sqlite.png" alt="SQLite" slot="header">
+                            <p slot="content">
+                                Media are indexed and tagged using an SQLite database requiring no additional setup.
+                            </p>
+                        </TechInfo>
+                        <TechInfo bg_color="#FFFFFF" text_color="#000000">
+                            <img class="logo" src="/img/webdav-logo.jpg" alt="WebDAV" slot="header">
+                            <p slot="content">
+                                The app communicates with your preferred cloud storage provider over WebDAV.
+                            </p>
+                        </TechInfo>
+                    </div>
+                    <Button href="https://github.com/Circl3s/DAVbooru/">
+                        View source code
+                    </Button> 
+                </div>
+            </Card>
+            <div class="wrapper">
+                <img src="img/davbooru.png" alt="DAVbooru Screenshot" class="image">
+            </div>
         </div>
         <div class="row">
             <Card size="2xl">

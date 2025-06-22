@@ -3,10 +3,14 @@
     export let disabled = false;
     export let target = "";
     export let href;
+    export let callback;
 
     function action() {
         if (href) {
             window.open(href, target);
+        }
+        if (callback) {
+            callback();
         }
     }
 </script>

@@ -46,7 +46,7 @@
         @apply hidden first:flex md:flex;
     }
 
-    .News {
+    .MiniNews {
         @apply flex flex-col justify-center items-center bg-gray-200 p-4;
     }
 
@@ -65,12 +65,16 @@
     .content > p {
         @apply text-justify;
     }
+
+    .more {
+        @apply text-3xl text-gray-500 italic hover:underline m-10;
+    }
 </style>
 
 <CosmeticNotch orientation="bottom-right" />
 <Marker name="news" />
-<div class="News">
-    <h1>News</h1>
+<div class="MiniNews">
+    <h1><a href="/news">News</a></h1>
     <div class="items" id="items">
         {#if post_array.length == 0}
             <h3 bind:this="{ph_text}">Getting posts...</h3>
@@ -93,6 +97,6 @@
                 </div>
             {/each}
         {/if}
-        
+        <a href="/news" class="more">See more →</a>
     </div>
 </div>

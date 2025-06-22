@@ -3,7 +3,7 @@
     import Greeter from "./Greeter.svelte";
     import Hobbies from "./Hobbies.svelte";
     import Navbar from "../shared/Navbar.svelte";
-    import News from "./News.svelte";
+    import MiniNews from "./MiniNews.svelte";
     import Toolbox from "./Toolbox.svelte";
     import Social from "./Social.svelte";
     import Footer from "../shared/Footer.svelte";
@@ -21,7 +21,7 @@
     <Greeter />
     <About />
     <Hobbies />
-    <News />
+    <MiniNews />
     <Toolbox />
     <Social />
     <Footer />
